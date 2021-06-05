@@ -28,7 +28,7 @@ user_one = User.new(
     gender: "Female",
     height: 165,
     )
-user_one.photo.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
+user_one.photos.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
 user_one.save!
 puts "user_one created!"
 
@@ -44,7 +44,7 @@ user_two = User.new(
     gender: "Female",
     height: 171.5,
     )
-user_two.photo.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
+user_two.photos.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
 user_two.save!
 puts "user_two created!"
 
@@ -60,7 +60,7 @@ user_three = User.new(
     gender: "Female",
     height: 167,
     )
-user_three.photo.attach(io: photo_three, filename: 'temp.png', content_type: 'image/png')
+user_three.photos.attach(io: photo_three, filename: 'temp.png', content_type: 'image/png')
 user_three.save!
 puts "user_three created!"
 
@@ -76,12 +76,12 @@ user_four= User.new(
     gender: "male",
     height: 178.5,
     )
-user_four.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
+user_four.photos.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
 user_four.save!
 puts "user_four created!"
 
 # User_five
-photo_five URI.open('https://images.unsplash.com/flagged/photo-1569551540531-2694659700e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZhdCUyMG1hbiUyMGZpc2hpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+photo_five = URI.open('https://unsplash.com/photos/bZtJgeehRVs')
 
 user_five = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -92,12 +92,12 @@ user_five = User.new(
     gender: "male",
     height: 187,
     )
-user_five.photo.attach(io: photo_five, filename: 'temp.png', content_type: 'image/png')
+user_five.photos.attach(io: photo_five, filename: 'temp.png', content_type: 'image/png')
 user_five.save!
 puts "user_five created!"
 
 # User_six
-photo_six URI.open('https://unsplash.com/photos/7ibR2ENaDjg')
+photo_six= URI.open('https://unsplash.com/photos/7ibR2ENaDjg')
 
 user_six = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -108,6 +108,6 @@ user_six = User.new(
     gender: "male",
     height: 174,
     )
-user_six.photo.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
+user_six.photos.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
 user_six.save!
 puts "user_six created!"
