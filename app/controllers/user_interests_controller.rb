@@ -12,6 +12,6 @@ class UserInterestsController < ApplicationController
     private
 
     def get_user_interests 
-        params.require(:user_interest).permit(:name, :address, :age, :gender, :height)
+        params.require(:user_interest).permit(:business_industry, :entertaiment, :family_relation, :fitness_wellness, :food_drink, :hobby_activity, :shopping_fashion, :sport_outdoor, :technology)
     end
 end
