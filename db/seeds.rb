@@ -22,11 +22,12 @@ photo_one = URI.open('https://unsplash.com/photos/V297jRiZZSI')
 user_one = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
     password: "password",
-    name: "Jen",
-    description: "About Me👩: I like to sing-talk, guys with messy hair, reading the New Yorker on Sunday mornings, and funny voices. About You🧑: If you are still reading, that's pretty good Let's do this.",
+    name: "Anne",
+    description: "I am a fashion designer 🎨, fairly decent skier, and able to order cocktails 🍹😄 in 3 different languages. I like checking out a new bar with friends, scuba diving anwhere tropical, and trying a new hobby on for size. I appreciate when my date has an intelligent side, is ambitious.",
     age: 25,
     gender: "Female",
     height: 165,
+    address: "Oslo, Norway"
     )
 user_one.photos.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
 user_one.save!
@@ -43,6 +44,7 @@ user_two = User.new(
     age: 34,
     gender: "Female",
     height: 171.5,
+    address: "Oslo, Norway"
     )
 user_two.photos.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
 user_two.save!
@@ -59,6 +61,7 @@ user_three = User.new(
     age: 31,
     gender: "Female",
     height: 167,
+    address: "Eidsberg, Norway"
     )
 user_three.photos.attach(io: photo_three, filename: 'temp.png', content_type: 'image/png')
 user_three.save!
@@ -75,6 +78,7 @@ user_four= User.new(
     age: 23,
     gender: "male",
     height: 178.5,
+    address: "Bærum, Norway"
     )
 user_four.photos.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
 user_four.save!
@@ -91,6 +95,7 @@ user_five = User.new(
     age: 35,
     gender: "male",
     height: 187,
+    address: "Oslo, Norway"
     )
 user_five.photos.attach(io: photo_five, filename: 'temp.png', content_type: 'image/png')
 user_five.save!
@@ -107,6 +112,7 @@ user_six = User.new(
     age: 26,
     gender: "male",
     height: 174,
+    address: "Trondheim, Norway"
     )
 user_six.photos.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
 user_six.save!
