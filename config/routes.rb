@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [ :index, :edit, :update ]
 
+  resources :users do
+    resource :bookings, only: [:create, :edit, :update, :destroy, :show]
+  end
+
 end
