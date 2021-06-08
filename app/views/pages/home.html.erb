@@ -1,2 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<p> Links: </p>
+
+<p> <%= link_to "Finish Profile", edit_profile_path(current_user) %> </p>
+<p> <%= link_to "Add your Interests", new_user_interests_path %> </p>
+<p> <%= link_to "Profiles", profiles_path %> </p>

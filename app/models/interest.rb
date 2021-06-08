@@ -1,3 +1,5 @@
 class Interest < ApplicationRecord
-  belongs_to :user, through: :user_interests # question ?
+  # has_many :user_interests, dependent: :destroy
+  has_and_belongs_to_many :users, through: :user_interests
+  has_many :user_interests
 end

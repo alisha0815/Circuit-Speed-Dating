@@ -1,17 +1,28 @@
 class UserInterestsController < ApplicationController
+  def new
+    @user = current_user
+    @interest = Interest.new
+  end
 
-    def new 
-        @user_interest = UserInterest.new
+  def create
+    @interest = Interest.new(interest_params)
+
+    if @interest.save
+      @user_interest = UserInterest.new
+      @user_interest.interest_id = @interest.id
+      @user_interest.user = current_user
+      @user_interest.save
+      redirect_to profiles_path
+    else
+      render :new
     end
+  end
 
-    def create 
-        @user_interest = UserInterest.new(params[:get_user_interests])
-        @user_interest.save
-    end
+  private
 
-    private
-
-    def get_user_interests 
-        params.require(:user_interest).permit(:business_industry, :entertaiment, :family_relation, :fitness_wellness, :food_drink, :hobby_activity, :shopping_fashion, :sport_outdoor, :technology)
-    end
+  def interest_params
+    params.require(:interest).permit(:business_industry, :entertaiment, :family_relation,
+                                     :fitness_wellness, :food_drink, :hobby_activity,
+                                     :shopping_fashion, :sport_outdoor, :technology)
+  end
 end
