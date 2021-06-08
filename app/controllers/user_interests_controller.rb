@@ -12,7 +12,7 @@ class UserInterestsController < ApplicationController
       @user_interest.interest_id = @interest.id
       @user_interest.user = current_user
       @user_interest.save
-      redirect_to root_path
+      redirect_to profiles_path
     else
       render :new
     end
