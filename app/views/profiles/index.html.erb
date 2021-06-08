@@ -1,1 +1,19 @@
-<h1><strong> Users Profiles </strong></h1>
+<div class="container">
+  <h1><strong> Users Profiles </strong></h1>
+
+  <% @users.each do |user| %>
+
+    <% if user.photos.attached? %>
+      <% user.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300 , width: 200, :crop=>"fill", :radius => 20 %>
+      <% end %>
+    <% end %>
+
+    <p> <%= user.name %> </p>
+    <p> <%= user.age %> </p>
+    <p> <%= user.gender %> </p>
+    <p> <%= user.height %> </p>
+    <p> <%= user.address %> </p>
+
+  <% end %>
+</div>

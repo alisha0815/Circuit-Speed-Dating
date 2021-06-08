@@ -1,4 +1,16 @@
-<h1>So this is my Interest page</h1>
 
 
-  
+<h1> Your Interests </h1>
+
+  <%= simple_form_for [@user, @interest] do |f| %>
+    <%= f.input :business_industry %>
+    <%= f.input :entertainment, placeholder: '' %>
+    <%= f.input :family_relation, placeholder: '' %>
+    <%= f.input :fitness_wellness, placeholder: '' %>
+    <%= f.input :food_drink, placeholder: '' %>
+    <%= f.input :hobby_activity, placeholder: '' %>
+    <%= f.input :shopping_fashion %>
+    <%= f.input :sport_outdoor %>
+    <%= f.input :technology %>
+    <%= f.submit :Submit, class: "" %>
+  <% end %>

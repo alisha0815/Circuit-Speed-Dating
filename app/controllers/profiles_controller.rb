@@ -1,8 +1,7 @@
 class ProfilesController < ApplicationController
-	skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: :home
 
   def index
-  	@users = User.all
+    @users = User.all
   end
-
 end
