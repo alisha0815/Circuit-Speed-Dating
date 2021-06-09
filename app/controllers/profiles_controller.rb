@@ -1,20 +1,17 @@
 class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
-  before_action :set_user, only: [:update]
-
   def index
     @users = User.all
   end
 
   def show
-    @users = User.all
-    # @user = current_user
+    @user = User.find(params[:id])
   end
 
-  def edit
-    @user = current_user
+  private
+
+  def user_params
+    params.require(:personalized_trainer).permit(:name, :description, :age, :gender, :height, :address, photos: [])
   end
-
-
 end

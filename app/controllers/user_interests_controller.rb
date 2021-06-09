@@ -21,8 +21,6 @@ class UserInterestsController < ApplicationController
   private
 
   def interest_params
-    params.require(:interest).permit(:business_industry, :entertaiment, :family_relation,
-                                     :fitness_wellness, :food_drink, :hobby_activity,
-                                     :shopping_fashion, :sport_outdoor, :technology)
+    params.require(:interest).permit(:name, :category)
   end
 end

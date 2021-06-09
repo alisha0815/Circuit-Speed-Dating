@@ -2,14 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  # See other User's profiles // why has to be on top???
+  resources :profiles, only: [ :index, :show ]
+
+  # User Interests
   resource :user_interests, only: [ :new, :create ]
 
-  resource :profile, only: [ :show, :edit, :update ]
-  resources :profiles, only: [ :index ]
-
+   # Booking a session
   resources :users do
     resource :bookings, only: [:create, :edit, :update, :destroy, :show]
   end
-  
-  resources :user, only: [ :update ]
+
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_05_134801) do
+ActiveRecord::Schema.define(version: 2021_06_09_100936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,17 +37,10 @@ ActiveRecord::Schema.define(version: 2021_06_05_134801) do
   end
 
   create_table "interests", force: :cascade do |t|
-    t.string "business_industry"
-    t.string "entertainment"
-    t.string "family_relation"
-    t.string "fitness_wellness"
-    t.string "food_drink"
-    t.string "hobby_activity"
-    t.string "shopping_fashion"
-    t.string "sport_outdoor"
-    t.string "technology"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
+    t.string "name"
   end
 
   create_table "user_interests", force: :cascade do |t|
