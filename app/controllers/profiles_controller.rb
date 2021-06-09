@@ -8,28 +8,13 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @users = User.all
+    # @user = current_user
   end
 
   def edit
     @user = current_user
   end
 
-  def update
-    if @user.update(user_params)
-      redirect_to new_user_interests_path
-    else
-      render :edit
-    end
-  end
 
-  private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
-
-  def user_params
-    params.require(:user).permit(:name, :description, :age, :gender, :height, :address, photos: [])
-  end
 end

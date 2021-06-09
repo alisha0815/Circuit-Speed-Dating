@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   resource :user_interests, only: [ :new, :create ]
 
-  resource :profile, only: [ :show, :edit ]
+  resource :profile, only: [ :show, :edit, :update ]
   resources :profiles, only: [ :index ]
 
+  resources :users do
+    resource :bookings, only: [:create, :edit, :update, :destroy, :show]
+  end
+  
   resources :user, only: [ :update ]
 end
