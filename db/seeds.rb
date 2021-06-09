@@ -117,3 +117,6 @@ user_six = User.new(
 user_six.photos.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
 user_six.save!
 puts "user_six created!"
+
+
+

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resource :user_interests, only: [ :new, :create ]
 
-  resources :profiles, only: [ :index, :edit, :update ]
+  resources :profiles, only: [ :index, :edit, :update, :show ]
 
   resources :users do
     resource :bookings, only: [:create, :edit, :update, :destroy, :show]
