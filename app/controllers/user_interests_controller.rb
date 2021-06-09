@@ -1,7 +1,7 @@
 class UserInterestsController < ApplicationController
   def new
     @user = current_user
-    @interest = Interest.new
+    @user_interest = UserInterest.new
   end
 
   def create

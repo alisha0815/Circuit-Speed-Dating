@@ -1,15 +1,13 @@
 
-<h1> Your Interests </h1>
+<h1 class="interests-header">Your Interests</h1>
 
-  <%= simple_form_for [@user, @interest] do |f| %>
-    <%= f.input :business_industry %>
-    <%= f.input :entertainment, placeholder: '' %>
-    <%= f.input :family_relation, placeholder: '' %>
-    <%= f.input :fitness_wellness, placeholder: '' %>
-    <%= f.input :food_drink, placeholder: '' %>
-    <%= f.input :hobby_activity, placeholder: '' %>
-    <%= f.input :shopping_fashion %>
-    <%= f.input :sport_outdoor %>
-    <%= f.input :technology %>
-    <%= f.submit :Submit, class: "" %>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 m-5 card">
+      <%= simple_form_for [@user_interest] do |f| %>
+      <%=f.input :interest, collection: Interest.all, input_html: {multiple: true}, include_hidden: false  %>
+      <%= f.submit "add interests", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
