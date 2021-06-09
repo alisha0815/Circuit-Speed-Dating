@@ -119,4 +119,29 @@ user_six.save!
 puts "user_six created!"
 
 
+# => SEEDING INTERESTS
 
+Interest.destroy_all
+
+puts 'Destroying interests..'
+
+puts 'Creating pre-filled interests'
+
+def seed_interests
+  sport = ['Tennis', 'Squash', 'Cricket', 'Rugby', 'Running', 'Climbing', 'Other']
+  industry = ['Arts and Humanities', 'Physical Science and Engineering', 'Math and Logic',
+          'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
+          'Social Sciences', 'Language', 'Other']
+
+  sport.each do |name|
+    Interest.create!(category: 'sport', name: name)
+  end
+
+  industry.each do |name|
+    Interest.create!(category: 'industry', name: name)
+  end
+
+  puts "Interests created!"
+end
+
+seed_interests
