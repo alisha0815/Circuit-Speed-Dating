@@ -2,9 +2,6 @@
 <h1> User show page </h1>
 
 
-
-
-
  <% if @user.photos.attached? %>
     <% @user.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 300 , width: 200, :crop=>"fill", :radius => 20 %>
@@ -18,21 +15,77 @@
   <p> Height: <%= @user.height %> </p>
   <p> Location: <%= @user.address %> </p>
 
-<h4> Sport </h4>
 
-<% @user.interests.each do |interest| %>
-  <% if interest.category == "sport" %>
+
+<h4> Business </h4>
+  <% @user.interests_category("business").each do |interest| %>
   <%= interest.name  %>
-  <%# raise %>
   <% end %>
-<% end %>
 
-<h4> Industry </h4>
 
-<% @user.interests.each do |interest| %>
-  <% if interest.category == "industry" %>
-  <%= interest.name %>
-  <%# raise %>
+<h4> Entertainment </h4>
+  <% @user.interests_category("entertainment").each do |interest| %>
+  <%= interest.name  %>
   <% end %>
-<% end %>
+
+
+<h4> Fashion </h4>
+  <% @user.interests_category("fashion").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Fitness </h4>
+  <% @user.interests_category("fitness").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Food </h4>
+  <% @user.interests_category("food").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Hobbies </h4>
+  <% @user.interests_category("hobbies").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Movies </h4>
+  <% @user.interests_category("movies").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Music </h4>
+  <% @user.interests_category("music").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Outdoors </h4>
+  <% @user.interests_category("outdoors").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Reading </h4>
+  <% @user.interests_category("reading").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Relantionships </h4>
+  <% @user.interests_category("relationships").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
+
+<h4> Technology </h4>
+  <% @user.interests_category("technology").each do |interest| %>
+  <%= interest.name  %>
+  <% end %>
+
 
