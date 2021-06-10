@@ -9,7 +9,7 @@
       <% end %>
     <% end %>
 
-    <p> <%= user.name %> </p>
+    <p> <%= link_to user.name, profile_path(user.id) %> </p>
     <p> <%= user.age %> </p>
     <p> <%= user.gender %> </p>
     <p> <%= user.height %> </p>

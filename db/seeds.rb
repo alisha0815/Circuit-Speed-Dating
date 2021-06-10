@@ -17,7 +17,7 @@ p 'Destroying users..'
 puts 'Creating users'
 
 # User_one
-photo_one = URI.open('https://unsplash.com/photos/V297jRiZZSI')
+photo_one = URI.open('https://images.unsplash.com/photo-1615332327401-3c8f03c8af5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 
 user_one = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -34,7 +34,7 @@ user_one.save!
 puts "user_one created!"
 
 # User_two
-photo_two= URI.open('https://unsplash.com/photos/Ll9bGE6w8uw')
+photo_two= URI.open('https://images.unsplash.com/photo-1562904403-a5106bef8319?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 
 user_two = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -51,7 +51,7 @@ user_two.save!
 puts "user_two created!"
 
 # User_three
-photo_three= URI.open('https://unsplash.com/photos/KJE--xk4AWE')
+photo_three= URI.open('https://images.unsplash.com/photo-1558467612-d1dd65c7ede7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 
 user_three = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -68,7 +68,7 @@ user_three.save!
 puts "user_three created!"
 
 # User_four
-photo_four= URI.open('https://unsplash.com/photos/E9PFbdhZmus')
+photo_four= URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
 
 user_four= User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -85,7 +85,7 @@ user_four.save!
 puts "user_four created!"
 
 # User_five
-photo_five = URI.open('https://unsplash.com/photos/bZtJgeehRVs')
+photo_five = URI.open('https://images.unsplash.com/photo-1602900017944-678041f27dbc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 
 user_five = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -102,7 +102,7 @@ user_five.save!
 puts "user_five created!"
 
 # User_six
-photo_six= URI.open('https://unsplash.com/photos/7ibR2ENaDjg')
+photo_six= URI.open('https://images.unsplash.com/photo-1567784177951-6fa58317e16b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80')
 
 user_six = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -117,3 +117,42 @@ user_six = User.new(
 user_six.photos.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
 user_six.save!
 puts "user_six created!"
+
+seedUsers = [user_one, user_two, user_three, user_four, user_five, user_six]
+
+
+# => SEEDING INTERESTS
+# I have some seeding options from Facebook in a document // sport & industry only an example
+Interest.destroy_all
+
+puts 'Destroying interests..'
+
+puts 'Creating pre-filled interests'
+
+def seed_interests
+
+  sport = ['Tennis', 'Squash', 'Cricket', 'Rugby', 'Running', 'Climbing', 'Other']
+  industry = ['Arts and Humanities', 'Physical Science and Engineering', 'Math and Logic',
+            'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
+            'Social Sciences', 'Language', 'Other']
+  sport.each do |name|
+    Interest.create!(category: 'sport', name: name)
+  end
+
+  industry.each do |name|
+    Interest.create!(category: 'industry', name: name)
+  end
+
+  puts "Interests created!"
+end
+
+seed_interests
+
+# => SEEDING USER_INTERESTS
+puts "Creating User_interests"
+
+100.times do
+  user_interest = UserInterest.create!(user: User.all.sample, interest: Interest.all.sample)
+end
+
+puts "Completed Seeding"
