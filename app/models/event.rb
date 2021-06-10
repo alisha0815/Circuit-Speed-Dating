@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  serialize :recurring, Hash
+    serialize :recurring, Hash
 
   has_many :event_exceptions
 

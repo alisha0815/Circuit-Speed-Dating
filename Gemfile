@@ -37,7 +37,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
 gem 'simple_calendar'
-gem 'recurring_select', github: "RundownApp/recurring_select"
+gem 'recurring_select' #, github: "RundownApp/recurring_select"
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
