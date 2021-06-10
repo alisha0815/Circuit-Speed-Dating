@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     resource :bookings, only: [:create, :edit, :update, :destroy, :show]
   end
 
+  # Creating Events and Showing All Events
+  resources :events do
+    resources :exceptions, module: :events
+  end
 
 end

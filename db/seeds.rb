@@ -118,9 +118,11 @@ user_six.photos.attach(io: photo_six, filename: 'temp.png', content_type: 'image
 user_six.save!
 puts "user_six created!"
 
+seedUsers = [user_one, user_two, user_three, user_four, user_five, user_six]
+
 
 # => SEEDING INTERESTS
-
+# I have some seeding options from Facebook in a document // sport & industry only an example
 Interest.destroy_all
 
 puts 'Destroying interests..'
@@ -128,11 +130,11 @@ puts 'Destroying interests..'
 puts 'Creating pre-filled interests'
 
 def seed_interests
+
   sport = ['Tennis', 'Squash', 'Cricket', 'Rugby', 'Running', 'Climbing', 'Other']
   industry = ['Arts and Humanities', 'Physical Science and Engineering', 'Math and Logic',
-          'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
-          'Social Sciences', 'Language', 'Other']
-
+            'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
+            'Social Sciences', 'Language', 'Other']
   sport.each do |name|
     Interest.create!(category: 'sport', name: name)
   end
@@ -145,3 +147,12 @@ def seed_interests
 end
 
 seed_interests
+
+# => SEEDING USER_INTERESTS
+puts "Creating User_interests"
+
+100.times do
+  user_interest = UserInterest.create!(user: User.all.sample, interest: Interest.all.sample)
+end
+
+puts "Completed Seeding"
