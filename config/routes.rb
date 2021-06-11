@@ -2,21 +2,20 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  # See other User's profiles // why has to be on top???
+  # See other User's profiles // (Why has to be on top?)
   resources :profiles, only: [ :index, :show ]
 
   # User Interests
   resource :user_interests, only: [ :new, :create ]
 
-   # Booking a session
+   # Booking a session || this should be nested in events
   resources :users do
     resource :bookings, only: [:create, :edit, :update, :destroy, :show]
   end
 
-  # Creating Events and Showing All Events
-  resources :events do
-    resources :exceptions, module: :events
-    resources :bookings, only: [:create]
-  end
+  # Creating Events
+  resources :recurring_events, only: [:new, :create]
 
+  # Showing All Events or 1x event
+  resources :events, only: [:index, :show]
 end
