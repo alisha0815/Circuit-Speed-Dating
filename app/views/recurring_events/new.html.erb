@@ -1,0 +1,10 @@
+
+<%= simple_form_for @event, url: recurring_events_path do |f| %>
+    <%= f.input :name %>
+    <%= f.input :start_time, as: :time %>
+    <%= f.input :end_time, as: :time %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+
+    <%= f.submit %>
+  <% end %>
