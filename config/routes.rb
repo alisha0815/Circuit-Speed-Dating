@@ -13,9 +13,7 @@ Rails.application.routes.draw do
     resource :bookings, only: [:create, :edit, :update, :destroy, :show]
   end
 
+  resources :recurring_events, only: [:index, :new, :create]
   # Creating Events and Showing All Events
-  resources :events do
-    resources :exceptions, module: :events
-  end
-
+  resources :events
 end
