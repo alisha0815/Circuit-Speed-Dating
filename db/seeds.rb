@@ -8,7 +8,7 @@
 require 'faker'
 require 'open-uri'
 
-puts 'Cleaning databse..'
+puts 'Cleaning database..'
 
 User.destroy_all
 
@@ -126,7 +126,6 @@ seedUsers = [user_one, user_two, user_three, user_four, user_five, user_six]
 Interest.destroy_all
 
 puts 'Destroying interests..'
-
 puts 'Creating pre-filled interests'
 
 def seed_interests
@@ -198,9 +197,12 @@ end
 seed_interests
 
 # => SEEDING USER_INTERESTS
+puts 'Destroying User_interests..'
+UserInterest.destroy_all
+
 puts "Creating User_interests"
 
-100.times do
+200.times do
   user_interest = UserInterest.create!(user: User.all.sample, interest: Interest.all.sample)
 end
 

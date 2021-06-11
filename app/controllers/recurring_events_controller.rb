@@ -1,8 +1,4 @@
 class RecurringEventsController < ApplicationController
-  def index
-    @events = Event.all
-  end
-
   def new
     @event = Event.new
   end
@@ -44,5 +40,4 @@ class RecurringEventsController < ApplicationController
     @end_min = params["event"]["end_time(5i)"].to_i
     # raise
   end
-
 end

@@ -1,7 +1,13 @@
 <h2> Sessions: </h2>
 
-<% @events.each do |event| %>
-  <p> <%= event.name %> </p>
-  <p> <%= event.start_time %> - <%= event.end_time %>  </p>
-  <p> <%= link_to "Book" %> </p>
+<%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <div class="meeting">
+      <p><%= event.name %></p>
+      <p class="text-muted"> <%= event.time %> </p>
+      <p> <%= link_to "Book" %> </p>
+    </div>
+  <% end %>
 <% end %>
