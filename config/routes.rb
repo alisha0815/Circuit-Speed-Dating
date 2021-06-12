@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
    # Booking a session || this should be nested in events
   resources :users do
+    resources :events do
     resource :bookings, only: [:create, :edit, :update, :destroy, :show]
+    end
   end
 
   # Creating Events

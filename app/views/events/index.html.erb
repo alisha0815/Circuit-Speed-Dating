@@ -7,7 +7,7 @@
     <div class="meeting">
       <p><%= event.name %></p>
       <p class="text-muted"> <%= event.time %> </p>
-      <p> <%= link_to "Book" %> </p>
+      <p> <%= link_to "Book",  user_event_bookings_path %> </p>
     </div>
   <% end %>
 <% end %>

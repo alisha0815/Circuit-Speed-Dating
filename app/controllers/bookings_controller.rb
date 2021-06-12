@@ -7,8 +7,8 @@ def create
   @booking.user = current_user
   @booking.event = @event
   if @booking.save
+    redirect_to events_path(current_user)
     flash[:notice] = "Booked successfully"
-    #redirect_to 
   else
     render :new
   end
