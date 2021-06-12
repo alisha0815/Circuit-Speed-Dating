@@ -9,14 +9,9 @@
         <%= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
         <%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
         <%= f.submit "Create Interests", class: 'form-control' %>
-        
       <% end %>
 
     </div>
   </div>
 </div>
-
-<%#= f.collection_select :interest_id, Interest.all, :category, :name, input_html: { multiple: true, class: 'multiple-select select2 form-control' }, include_hidden: false %>
-
-<%#= f.collection_select :interest_id, Interest.all, :category, :name, input_html: { multiple: true, class: 'multiple-select select2 form-control' }, include_hidden: false %>
 

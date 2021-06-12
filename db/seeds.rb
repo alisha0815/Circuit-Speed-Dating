@@ -25,7 +25,7 @@ user_one = User.new(
     name: "Anne",
     description: "I am a fashion designer 🎨, fairly decent skier, and able to order cocktails 🍹😄 in 3 different languages. I like checking out a new bar with friends, scuba diving anwhere tropical, and trying a new hobby on for size. I appreciate when my date has an intelligent side, is ambitious.",
     age: 25,
-    gender: "Female",
+    gender: "female",
     height: 165,
     address: "Oslo, Norway"
     )
@@ -42,7 +42,7 @@ user_two = User.new(
     name: "Grace",
     description: "Hiking, sleeping, Netflix, running, baking, and tea. What I lack in technique. I make up for in enthusiasm though my technique has gotten pretty good 🤷‍♀️ Let's talk sports, dogs, and the ending of Infinity War.. 😉 ",
     age: 34,
-    gender: "Female",
+    gender: "female",
     height: 171.5,
     address: "Oslo, Norway"
     )
@@ -59,7 +59,7 @@ user_three = User.new(
     name: "Mallory",
     description: "I am a huge baseball fan. Also enjoy ski. 😉 I also really love Broadway musicals- definitely a total theatre nerd lol. Looking for a serious relationship but also open to friends - just important to have a connection and hopefully some common interests 😜",
     age: 31,
-    gender: "Female",
+    gender: "female",
     height: 167,
     address: "Eidsberg, Norway"
     )
@@ -205,5 +205,24 @@ puts "Creating User_interests"
 200.times do
   user_interest = UserInterest.create!(user: User.all.sample, interest: Interest.all.sample)
 end
+
+puts "Completed User_interests"
+
+# => SEEDING BOOKINGS
+
+puts "Creating User Bookings from 1st Event"
+
+booking1 = Booking.create(user: user_one, event: Event.first)
+booking2 = Booking.create(user: user_two, event: Event.first)
+booking3 = Booking.create(user: user_three, event: Event.first)
+booking4 = Booking.create(user: user_four, event: Event.first)
+booking5 = Booking.create(user: user_five, event: Event.first)
+booking6 = Booking.create(user: user_six, event: Event.first)
+
+puts "Completed User Bookings"
+
+puts "Creating Matches for 1st Event"
+
+Event.first.match_making
 
 puts "Completed Seeding"
