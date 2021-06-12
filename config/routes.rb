@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     resource :lobbies, only: [:show]
   end
 
-  resources :matches, only: [:show]
+  resources :bookings, only: [:edit, :update, :destroy, :show, :index]
 
-  resources :bookings, only: [:edit, :update, :destroy, :show]
+  resources :matches, only: [:show]
 
   # Creating Events
   resources :recurring_events, only: [:new, :create]

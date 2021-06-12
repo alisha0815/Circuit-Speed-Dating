@@ -8,12 +8,13 @@
     <% end %>
   <% end %>
 
-  <h3> <%= @user.name %> | <%= link_to "⚡️" %></h3>
+  <h3> <%= @user.name %> | <%= link_to "⚡️" %> | <%= link_to "Like ❤",profiles_path, class: "btn btn-primary" %></h3>
   <p> <%= @user.description %> </p>
   <p> Age: <%= @user.age %> </p>
   <p> Gender: <%= @user.gender %> </p>
   <p> Height: <%= @user.height %> </p>
   <p> Location: <%= @user.address %> </p>
+  
 
 
 <h4> Business </h4>
