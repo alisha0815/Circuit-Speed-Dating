@@ -1,77 +1,161 @@
-
-<h1> User show page </h1>
+<h1 class="card-title"> User show page </h1>
 <p> <%= link_to "back", profiles_path %> </p>
 
- <% if @user.photos.attached? %>
-    <% @user.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300 , width: 200, :crop=>"fill", :radius => 20 %>
-    <% end %>
-  <% end %>
+<div class="d-flex justify-content-center">
+	
+	<div class="left-container">
+		<h6>Stuff on left side</h6>
+	</div>
 
-  <h3> <%= @user.name %> | <%= link_to "⚡️" %></h3>
-  <p> <%= @user.description %> </p>
-  <p> Age: <%= @user.age %> </p>
-  <p> Gender: <%= @user.gender %> </p>
-  <p> Height: <%= @user.height %> </p>
-  <p> Location: <%= @user.address %> </p>
+	<div class="d-flex justify-content-center middle-container">
+	  <div class="card-header">
+		<div>
+	      <% if @user.photos.attached? %>
+	      <%= cl_image_tag @user.photos.first.key, height: 200 , width: 500, :crop=>"fill", :radius => 20 %>
+	      <% end %>
+
+	      <div>
+	        <img class="avatar" style="position: relative;" alt="Image placeholder" src="https://avatars.githubusercontent.com/u/76750085?s=60&v=4">
+
+	          <div class="container">
+	          <div class="card my-3">
+                 <div class="row">
+                 	<div class="col">
+	              <h3> <%= @user.name %> | <%= link_to "⚡️" %></h3>
+	                <p> <%= @user.description %> </p>
+	                <p> Age: <%= @user.age %> </p>
+	                <p> Gender: <%= @user.gender %> </p>
+	                <p> Height: <%= @user.height %> </p>
+	                <p> Location: <%= @user.address %> </p>
+                 		
+                 	</div>	
+                 </div>
+	          </div>
 
 
-<h4> Business </h4>
-  <% @user.interests_category("business").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+<div class="container card">
+  <div class="row">
 
-<h4> Entertainment </h4>
-  <% @user.interests_category("entertainment").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
 
-<h4> Fashion </h4>
-  <% @user.interests_category("fashion").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+	<div class="col-4">
+	  <h5 class="interest_title"> Business </h5>
+	  <% @user.interests_category("business").each do |interest| %>
+      <%= interest.name  %>
+	  <% end %>
+	</div>
+		
+    <div class="col-4">
+	  <h5 class="interest_title"> Entertainment </h5>
+	  <% @user.interests_category("entertainment").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+    </div>
 
-<h4> Fitness </h4>
-  <% @user.interests_category("fitness").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+    <div class="col-4">
+	  <h5 class="interest_title"> Fashion </h5>
+	  <% @user.interests_category("fashion").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
 
-<h4> Food </h4>
-  <% @user.interests_category("food").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+  </div>
+</div>
 
-<h4> Hobbies </h4>
-  <% @user.interests_category("hobbies").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
 
-<h4> Movies </h4>
-  <% @user.interests_category("movies").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+<div class="container card">
+  <div class="row">
 
-<h4> Music </h4>
-  <% @user.interests_category("music").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+	<div class="col-4">
+	  <h5 class="interest_title"> Fitness </h5>
+	  <% @user.interests_category("fitness").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
 
-<h4> Outdoors </h4>
-  <% @user.interests_category("outdoors").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+	<div class="col-4">
+	  <h5 class="interest_title"> Food </h5>
+	  <% @user.interests_category("food").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
 
-<h4> Reading </h4>
-  <% @user.interests_category("reading").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+    <div class="col-4">
+	  <h5 class="interest_title"> Hobbies </h5>
+	  <% @user.interests_category("hobbies").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+    </div>
 
-<h4> Relantionships </h4>
-  <% @user.interests_category("relationships").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+  </div>
+</div>
 
-<h4> Technology </h4>
-  <% @user.interests_category("technology").each do |interest| %>
-  <%= interest.name  %>
-  <% end %>
+
+<div class="container card">
+  <div class="row">
+
+	<div class="col-4">
+      <h5 class="interest_title"> Movies </h5>
+	  <% @user.interests_category("movies").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
+
+	<div class="col-4">
+	  <h5 class="interest_title"> Music </h5>
+	  <% @user.interests_category("music").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
+
+    <div class="col-4">
+	  <h5 class="interest_title"> Outdoors </h5>
+	  <% @user.interests_category("outdoors").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container card">
+  <div class="row">
+
+	<div class="col-4">
+	  <h5 class="interest_title"> Reading </h5>
+	  <% @user.interests_category("reading").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
+
+	<div class="col-4">
+	  <h5 class="interest_title"> Relantionships </h5>
+	  <% @user.interests_category("relationships").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+	</div>
+
+    <div class="col-4">
+	  <h5 class="interest_title"> Technology </h5>
+	  <% @user.interests_category("technology").each do |interest| %>
+	  <%= interest.name  %>
+	  <% end %>
+    </div>
+
+  </div>
+</div>
+
+	    
+
+	            
+	         
+	        </div>
+	      </div>
+	  </div>
+	</div>
+
+	<div class="right-container">
+		<h6>Stuff on right side</h6>
+	</div>
+
+</div>
