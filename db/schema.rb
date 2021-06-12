@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2021_06_11_145423) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_bookings_on_event_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "event_exceptions", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.datetime "time"
@@ -105,6 +114,8 @@ ActiveRecord::Schema.define(version: 2021_06_11_145423) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "events"
+  add_foreign_key "bookings", "users"
   add_foreign_key "event_exceptions", "events"
   add_foreign_key "matches", "events"
   add_foreign_key "user_interests", "interests"

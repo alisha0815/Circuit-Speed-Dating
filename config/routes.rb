@@ -9,13 +9,15 @@ Rails.application.routes.draw do
   resource :user_interests, only: [ :new, :create ]
 
    # Booking a session || this should be nested in events
-  resources :users do
-    resource :bookings, only: [:create, :edit, :update, :destroy, :show]
+  resources :events do
+    resources :bookings, only: [:create, :new]
   end
+
+  resources :bookings, only: [:edit, :update, :destroy, :show]
 
   # Creating Events
   resources :recurring_events, only: [:new, :create]
 
   # Showing All Events or 1x event
-  resources :events, only: [:index, :show]
+  #resources :events, only: [:index, :show]
 end
