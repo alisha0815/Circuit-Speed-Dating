@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new]
   end
 
-  resources :bookings, only: [:edit, :update, :destroy, :show]
+  resources :bookings, only: [:edit, :update, :destroy, :show, :index]
 
   # Creating Events
   resources :recurring_events, only: [:new, :create]
