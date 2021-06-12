@@ -5,9 +5,9 @@
 
   <% events.each do |event| %>
     <div class="meeting">
-      <p><%= event.name %></p>
+      <p><%= link_to event.name, event_lobbies_path(event) %></p>
       <p class="text-muted"> <%= event.time %> </p>
-      <p> <%= link_to "Book",  new_event_booking_path(event) %> </p>
+      <p> <%= link_to "Book", new_event_booking_path(event) %> </p>
     </div>
   <% end %>
 <% end %>
