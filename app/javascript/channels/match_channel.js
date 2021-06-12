@@ -7,16 +7,12 @@ const initMatchCable = () => {
 
     consumer.subscriptions.create({ channel: "MatchChannel", id: id }, {
       received(data) {
-        console.log(data); // called when data is broadcast in the cable
-      },
+      messagesContainer.insertAdjacentHTML('beforeend', data);
+      }
     });
   }
 }
 
-consumer.subscriptions.create({ channel: "MatchChannel", id: id }, {
-  received(data) {
-    messagesContainer.insertAdjacentHTML('beforeend', data);
-  }
-});
+
 
 export { initMatchCable };

@@ -31,7 +31,7 @@ import "bootstrap";
 
 // import { multipleSelect } from "../components/select2";
 // import { toggleForm } from "../components/form";
-import { initMatchCable } from "../channel/match_channel";
+import { initMatchCable } from "../channels/match_channel";
 
 
 document.addEventListener('turbolinks:load', () => {
