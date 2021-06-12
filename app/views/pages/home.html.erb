@@ -24,7 +24,17 @@
   
 
 
+<p> <%= link_to "Complete/Edit Profile", edit_user_registration_path %> </p>
+<p> <%= link_to "Add your Interests", new_user_interests_path %> </p>
 
+<% if current_user %>
+<p> <%= link_to "My Profile", profile_path(current_user) %> </p>
+<% end %>
 
+<p> <%= link_to "Profiles + Show Profile", profiles_path %> </p>
+
+<p> <%= link_to "Chat Room", match_path(1) %> </p>
+
+<p> <%= link_to " My Bookings", bookings_path %> </p>
 
 
