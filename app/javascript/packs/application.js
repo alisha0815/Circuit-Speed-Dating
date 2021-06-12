@@ -30,12 +30,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { multipleSelect } from "../components/select2";
 import { toggleForm } from "../components/form";
-
+import { initMatchCable } from "../channel/match_channel";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   //initSelect2();
   multipleSelect();
- 
+  initMatchCable();
 });
 
