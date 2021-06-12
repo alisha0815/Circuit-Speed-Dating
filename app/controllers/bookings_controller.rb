@@ -1,13 +1,19 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :destroy]
 
+ 
+def new
+  @booking = Booking.new
+  @event = Event.find(params[:event_id])
+end
+
 def create
   @booking = Booking.new
   @event = Event.find(params[:event_id])
   @booking.user = current_user
   @booking.event = @event
   if @booking.save
-    redirect_to events_path(current_user)
+    redirect_to  event_path(@event)
     flash[:notice] = "Booked successfully"
   else
     render :new
