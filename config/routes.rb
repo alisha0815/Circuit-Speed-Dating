@@ -13,12 +13,16 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new]
     resource :lobbies, only: [:show]
   end
-
+  
+  # Creating Chatroom
   resources :matches, only: [:show] do
     resources :messages, only: [:create]
   end
 
-  resources :bookings, only: [:edit, :update, :destroy, :show]
+  resources :bookings, only: [:edit, :update, :destroy, :show, :index]
+
+
+  resources :matches, only: [:show]
 
   # Creating Events
   resources :recurring_events, only: [:new, :create]
