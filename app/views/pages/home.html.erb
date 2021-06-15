@@ -5,25 +5,25 @@
         <h1>Home#Page</h1>
         <p>Find me in app/views/pages/home.html.erb</p>
         <p> Links: </p>
-        <p class="btn btn-success"> <%= link_to "Complete/Edit Profile", edit_user_registration_path %> </p>
+          <p class="btn btn-success"> <%= link_to "Complete/Edit Profile", edit_user_registration_path %> </p>
         <br>
-        <p class="btn btn-success"> <%= link_to "Add your Interests", new_user_interests_path %> </p>
+          <p class="btn btn-success"> <%= link_to "Add your Interests", new_user_interests_path %> </p>
         <br>
         <% if current_user %>
-          <p> <%= link_to "My Profile", profile_path(current_user) %> </p>
-          <% end %>
-
+          <p class="btn btn-success"> <%= link_to "My Profile", profile_path(current_user) %> </p>
+        <% end %>
+        <br>
           <p class="btn btn-success"> <%= link_to "Profiles + Show Profile", profiles_path %> </p>
         <br>
           <p class="btn btn-success"> <%= link_to "Chat Room", match_path(1) %> </p>
         <br>
           <p class="btn btn-success"> <%= link_to " My Bookings", bookings_path %> </p>
         <br>
-        <p class="btn btn-success"> <%= link_to "Profiles + Show Profile", profiles_path %> </p>
+          <p class="btn btn-success"> <%= link_to "Profiles + Show Profile", profiles_path %> </p>
         <br>
-        <p class="btn btn-success"> <%= link_to "All Dating Sessions", events_path %> </p>
+          <p class="btn btn-success"> <%= link_to "All Dating Sessions", events_path %> </p>
         <br>
-        <p> <%= link_to " NB! *DEVELOPER* -- create dating sessions -- (like seeding)", new_recurring_event_path %> </p>
+          <p> <%= link_to " NB! *DEVELOPER* -- create dating sessions -- (like seeding)", new_recurring_event_path %> </p>
     </div>
   </div>
 </div>
