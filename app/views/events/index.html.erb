@@ -1,3 +1,8 @@
+
+<p> <%= link_to "Back", profiles_path %> </p>
+
+<p> <%= link_to "My Sessions", bookings_path %> </p>
+
 <h2> Sessions: </h2>
 
 <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
