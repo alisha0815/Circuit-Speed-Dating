@@ -8,6 +8,10 @@ class EventsController < ApplicationController
     # @events = Event.where(start_time: start_date.beginning_of_week..start_date.end_of_week)
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   private
 
   def event_params

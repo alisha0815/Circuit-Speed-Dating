@@ -6,7 +6,7 @@
     <div class="col-6 m-5 card">
 
       <%= simple_form_for [ @user, @user_interest ] do |f| %>
-        <%= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
+        <%#= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
         <%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
         <%= f.submit "Create Interests", class: 'form-control' %>
       <% end %>

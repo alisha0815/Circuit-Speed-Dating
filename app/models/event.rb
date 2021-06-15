@@ -21,5 +21,5 @@ class Event < ApplicationRecord
       end
     end
   end
-  # => Can call Event.match_making
+  # => Can call Event(x).match_making
 end
