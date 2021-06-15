@@ -5,7 +5,10 @@
 
   <% events.each do |event| %>
     <div class="meeting">
-      <p><%= link_to event.name, event_lobbies_path(event) %></p>
+      <% if (current_user.events).include?(event) %>
+      <p><%= link_to event.name, event_path(event) %></p>
+      <%# raise %>
+      <% end %>
       <p class="text-muted"> <%= event.time %> </p>
       <p> <%= link_to "Book", new_event_booking_path(event) %> </p>
     </div>

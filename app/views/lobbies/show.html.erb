@@ -1,7 +1,11 @@
 <h4> Matches for this <%= @event.name %> </h4>
 
 <% @event.users.each do |user| %>
-  <p> <%= user.name %> </p>
+  <p> <strong> <%= user.name %> </strong> </p>
+  <p> Match#: <%= user.user_matches[0].match_id %> </p>
+  <p> Match#: <%= user.user_matches[1].match_id %> </p>
+  <p> Match#: <%= user.user_matches[2].match_id %> </p>
+  <%# raise %>
 <% end %>
 
 <p> <%= link_to "back", events_path %> </p>

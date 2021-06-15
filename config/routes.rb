@@ -9,10 +9,13 @@ Rails.application.routes.draw do
   resource :user_interests, only: [:new, :create]
 
   # Showing all events & Booking a session
-  resources :events, only: [:index] do
+  resources :events, only: [:index, :show] do
     resources :bookings, only: [:create, :new]
-    resource :lobbies, only: [:show]
+    # resource :lobbies, only: [:show]
+
   end
+
+  resources :matches, only: [:show]
   
   # Creating Chatroom
   resources :matches, only: [:show] do
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:edit, :update, :destroy, :show, :index]
 
 
-  resources :matches, only: [:show]
+
 
   # Creating Events
   resources :recurring_events, only: [:new, :create]
