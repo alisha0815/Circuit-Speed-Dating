@@ -8,7 +8,12 @@
     <% end %>
   <% end %>
 
-  <h3> <%= @user.name %> | <%= link_to "⚡️" %> | <%= link_to "Like ❤",profiles_path, class: "btn btn-primary" %></h3>
+
+  <% if current_user.likes?(@user)%>
+   "💖" 
+  <% else%>
+    <h3> <%= @user.name %> | <%= link_to "⚡️" %> | <%= link_to "Like ❤", profile_likes_path(@user.id), class: "btn btn-primary" , method: :post %></h3>
+  <% end %>
   <p> <%= @user.description %> </p>
   <p> Age: <%= @user.age %> </p>
   <p> Gender: <%= @user.gender %> </p>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_145423) do
+ActiveRecord::Schema.define(version: 2021_06_12_143017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,14 +45,6 @@ ActiveRecord::Schema.define(version: 2021_06_11_145423) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "event_exceptions", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.datetime "time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_event_exceptions_on_event_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
@@ -67,6 +59,15 @@ ActiveRecord::Schema.define(version: 2021_06_11_145423) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
     t.string "name"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "asker_id"
+    t.bigint "receiver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["asker_id"], name: "index_likes_on_asker_id"
+    t.index ["receiver_id"], name: "index_likes_on_receiver_id"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -116,7 +117,8 @@ ActiveRecord::Schema.define(version: 2021_06_11_145423) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
-  add_foreign_key "event_exceptions", "events"
+  add_foreign_key "likes", "users", column: "asker_id"
+  add_foreign_key "likes", "users", column: "receiver_id"
   add_foreign_key "matches", "events"
   add_foreign_key "user_interests", "interests"
   add_foreign_key "user_interests", "users"
