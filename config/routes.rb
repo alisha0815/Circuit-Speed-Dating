@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # See other User's profiles // (Why has to be on top?)
-  resources :profiles, only: [:index, :show]
+
+  resources :profiles, only: [ :index, :show ] do
+    resources :likes, only: [:create]
+  end
 
   # User Interests
   resource :user_interests, only: [:new, :create]
@@ -23,8 +26,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:edit, :update, :destroy, :show, :index]
-
-
 
 
   # Creating Events
