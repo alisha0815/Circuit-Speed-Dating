@@ -15,3 +15,12 @@
 <%= simple_form_for [ @match, @message ], remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Type a message.." %>
 <% end %>
+
+<p> <%= link_to "back", events_path %> </p>
+
+
+
+<% @my_matches.each do |my_match| %>
+  <%# raise %>
+  <p> <%= link_to "next date", match_path(my_match) %> </p>
+<% end %>
