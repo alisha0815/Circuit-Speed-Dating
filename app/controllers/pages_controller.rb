@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def loading
+    flash[:notice] = "Matches Created!"
+  end
 end

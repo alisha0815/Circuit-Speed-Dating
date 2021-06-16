@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get '/loading/', to: 'pages#loading'
+
   # See other User's profiles // (Why has to be on top?)
 
   resources :profiles, only: [ :index, :show ] do

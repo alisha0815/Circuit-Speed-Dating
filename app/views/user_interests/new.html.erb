@@ -1,10 +1,15 @@
-<h1 class="interests-header">Your Interests</h1>
-<%= simple_form_for [ @user, @user_interest ] do |f| %>
-<%#= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
-<%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
-<%= f.submit "Create Interests", class: 'form-control', class: 'btn btn-success'%>
-<% end %>
-    
 
+<div class="justify-content-center home-page-size">
+    <div class="row home-page-card d-flex p-2 bd-highlight ">
+      <div class="col-6 card home-page-pages card-scroll">
+      <h1 class="interests-header">Your Interests</h1>
+      <%= simple_form_for [ @user, @user_interest ] do |f| %>
+        <%#= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
+        <%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
+        <%= f.submit "Create Interests", class: 'form-control', class: 'btn btn-success'%>
+        <%= link_to "Back", profile_path(current_user) %>
+      <% end %>
+   </div>
+  </div>
+</div>
 
-  

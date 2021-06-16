@@ -1,5 +1,12 @@
 <div class="container">
-  <h1><strong> Users Profiles </strong></h1>
+
+  <% if current_user %>
+    <p> <%= link_to "Back", profile_path(current_user) %> </p>
+  <% end %>
+
+  <p> <%= link_to "All Dating Sessions", events_path %> </p>
+
+  <h1><strong> Find your Match </strong></h1>
 
   <% @users.each do |user| %>
 

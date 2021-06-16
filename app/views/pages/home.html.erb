@@ -1,17 +1,30 @@
-<h1>Home#Page</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p> Links: </p>
-<p> <%= link_to "Complete/Edit Profile", edit_user_registration_path %> </p>
-<p> <%= link_to "Add your Interests", new_user_interests_path %> </p>
-<% if current_user %>
-  <p> <%= link_to "My Profile", profile_path(current_user) %> </p>
-<% end %>
-<p> <%= link_to "Profiles + Show Profile", profiles_path %> </p>
-<p> <%= link_to "All Dating Sessions", events_path %> </p>
-<p> <%= link_to "Chat Room", match_path(1) %> </p>
-<p> <%= link_to " My Bookings", bookings_path %> </p>
-<p> <%= link_to " NB! *DEVELOPER* -- create dating sessions -- (like seeding)", new_recurring_event_path %> </p>
-    
-  
+
+
+<div class="justify-content-center home-page-size">
+    <div class="row home-page-card d-flex p-2 bd-highlight ">
+      <div class="col-6 card home-page-pages">
+        
+        <img class="" src="<%= asset_path('logo.jpg') %>"/>
+
+        <div>
+           <% if current_user %>
+            <p> <%= link_to "My Profile", profile_path(current_user) %> </p>
+          <% end %>
+        </div>
+
+        <p> Links for NAVBAR: </p>
+
+        <p> <%= link_to "Complete/Edit Profile", edit_user_registration_path %> </p>
+        <p> <%= link_to "Profiles + Show Profile", profiles_path %> </p>
+        <p> <%= link_to " My Bookings", bookings_path %> </p>
+      
+        <p> <%= link_to "Chat Room", match_path(1) %> </p>
+        <p> <%= link_to " NB! *DEVELOPER* -- create dating sessions -- (like seeding)", new_recurring_event_path %> </p>
+
+        
+    </div>
+  </div>
+</div>
+
 
 
