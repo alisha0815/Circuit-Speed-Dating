@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Circuit</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Circuit</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!-- This are links to be able to use jquery turbolinks  not added by me -->
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <!-- select2 cdn and link to make the dropdown for interests work. Matthaios-->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
-   
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- This are links to be able to use jquery turbolinks  not added by me -->
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- select2 cdn and link to make the dropdown for interests work. Matthaios-->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-  <body>
+</head>
+
+<body>
+
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
 
   <div class="justify-content-center home-page-size">
-    <div class="row home-page-card d-flex p-2 bd-highlight ">
+    <div class="row home-page-card d-flex p-4 bd-highlight ">
       <div class="col-6 card home-page-pages card-scroll">
-        <%= render 'shared/navbar' %>
-        <%= render 'shared/flashes' %>
+
         <%= yield %>
+
       </div>
     </div>
   </div>
 
-  </body>
+</body>
 </html>

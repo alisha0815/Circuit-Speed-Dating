@@ -1,21 +1,25 @@
 
-<p> <%= link_to "Back", profiles_path %> </p>
+<div class="container">
+  <div class="row p-3">
+    <p> <%= link_to "Back", profiles_path, class: "btn rounded-pill border" %> </p>
+    <p> <%= link_to "My Sessions", bookings_path, class: "btn rounded-pill border" %> </p>
+  </div>
+  <div class="row">
+    <h2> Sessions: </h2>
 
-<p> <%= link_to "My Sessions", bookings_path %> </p>
+    <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
+      <%= date %>
 
-<h2> Sessions: </h2>
-
-<%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
-  <%= date %>
-
-  <% events.each do |event| %>
-    <div class="meeting">
-      <% if (current_user.events).include?(event) %>
-      <p><%= link_to event.name, event_path(event) %></p>
-      <%# raise %>
+      <% events.each do |event| %>
+        <div class="meeting">
+          <% if (current_user.events).include?(event) %>
+          <p><%= link_to event.name, event_path(event) %></p>
+          <% end %>
+          <p class="text-muted"> <%= event.time %> </p>
+          <p> <%= link_to "Book", new_event_booking_path(event) %> </p>
+        </div>
       <% end %>
-      <p class="text-muted"> <%= event.time %> </p>
-      <p> <%= link_to "Book", new_event_booking_path(event) %> </p>
-    </div>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</div>
+

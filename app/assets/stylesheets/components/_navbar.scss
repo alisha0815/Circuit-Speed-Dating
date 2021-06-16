@@ -1,10 +1,12 @@
 /* Style the links inside the sidenav */
 #mySidenav a {
   position: absolute; /* Position them relative to the browser window */
+  z-index: 9;
   left: -70px; /* Position them outside of the screen */
   transition: 0.3s; /* Add transition on hover */
   padding: 12px; /* 12px padding */
   width: 100px; /* Set a specific width */
+  height: 80px;
   text-decoration: none; /* Remove underline */
   font-size: 12px; /* Increase font size */
   color: white; /* White text color */
@@ -16,28 +18,32 @@
 }
 
 /* The about link: 20px from the top with a green background */
-#about {
+#image {
   top: 80px;
+}
+
+#home {
+  top: 180px;
   background-color: #04AA6D;
 }
 
-#blog {
-  top: 140px;
+#profile {
+  top: 280px;
   background-color: #2196F3; /* Blue */
 }
 
-#projects {
-  top: 200px;
+#bookings {
+  top: 380px;
   background-color: #f44336; /* Red */
 }
 
-#contact {
-  top: 260px;
+#user_login {
+  top: 480px;
   background-color: #51C4D3; /* Light Black */
 }
 
-#info {
-  top: 320px;
+#user_logout {
+  top: 580px;
   background-color: #E99497;
 }
 
