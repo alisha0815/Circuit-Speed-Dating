@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :events, through: :bookings
 
+  has_many :matches, through: :user_matches
+  has_many :user_matches #, dependent: :destroy
+
   has_many_attached :photos
 
   # Likes
@@ -21,7 +24,7 @@ class User < ApplicationRecord
   scope :females, -> { where(gender: "female") }
 
   def interests_category(category)
-  	interests.where(category: category)
+    interests.where(category: category)
   end
 
   def likes?(user)

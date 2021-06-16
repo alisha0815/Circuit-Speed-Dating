@@ -1,22 +1,15 @@
 
-<h1 class="interests-header">Your Interests</h1>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6 m-5 card">
-
+<div class="justify-content-center home-page-size">
+    <div class="row home-page-card d-flex p-2 bd-highlight ">
+      <div class="col-6 card home-page-pages card-scroll">
+      <h1 class="interests-header">Your Interests</h1>
       <%= simple_form_for [ @user, @user_interest ] do |f| %>
-        <%= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
+        <%#= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
         <%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
-        <%= f.submit "Create Interests", class: 'form-control' %>
-        
+        <%= f.submit "Create Interests", class: 'form-control', class: 'btn btn-success'%>
       <% end %>
-
-    </div>
+   </div>
   </div>
 </div>
-
-<%#= f.collection_select :interest_id, Interest.all, :category, :name, input_html: { multiple: true, class: 'multiple-select select2 form-control' }, include_hidden: false %>
-
-<%#= f.collection_select :interest_id, Interest.all, :category, :name, input_html: { multiple: true, class: 'multiple-select select2 form-control' }, include_hidden: false %>
 
