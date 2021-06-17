@@ -478,7 +478,7 @@ booking3 = Booking.create(user: user_three, event: Event.first)
 # booking4 = Booking.create(user: user_four, event: Event.first)
 booking5 = Booking.create(user: user_five, event: Event.first)
 booking6 = Booking.create(user: user_six, event: Event.first)
-
+puts "created #{Booking.count} bookings"
 puts "Completed User Bookings"
 
 # => CREATE EVENT / MANUALLY
