@@ -472,12 +472,12 @@ puts "Completed User_interests"
 
 puts "Creating User Bookings from 1st Event"
 
-booking1 = Booking.create(user: user_one, event: Event.first)
-booking2 = Booking.create(user: user_two, event: Event.first)
-booking3 = Booking.create(user: user_three, event: Event.first)
+booking1 = Booking.create!(user: user_one, event: Event.first)
+booking2 = Booking.create!(user: user_two, event: Event.first)
+booking3 = Booking.create!(user: user_three, event: Event.first)
 # booking4 = Booking.create(user: user_four, event: Event.first)
-booking5 = Booking.create(user: user_five, event: Event.first)
-booking6 = Booking.create(user: user_six, event: Event.first)
+booking5 = Booking.create!(user: user_five, event: Event.first)
+booking6 = Booking.create!(user: user_six, event: Event.first)
 puts "created #{Booking.count} bookings"
 puts "Completed User Bookings"
 
