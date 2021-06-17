@@ -8,11 +8,25 @@
 require 'faker'
 require 'open-uri'
 
-#puts 'Cleaning database..'
+puts 'Cleaning database..'
 #
-#User.destroy_all
-#
-#p 'Destroying users..'
+p 'Destroying users..'
+User.destroy_all
+
+puts 'Destroying User_interests..'
+UserInterest.destroy_all
+
+puts 'Destroying Interests..'
+Interest.destroy_all
+
+puts 'Destroying Bookings..'
+Booking.destroy_all
+
+puts 'Destroying User_Matches..'
+UserMatch.destroy_all
+
+puts 'Destroying Matches..'
+Match.destroy_all
 
 puts 'Creating users'
 
@@ -370,10 +384,7 @@ seedUsers = [user_one, user_two, user_three, user_four, user_five, user_six,
 
 
 # => SEEDING INTERESTS
-# I have some seeding options from Facebook in a document // sport & industry only an example
-#Interest.destroy_all
 
-puts 'Destroying interests..'
 puts 'Creating pre-filled interests'
 
 def seed_interests
@@ -445,8 +456,6 @@ end
 seed_interests
 
 # => SEEDING USER_INTERESTS
-puts 'Destroying User_interests..'
-UserInterest.destroy_all
 
 puts "Creating User_interests"
 
@@ -466,14 +475,16 @@ puts "Creating User Bookings from 1st Event"
 booking1 = Booking.create(user: user_one, event: Event.first)
 booking2 = Booking.create(user: user_two, event: Event.first)
 booking3 = Booking.create(user: user_three, event: Event.first)
-booking4 = Booking.create(user: user_four, event: Event.first)
+# booking4 = Booking.create(user: user_four, event: Event.first)
 booking5 = Booking.create(user: user_five, event: Event.first)
 booking6 = Booking.create(user: user_six, event: Event.first)
 
 puts "Completed User Bookings"
 
-puts "Creating Matches for 1st Event"
+# => CREATE EVENT / MANUALLY
 
-Event.first.match_making
+# puts "Creating Matches for 1st Event"
+
+# Event.first.match_making
 
 puts "Completed Seeding"

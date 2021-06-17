@@ -45,14 +45,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_143017) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "event_exceptions", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.datetime "time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_event_exceptions_on_event_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
@@ -135,7 +127,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_143017) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
-  add_foreign_key "event_exceptions", "events"
   add_foreign_key "likes", "users", column: "asker_id"
   add_foreign_key "likes", "users", column: "receiver_id"
   add_foreign_key "matches", "events"

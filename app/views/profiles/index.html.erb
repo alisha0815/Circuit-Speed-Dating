@@ -17,11 +17,16 @@
     <% @users.each do |user| %>
       <div class="col-sm-3 m-2">
         <div class="card-trip">
+
           <% if user.photos.attached? %>
-            <% user.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 150 , width: 150, :crop=>"fill", :radius => 0 %>
-            <% end %>
+            <%= cl_image_tag user.photos.first.key, height: 150 , width: 150, :crop=>"fill", :radius => 0 %>
           <% end %>
+
+          <%# if user.photos.attached? %>
+            <%# user.photos.each do |photo| %>
+            <%#= cl_image_tag photo.key, height: 150 , width: 150, :crop=>"fill", :radius => 0 %>
+            <%# end %>
+          <%# end %>
 
           <div class="card-trip-infos">
             <div>
