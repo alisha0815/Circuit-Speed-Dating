@@ -4,7 +4,7 @@
     <p> <%= link_to "Back", profiles_path, class: "btn rounded-pill border" %> </p>
     <p> <%= link_to "My Sessions", bookings_path, class: "btn rounded-pill border" %> </p>
   </div>
-  <div class="row">
+
     <h2> Sessions: </h2>
 
     <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
@@ -20,6 +20,6 @@
         </div>
       <% end %>
     <% end %>
-  </div>
+
 </div>
 

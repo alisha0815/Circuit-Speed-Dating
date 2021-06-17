@@ -202,8 +202,11 @@ UserInterest.destroy_all
 
 puts "Creating User_interests"
 
-200.times do
-  user_interest = UserInterest.create!(user: User.all.sample, interest: Interest.all.sample)
+User.all.each do |user|
+  40.times do
+    user_interest = UserInterest.create!(user: user, interest: Interest.all.sample)
+  end
+  puts "User seeded with interests"
 end
 
 puts "Completed User_interests"

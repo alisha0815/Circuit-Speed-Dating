@@ -1,9 +1,9 @@
 
 
-<div class="d-flex justify-content-center container">
+<div class="container">
   <div class="card-header">
 
-    <div class="row">
+    <div class="row justify-content-center">
       <% if current_user == @user %>
       <p> <%= link_to "Back to Home", root_path, class: "btn rounded-pill border" %> </p>
       <p> <%= link_to "Complete/Edit Profile", edit_user_registration_path, class: "btn rounded-pill border" %> </p>
@@ -18,9 +18,9 @@
     </div>
 
 
-    <div class="row">
+    <div class="row justify-content-center">
      <% if @user.photos.attached? %>
-     <%= cl_image_tag @user.photos.first.key, height: 200 , width: 500, :crop=>"fill", :radius => 20 %>
+     <%= cl_image_tag @user.photos.first.key, height: 200 , width: 800, :crop=>"fill", :radius => 20 %>
      <% end %>
     </div>
     <img class="avatar" style="position: relative;" alt="Image placeholder" src="https://avatars.githubusercontent.com/u/76750085?s=60&v=4">
