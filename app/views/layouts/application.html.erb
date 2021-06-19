@@ -23,7 +23,11 @@
 
   <div class="justify-content-center home-page-size">
     <div class="row home-page-card d-flex p-4 bd-highlight ">
-      <div class="col-6 card home-page-pages card-scroll">
+      <% if @user %>
+        <div class="col-6 home-page-pages card-scroll card <%= "p-none" if (current_page?(profile_path(current_user))) || (current_page?(profile_path(@user)))  %>">
+      <% else %>
+        <div class="col-6 home-page-pages card-scroll card <%= "p-none" if (current_page?(profile_path(current_user)))  %>">
+      <% end %>
 
         <%= yield %>
 
