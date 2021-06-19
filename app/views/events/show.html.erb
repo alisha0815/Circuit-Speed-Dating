@@ -1,36 +1,33 @@
-<h4> "Lobby" </h4>
-<h4> Matches for this <%= @event.name %> </h4>
-
-<%# if (@event.bookings).include?(current_user) %>
-<%# raise %>
-  <% @event.users.each do |user| %>
-  <p> <strong> <%= user.name %> </strong> </p>
-
-<div class="row pb-3">
-
-  <div class="col-sm-4">
-    <p> Match#: <%= user.user_matches[0].match.id %> </p>
-    <% if current_user.user_matches[0].match.id == user.user_matches[0].match.id %>
-      <%= link_to "Start Session", match_path(user.user_matches[0].match), class: "btn rounded-pill border" %>
-    <% end %>
-  </div>
-  <div class="col-sm-4">
-    <p> Match#: <%= user.user_matches[1].match.id %> </p>
-    <% if current_user.user_matches[1].match.id == user.user_matches[1].match.id %>
-      <%= link_to "Start Session", match_path(user.user_matches[1].match), class: "btn rounded-pill border" %>
-    <% end %>
-  </div>
-  <div class="col-sm-4">
-    <p> Match#: <%= user.user_matches[2].match.id %> </p>
-    <% if current_user.user_matches[2].match.id == user.user_matches[2].match.id %>
-      <%= link_to "Start Session", match_path(user.user_matches[2].match), class: "btn rounded-pill border" %>
-    <% end %>
-  </div>
-
-</div>
-
-  <% end %>
-<%# end %>
-
-
+<div class="container">
 <p> <%= link_to "back", events_path, class: "btn rounded-pill border" %> </p>
+
+  <div class="row justify-content-center">
+    <h4> "Lobby" </h4>
+    <h4> Matches for this <%= @event.name %> </h4>
+  </div>
+
+  <div class="row justify-content-center">
+    <% @event.my_matches(current_user).each do |match| %>
+    <div class="col-sm-4">
+      <%# raise %>
+      <% match.user_matches.each do | user_match | %>
+        <% if user_match.user_id != current_user.id %>
+          <% if user_match.user.photos.attached? %>
+            <%= cl_image_tag user_match.user.photos.first.key, height: 200 , width: 200, :crop=>"fill", :radius => 100 %>
+          <% end %>
+          <p> <%= user_match.user.name %> </p>
+          <p> <%= user_match.user.description %> </p>
+          <p> Age: <%= user_match.user.age %> </p>
+          <p> <%= user_match.user.address %> </p>
+        <% end %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-center">
+    <%# if DateTime.now == @event.start_time - 300.seconds %>
+      <h1> <%= link_to "BEGIN SESSION", match_path(@my_matches.first) %> </h1>
+    <%# end %>
+  </div>
+</div>

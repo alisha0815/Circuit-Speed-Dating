@@ -32,12 +32,14 @@ import "bootstrap";
 // import { multipleSelect } from "../components/select2";
 // import { toggleForm } from "../components/form";
 import { initMatchCable } from "../channels/match_channel";
-
+import { initializeClock } from "../components/timer";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   //initSelect2();
   //multipleSelect();
   initMatchCable();
+  const deadline = new Date(Date.parse(new Date()) + 1 * 60 * 1000);
+  initializeClock('clockdiv', deadline);
 });
 

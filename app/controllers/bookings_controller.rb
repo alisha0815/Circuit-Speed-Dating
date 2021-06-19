@@ -13,14 +13,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @event = Event.find(params[:event_id])
-    @booking.user = current_user
-    @booking.event = @event
-    if @booking.save
-      redirect_to loading_path
-      flash[:notice] = "Booked successfully"
-    else
-      render :new
-    end
+      @booking.user = current_user
+      @booking.event = @event
+      if @booking.save
+        redirect_to loading_path
+        flash[:notice] = "Booked successfully"
+      else
+        render :new
+      end
   end
   
   def edit
