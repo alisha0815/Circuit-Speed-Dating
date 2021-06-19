@@ -13,6 +13,12 @@
   </div>
 
   <div class="row justify-content-center">
+  <p><%= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
+  <p><%= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border" %></p>
+  <p><%= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
+  </div>
+
+  <div class="row justify-content-center">
 
     <% @users.each do |user| %>
       <div class="col-sm-3 m-2">
