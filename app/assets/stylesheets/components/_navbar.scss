@@ -1,49 +1,79 @@
 /* Style the links inside the sidenav */
-#mySidenav a {
+#mysidenav a {
   position: absolute; /* Position them relative to the browser window */
   z-index: 9;
-  left: -70px; /* Position them outside of the screen */
+  left: 0; /* Position them outside of the screen */
   transition: 0.3s; /* Add transition on hover */
   padding: 12px; /* 12px padding */
-  width: 100px; /* Set a specific width */
-  height: 80px;
+  width: 100%; /* Set a specific width */
+  height: 50px;
   text-decoration: none; /* Remove underline */
   font-size: 12px; /* Increase font size */
   color: white; /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
-}
-
-#mySidenav a:hover {
-  left: 0; /* On mouse-over, make the elements appear as they should */
+  text-align: center;
+  color: #2572FF;
+  font-size: 24px;
+  
 }
 
 /* The about link: 20px from the top with a green background */
 #image {
   top: 80px;
 }
+#home:hover {
+  color: #2262d8;
+  background-color: #a1c1fd;
+}
 
 #home {
   top: 180px;
-  background-color: #04AA6D;
+  opacity: 1;
 }
+
+#profile:hover {
+  color: #2262d8;
+  background-color: #a1c1fd;
+} 
 
 #profile {
   top: 280px;
-  background-color: #2196F3; /* Blue */
+}
+
+#bookings:hover {
+  color: #2262d8;
+  background-color: #a1c1fd;
 }
 
 #bookings {
   top: 380px;
-  background-color: #f44336; /* Red */
+}
+
+#user_login:hover {
+  color: #2262d8;
+  background-color: #a1c1fd;
 }
 
 #user_login {
   top: 480px;
-  background-color: #51C4D3; /* Light Black */
+}
+
+#user_logout:hover {
+  color: #2262d8;
+  background-color: #a1c1fd;
 }
 
 #user_logout {
   top: 580px;
-  background-color: #E99497;
 }
 
+.nav-background {
+  background-color: white;
+  position: absolute;
+  padding-right: 70px;
+  border-radius: 32px;
+  margin-left: 6px;
+  margin-top: 8px;
+  height: 98%;
+  
+}
