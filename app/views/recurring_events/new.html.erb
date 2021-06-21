@@ -1,4 +1,5 @@
 
+<div class="card-scroll">
 <%= simple_form_for @event, url: recurring_events_path do |f| %>
     <%= f.input :name %>
     <%= f.input :start_time, as: :time %>
@@ -8,3 +9,4 @@
 
     <%= f.submit %>
   <% end %>
+</div>
