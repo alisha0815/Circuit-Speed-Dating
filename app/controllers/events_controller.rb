@@ -10,6 +10,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @matches = @event.my_matches(current_user)
+    # => Start first match convo
+    @my_matches = @event.my_matches(current_user)
   end
 
   private

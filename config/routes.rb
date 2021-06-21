@@ -20,7 +20,11 @@ Rails.application.routes.draw do
 
   end
 
-  resources :matches, only: [:show]
+  resources :matches, only: [:show] do
+    member do
+      get 'next'
+    end
+  end
   
   # Creating Chatroom
   resources :matches, only: [:show] do
