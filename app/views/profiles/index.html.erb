@@ -1,52 +1,37 @@
 <div class="container">
 
   <div class="m-3 row justify-content-center">
-    <% if current_user %>
-    <p> <%= link_to "Back", profile_path(current_user), class: "btn rounded-pill border" %> </p>
-    <% end %>
-
-    <p> <%= link_to "Start Dating Now!", events_path, class: "btn rounded-pill border" %> </p>
+    <p class="booking_btn"><%= link_to "Book Now!", events_path, class: "btn btn-lg btn-primary" %> </p>
   </div>
 
   <div class="row justify-content-center">
-    <h1><strong> Find your Match </strong></h1>
+    <p><%= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
+    <p><%= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
+    <p><%= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
   </div>
 
-  <div class="row justify-content-center">
-  <p><%= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
-  <p><%= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border" %></p>
-  <p><%= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
-  </div>
 
-  <div class="row justify-content-center">
-
-    <% @users.each do |user| %>
-      <div class="col-sm-3 m-2">
-        <div class="card-trip">
-
-          <% if user.photos.attached? %>
-            <%= cl_image_tag user.photos.first.key, height: 150 , width: 150, :crop=>"fill", :radius => 0 %>
-          <% end %>
-
-          <%# if user.photos.attached? %>
-            <%# user.photos.each do |photo| %>
-            <%#= cl_image_tag photo.key, height: 150 , width: 150, :crop=>"fill", :radius => 0 %>
-            <%# end %>
-          <%# end %>
-
-          <div class="card-trip-infos">
-            <div>
-              <p> <%= link_to user.name, profile_path(user) %> </p>
-              <p> <%= user.age %> </p>
-              <p> <%= user.gender %> </p>
-              <p> <%= user.height %> </p>
-              <p> <%= user.address %> </p>
-            </div>
+  <div class="profile-container">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @users.each do |user| %>
+        <div class="carousel-item <%= user == @users.first ? 'active' : '' %>">
+          <div class="profile_card">
+            <%= cl_image_tag user.photos.first.key, height: 300 , width: 300, :crop=>"fill", :radius => 10 %>
+            <div class="profile-name"><p><%= user.name %><span class="profile-position">   <%= user.age %></span></p></div>
+            <div class="profile-position"><p><i class="fas fa-location-arrow"></i> <%= user.address %>   <span class="view_btn"><%= link_to "View", profile_path(user), class: "button" %></span></p></div>
+            
           </div>
         </div>
+        <% end %>
       </div>
-    <% end %>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
   </div>
-
 </div>
-

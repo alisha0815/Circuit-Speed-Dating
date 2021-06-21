@@ -1,39 +1,106 @@
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-trip > img {
-  height: 150px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
 
 
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.container {
   position: relative;
+  text-align: center;
+  color: white;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  margin: 0 30px;
+}
+
+.profile-card {
+  flex: 1 1 30%;
+  max-width: 300px;
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 0 #ccc;
+  transition: .3s;
+}
+
+.profile-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px -5px #ccc;
+}
+
+.profile-icon {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-name {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin: 25px 0 10px 0;
+}
+
+.profile-position {
+  font-size: 16px;
+  color: #777;
+  text-align: left;
+}
+
+.button {
+  margin: 20px 0 0 0;
+  padding: 10px 20px;
+  color: #999;
+  text-decoration: none;
+  border: 1px solid #999;
+  border-radius: 4px;
+  text-align: right;
+}
+
+.button:hover {
+  color: #fff;
+  background: #167FFF;
+  border: 1px solid #167FFF;
+}
+
+.btn btn-primary btn-lg {
+  color: white;
+  background: #167FFF;
+  border: 1px solid #167FFF;
+}
+
+.btn-primary:hover {
+  color: #167FFF;
+  background: white;
+  border: 1px solid #167FFF;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile-name {
+      font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .profile-card {
+      padding: 20px 15px;
+  }
+
+  .profile-name {
+      font-size: 16px;
+  }
+}
+
