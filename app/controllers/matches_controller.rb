@@ -5,28 +5,28 @@ class MatchesController < ApplicationController
 
     # finding event that this match is related to
     @event = @match.event
-
     # all users of this event
     @users = @event.users
+    # => next matches with js
+    @my_matches = @event.my_matches(current_user)
+  end
 
-    # all matches of this event
-    @matches = Match.where("event_id = ?", @event)
+  def next
+    # find the current match
+    @match = Match.find(params[:id])
+    #raise
+    # find event
+    @event = @match.event
+    # find next match
+    @my_matches = @event.my_matches(current_user).order(:id)
+    # find the match index inside my matches
+    #binding.pry
+    match_index = @my_matches.index(@match)
+    # use match index to find next match
+    next_match_index = (match_index + 1) % @my_matches.count
 
-    # all user_matches of this event
-    @user_matches = []
-    @matches.each do |match|
-      user_match = UserMatch.where("match_id = ?", match)
-      @user_matches << user_match
-    end
-
-    # current_user matches (ids)
-    @my_matches = []
-    current_user.user_matches.each do |user_match|
-      if user_match.match != @match
-        @my_matches << user_match.match
-      end
-      #raise
-    end
-
+    @next_match = @my_matches[next_match_index]
+    # redirect to next match page
+    redirect_to match_path(@next_match)
   end
 end

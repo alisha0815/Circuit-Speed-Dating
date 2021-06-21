@@ -1,4 +1,5 @@
-<div class="">
+<div class="container">
+  <%= render 'matches/clock' %>
   <h1> Matched Chat Room </h1>
 
   <div class="">
@@ -22,10 +23,7 @@
 
   <div class="row p-3">
     <p> <%= link_to "back", events_path, class: "btn rounded-pill border" %> </p>
-
-    <% @my_matches.each do |my_match| %>
-      <p> <%= link_to "next date", match_path(my_match), class: "btn rounded-pill border" %> </p>
-    <% end %>
   </div>
+
 </div>
 

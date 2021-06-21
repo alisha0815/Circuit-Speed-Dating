@@ -16,7 +16,10 @@
           <p><%= link_to event.name, event_path(event) %></p>
           <% end %>
           <p class="text-muted"> <%= event.time %> </p>
-          <p> <%= link_to "Book", new_event_booking_path(event) %> </p>
+          <% if event.bookings.count < event.capacity %>
+            <p> <%= link_to "Book", new_event_booking_path(event) %> </p>
+          <% end %>
+          <p> Spots: <%= event.bookings.count %>/<%= event.capacity %> </p>
         </div>
       <% end %>
     <% end %>

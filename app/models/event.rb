@@ -6,12 +6,16 @@ class Event < ApplicationRecord
 
   has_many :bookings
   has_many :users, through: :bookings
+  has_many :matches
 
   def time
     "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"
   end
 
+  # =>
+
   def match_making
+    # => Can call Event(x).match_making
     # get users males/females
     users.males.each do |male|
       users.females.each do |female|
@@ -21,5 +25,9 @@ class Event < ApplicationRecord
       end
     end
   end
-  # => Can call Event(x).match_making
+
+  def my_matches(current_user)
+    matches.joins(:user_matches).where(user_matches: { user: current_user })
+  end
+
 end

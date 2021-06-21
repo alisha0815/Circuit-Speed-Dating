@@ -470,7 +470,7 @@ puts "Completed User_interests"
 
 # => SEEDING BOOKINGS
 
-event = Event.create!(name: "Dating Launch", start_time: Time.now + 1.hour, end_time: Time.now + 4.hours)
+event = Event.create!(name: "Dating Launch", start_time: Time.now + 1.hour, end_time: Time.now + 4.hours, capacity: 6)
 
 puts "Creating User Bookings from 1st Event"
 
