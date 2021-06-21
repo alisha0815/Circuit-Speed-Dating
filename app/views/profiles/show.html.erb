@@ -1,155 +1,113 @@
 <div class="container" style="background-color: #FDDFDD;"> 
-  <div class="row justify-content-center">
-    <% if current_user == @user %>
-    <p> <%= link_to "Back to Home", root_path, class: "btn rounded-pill border m-2" %> </p>
-    <p> <%= link_to "Complete/Edit Profile", edit_user_registration_path, class: "btn rounded-pill border m-2" %> </p>
-    <p> <%= link_to "Add your Interests", new_user_interests_path, class: "btn rounded-pill border m-2" %> </p>
-    <% end %>
-
-    <p> <%= link_to "Browse Profiles", profiles_path, class: "btn rounded-pill border m-2" %> </p>
-  </div>
-
-
-<div class="card-scroll">
-<div class="container">
-  <div class="card-header">
+  <div class="card-scroll">
 
     <div class="row justify-content-center">
       <% if current_user == @user %>
-      <p> <%= link_to "Back to Home", root_path, class: "btn rounded-pill border" %> </p>
-      <p> <%= link_to "Complete/Edit Profile", edit_user_registration_path, class: "btn rounded-pill border" %> </p>
-      <p> <%= link_to "Add your Interests", new_user_interests_path, class: "btn rounded-pill border" %> </p>
+      <p> <%= link_to "Back to Home", root_path, class: "btn rounded-pill border m-2" %> </p>
+      <p> <%= link_to "Complete/Edit Profile", edit_user_registration_path, class: "btn rounded-pill border m-2" %> </p>
+      <p> <%= link_to "Add your Interests", new_user_interests_path, class: "btn rounded-pill border m-2" %> </p>
       <% end %>
 
-      <p> <%= link_to "Browse Profiles", profiles_path, class: "btn rounded-pill border" %> </p>
+      <p> <%= link_to "Browse Profiles", profiles_path, class: "btn rounded-pill border m-2" %> </p>
     </div>
 
     <div class="row">
       <h1 class="card-title"> Hey! I'm <%= @user.name %>! </h1>
     </div>
 
-
-</div>
-
-
-
     <div class="row justify-content-center">
-     <% if @user.photos.attached? %>
-     <%= cl_image_tag @user.photos.second.key, height: 200 , width: 800, :crop=>"fill", :radius => 20 %>
-     <% end %>
+      <% if @user.photos.attached? %>
+      <%= cl_image_tag @user.photos.second.key, height: 200 , width: 800, :crop=>"fill", :radius => 20 %>
+      <% end %>
     </div>
-    
+
     <% if @user.photos.attached? %>
     <%= cl_image_tag @user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "position: relative", :crop=>"thumb", class: "avatar" %>
     <% end %>
 
     <div class="row px-4">
-        <% if current_user.likes?(@user)%>
-         ♥️
-        <% else%>
-        <h3> <%= @user.name %> | <%= link_to "⚡️" %> | <%= link_to "Like ❤", profile_likes_path(@user.id), class: "btn rounded-pill border mb-2", method: :post %></h3>
-        <% end %>
+      <% if current_user.likes?(@user)%>
+      <h3> <%= @user.name %> | <%= link_to "⚡️" %> | ♥️ </h3>
+      <% else%>
+      <h3> <%= @user.name %> | <%= link_to "⚡️" %> | <%= link_to "Like ❤", profile_likes_path(@user.id), class: "btn rounded-pill border mb-2", method: :post %></h3>
+      <% end %>
     </div>
 
     <div class="row px-4" style="background-color: #DAE7FF;">
-          <div class="col-sm-12">
-            <p> <i class="fas fa-envelope-open-text"></i> <%= @user.description %> </p>
-            <p> <i class="fas fa-birthday-cake"></i> <%= @user.age %> </p>
-            <p> <i class="fas fa-male"></i> <%= @user.gender %> </p>
-            <p> <i class="fas fa-heading"></i> <%= @user.height %> </p>
-            <p> <i class="fas fa-location-arrow"></i> <%= @user.address %> </p>
-          </div>
+      <div class="col-sm-12">
+        <p> <i class="fas fa-envelope-open-text"></i> <%= @user.description %> </p>
+        <p> <i class="fas fa-birthday-cake"></i> <%= @user.age %> </p>
+        <p> <i class="fas fa-male"></i> <%= @user.gender %> </p>
+        <p> <i class="fas fa-heading"></i> <%= @user.height %> </p>
+        <p> <i class="fas fa-location-arrow"></i> <%= @user.address %> </p>
+      </div>
     </div>
 
     <div class="row px-4 mt-2" style="background-color: #FDDFDD;">
-          <div class="col-sm-4">
-            <h5 class="interest_title"> <i class="fas fa-user-tie"></i> Business </h5>
-            <% @user.interests_category("business").each do |interest| %>
-            <p class="profile-interest"><%= interest.name %></p>
-            <% end %>
-          </div>
-          <div class="col-sm-4">
-            <h5 class="interest_title"> <i class="fas fa-gamepad"></i> Entertainment </h5>
-            <% @user.interests_category("entertainment").each do |interest| %>
-            <p class="profile-interest"><%= interest.name  %></p>
-            <% end %>
-          </div>
-          <div class="col-sm-4">
-            <h5 class="interest_title"> <i class="fas fa-vest"></i> Fashion </h5>
-            <% @user.interests_category("fashion").each do |interest| %>
-            <p class="profile-interest"><%= interest.name  %></p>
-            <% end %>
-          </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-user-tie"></i> Business </h5>
+        <% @user.interests_category("business").each do |interest| %>
+        <p class="profile-interest"><%= interest.name %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-gamepad"></i> Entertainment </h5>
+        <% @user.interests_category("entertainment").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-vest"></i> Fashion </h5>
+        <% @user.interests_category("fashion").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
     </div>
 
 
     <div class="row px-4" style="background-color: #FDDFDD;">
-         <div class="col-sm-4">
-           <h5 class="interest_title"> <i class="fas fa-running"></i> Fitness </h5>
-           <% @user.interests_category("fitness").each do |interest| %>
-           <p class="profile-interest"><%= interest.name  %></p>
-           <% end %>
-         </div>
-         <div class="col-sm-4">
-           <h5 class="interest_title"> <i class="fas fa-utensils"></i> Food </h5>
-           <% @user.interests_category("food").each do |interest| %>
-           <p class="profile-interest"><%= interest.name  %></p>
-           <% end %>
-         </div>
-         <div class="col-sm-4">
-           <h5 class="interest_title"> <i class="fas fa-water"></i> Hobbies </h5>
-           <% @user.interests_category("hobbies").each do |interest| %>
-           <p class="profile-interest"><%= interest.name  %></p>
-           <% end %>
-         </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-running"></i> Fitness </h5>
+        <% @user.interests_category("fitness").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-utensils"></i> Food </h5>
+        <% @user.interests_category("food").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-water"></i> Hobbies </h5>
+        <% @user.interests_category("hobbies").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
     </div>
 
 
     <div class="row px-4" style="background-color: #FDDFDD;">
-        <div class="col-sm-4">
-          <h5 class="interest_title"> <i class="fas fa-photo-video"></i> Movies </h5>
-          <% @user.interests_category("movies").each do |interest| %>
-          <p class="profile-interest"><%= interest.name  %></p>
-          <% end %>
-        </div>
-        <div class="col-sm-4">
-          <h5 class="interest_title"> <i class="fas fa-music"></i> Music </h5>
-          <% @user.interests_category("music").each do |interest| %>
-          <p class="profile-interest"><%= interest.name  %></p>
-          <% end %>
-        </div>
-        <div class="col-sm-4">
-          <h5 class="interest_title"> <i class="fas fa-skiing-nordic"></i> Outdoors </h5>
-          <% @user.interests_category("outdoors").each do |interest| %>
-          <p class="profile-interest"><%= interest.name  %></p>
-          <% end %>
-        </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-photo-video"></i> Movies </h5>
+        <% @user.interests_category("movies").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-music"></i> Music </h5>
+        <% @user.interests_category("music").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="interest_title"> <i class="fas fa-skiing-nordic"></i> Outdoors </h5>
+        <% @user.interests_category("outdoors").each do |interest| %>
+        <p class="profile-interest"><%= interest.name  %></p>
+        <% end %>
+      </div>
     </div>
 
-    <div class="row px-4" style="background-color: #FDDFDD;">
-        <div class="col-sm-4">
-          <h5 class="interest_title"> <i class="fas fa-glasses"></i> Reading </h5>
-          <% @user.interests_category("reading").each do |interest| %>
-          <p class="profile-interest"><%= interest.name  %></p>
-          <% end %>
-        </div>
-        <div class="col-sm-4">
-          <h5 class="interest_title"> <i class="fas fa-heart"></i> Relationships </h5>
-          <% @user.interests_category("relationships").each do |interest| %>
-          <p class="profile-interest"><%= interest.name  %></p>
-          <% end %>
-        </div>
-        <div class="col-sm-4">
-          <h5 class="interest_title"> <i class="fas fa-industry"></i> Technology </h5>
-          <% @user.interests_category("technology").each do |interest| %>
-          <p class="profile-interest"><%= interest.name  %></p>
-          <% end %>
-        </div>
-
-    </div>
   </div>
-</div>
-
-
 </div>
 

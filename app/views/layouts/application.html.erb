@@ -21,23 +21,15 @@
   <%= render 'shared/flashes' %>
  
   <div class="justify-content-center home-page-size">
+    <div class="nav-background">
+      <%= render 'shared/navbar' %>
+    </div>
 
-     <div class="nav-background">
-         <%= render 'shared/navbar' %>
-       </div>
-    <div class="row home-page-card p-4 bd-highlight ">
+    <div class="row home-page-card p-4 bd-highlight">
       <div class="d-flex card-position">
-      <div class="col-6 card home-page-pages">
-   
-    <div class="row home-page-card d-flex p-4 bd-highlight ">
-      <% if @user %>
-        <div class="col-6 home-page-pages card-scroll card <%= "p-none" if (current_page?(profile_path(current_user))) || (current_page?(profile_path(@user)))  %>">
-      <% else %>
-        <div class="col-6 home-page-pages card-scroll card <%= "p-none" if (current_page?(profile_path(current_user)))  %>">
-      <% end %>
-
-        <%= yield %>
-       </div>
+         <div class="col-6 card home-page-pages card-scroll">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div>
