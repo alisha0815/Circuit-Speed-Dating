@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/loading/', to: 'pages#loading'
 
   # See other User's profiles // (Why has to be on top?)
-
   resources :profiles, only: [ :index, :show ] do
     resources :likes, only: [:create]
   end
@@ -31,6 +30,9 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
+  resources :user_matches, only: [:update]
+
+  # Creating Bookings
   resources :bookings, only: [:edit, :update, :destroy, :show, :index]
 
 

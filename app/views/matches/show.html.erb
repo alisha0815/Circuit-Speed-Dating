@@ -1,8 +1,26 @@
 <div class="container">
-  <%= render 'matches/clock' %>
-  <h1> Matched Chat Room </h1>
+  <div class="row justify-content-center">
+    <%= render 'matches/clock' %>
+  </div>
+
+  <div class="row justify-content-center">
+     <% if @user_match.status == "pending" %>
+          <%= simple_form_for [@user_match] do |f| %>
+          <%= f.input :status, as: :hidden, :input_html => { :value => "accept" } %>
+          <%= button_tag do %>
+          <p> MATCH! </p>
+          <% end %>
+        <% end %>
+      <% elsif @user_match.status == "accept" %>
+        <p> Awaiting Match Confirmation </p>
+      <% end %>
+  </div>
 
   <div class="">
+    <div class="row justify-content-center p-3">
+      <h1> Matched Chat Room </h1>
+    </div>
+
     <div id="messages" data-match-id="<%= @match.id %>">
       <% @match.messages.each do |message| %>
         <div class="message-container" id="message-<%= message.id %>">
@@ -15,6 +33,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="">
     <%= simple_form_for [ @match, @message ], remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: "Type a message.." %>
