@@ -2,7 +2,13 @@ class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def index
-    @users = User.all.reject{ |user| user == current_user}
+    if params[:gender] == "female"
+      @users = User.females
+    elsif params[:gender] == "male"
+      @users = User.males
+    else
+      @users = User.all.reject{ |user| user == current_user}
+    end
   end
 
   def show

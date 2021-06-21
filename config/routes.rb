@@ -36,4 +36,7 @@ Rails.application.routes.draw do
 
   # Creating Events
   resources :recurring_events, only: [:new, :create]
+
+  # Browsing
+  resources :browse, only: [:browse]
 end
