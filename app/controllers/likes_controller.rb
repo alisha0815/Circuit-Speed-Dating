@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     @like.receiver = User.find(params[:profile_id])
 
     if @like.save
-      redirect_to  profile_path(@like.receiver) 
+      #redirect_to  profile_path(@like.receiver) 
     end  
   end
 end

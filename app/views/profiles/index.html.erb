@@ -16,8 +16,15 @@
           <% @users.each do |user| %>
           <div class="carousel-item <%= user == @users.first ? 'active' : '' %>">
             <div class="profile_card">
-              <%= cl_image_tag user.photos.first.key, height: 300 , width: 300, :crop=>"fill", :radius => 10 %>
-              <div class="profile-name"><p><%= user.name %><span class="profile-position">   <%= user.age %></span></p></div>
+              <%= cl_image_tag user.photos.first.key, class: "carousel-image" %>
+              <div class="profile-name"><p><%= user.name %><span class="profile-position">   <%= user.age %></span>
+              <span class="js-heart">
+                <% if current_user.likes?(user)%>♥️</span>
+                <% else%>
+                <%= link_to "Like ❤", profile_likes_path(user.id), class: "btn rounded-pill border mb-2", method: :post, remote: true%></h3>
+                <% end %>
+              </span>
+              </div></p>
               <div class="profile-position"><p><i class="fas fa-location-arrow"></i> <%= user.address %>   <span class="view_btn"><%= link_to "View", profile_path(user), class: "button" %></span></p></div>
             </div>
           </div>
