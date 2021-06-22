@@ -28,6 +28,9 @@ UserMatch.destroy_all
 puts 'Destroying Matches..'
 Match.destroy_all
 
+puts 'Destroying Event..'
+Event.destroy_all
+
 puts 'Creating users'
 
 # User_one

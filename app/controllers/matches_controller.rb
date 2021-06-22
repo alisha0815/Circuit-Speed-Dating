@@ -3,6 +3,9 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
     @message = Message.new
     @user_match = current_user_match
+    # video chat
+    opentok = OpenTok::OpenTok.new ENV['VONAGE_API_KEY'], ENV['VONAGE_API_SECRET']
+    @token = opentok.generate_token @match.vonage_session_id, { name: current_user.name }
     # finding event that this match is related to
     @event = @match.event
     # all users of this event

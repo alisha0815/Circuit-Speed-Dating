@@ -4,6 +4,26 @@
   </div>
 
   <div class="row justify-content-center">
+    <div id="black-background">
+      <div class="col-12 col-lg-9">
+      <p><%= current_user.name %></p>
+        <div id="videos"
+          data-controller="vonage"
+          data-vonage-api-key="<%= ENV['VONAGE_API_KEY'] %>"
+          data-vonage-session-id="<%= @match.vonage_session_id %>"
+          data-vonage-token="<%= @token %>"
+          data-vonage-name="<%= current_user.name %>"
+          data-vonage-role="<%= current_user.age %>"
+          >
+          <%#= link_to edit_lesson_path(@lesson) do %>
+          <i class="fas fa-phone-slash" id="phone-btn"></i>
+          <%# end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
      <% if @user_match.status == "pending" %>
           <%= simple_form_for [@user_match] do |f| %>
           <%= f.input :status, as: :hidden, :input_html => { :value => "accept" } %>

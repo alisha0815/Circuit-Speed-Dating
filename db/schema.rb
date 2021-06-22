@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_121345) do
+ActiveRecord::Schema.define(version: 2021_06_22_094712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_121345) do
     t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "vonage_session_id"
     t.index ["event_id"], name: "index_matches_on_event_id"
   end
 
@@ -121,6 +122,10 @@ ActiveRecord::Schema.define(version: 2021_06_21_121345) do
     t.float "height"
     t.text "address"
     t.integer "my_round", default: 1
+    t.string "job_title"
+    t.string "education"
+    t.string "sexual_orientation"
+    t.string "open_to"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
