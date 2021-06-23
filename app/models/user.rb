@@ -32,4 +32,8 @@ class User < ApplicationRecord
   def likes?(user)
     likes_as_asker.find_by(receiver: user)
   end
+
+  def update_match?(user_match)
+    user_match.status == "accept"
+  end
 end

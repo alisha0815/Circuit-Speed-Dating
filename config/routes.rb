@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get '/loading/', to: 'pages#loading'
+  # get '/loading/', to: 'pages#loading'
 
   # See other User's profiles // (Why has to be on top?)
   resources :profiles, only: [ :index, :show ] do
@@ -28,10 +28,6 @@ Rails.application.routes.draw do
       get 'next'
     end
   end
-
-  # My User Matches
-
-
 
   # Creating Chatroom
   resources :matches, only: [:show] do

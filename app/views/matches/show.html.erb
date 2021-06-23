@@ -1,93 +1,130 @@
 <div class="container">
   <% unless params[:mutual] %>
-  <div class="row justify-content-center pb-3">
 
-
-    <div class="col-sm-5">
-      <%= render 'matches/clock' %>
+    <div class="row justify-content-between mt-2">
+      <div class="match-item col-sm-3">
+        <% if @other_user_match.user.photos.attached? %>
+        <%= cl_image_tag @other_user_match.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
+        <% end %>
+      </div>
+      <div class="match-item col-sm-3">
+        <h3> <%= @other_user_match.user.name %> </h3>
+        <p> Age: <%= @other_user_match.user.age %> </p>
+      </div>
+      <div class="match-item col-sm-3">
+        <p> Gender: <%= @other_user_match.user.gender %> </p>
+        <p> Preference: Straight </p>
+      </div>
     </div>
 
-    <div class="col-sm-5">
-      <% if @other_user_match.user.photos.attached? %>
-      <%= cl_image_tag @other_user_match.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
-      <% end %>
-      <h3> You're talking with <%= @other_user_match.user.name %>! </h3>
-      <p> Age: <%= @other_user_match.user.age %> </p>
-      <p> Gender: <%= @other_user_match.user.gender %> </p>
-      <p> Preference: Straight </p>
+    <div class="timer-box row justify-content-between text-center">
+      <div class="col-sm-4 align-self-center">
+        <h3> YOUR MATCH IS READY! </h3>
+      </div>
+      <div class="col-sm-4 align-self-center">
+        <% if current_user.update_match?(@user_match) %>
+          <p> Awaiting Match Confirmation </p>
+        <% elsif @user_match.status == "pending" %>
+          <h1> <%= link_to "MATCH ❤", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "", method: :patch %> </h1>
+        <% end %>
+      </div>
+      <div class="col-sm-4 align-self-center">
+        <%= render 'matches/clock' %>
+      </div>
     </div>
-  </div>
 
-  <div class="row justify-content-center">
-    <div id="black-background">
-      <div class="col-12 col-lg-9">
-      <p><%= current_user.name %></p>
-        <div id="videos"
-          data-controller="vonage"
-          data-vonage-api-key="<%= ENV['VONAGE_API_KEY'] %>"
-          data-vonage-session-id="<%= @match.vonage_session_id %>"
-          data-vonage-token="<%= @token %>"
-          data-vonage-name="<%= current_user.name %>"
-          data-vonage-role="<%= current_user.age %>"
-          >
-          <%#= link_to edit_lesson_path(@lesson) do %>
-          <i class="fas fa-phone-slash" id="phone-btn"></i>
-          <%# end %>
+    <div class="row justify-content-center">
+      <div class="video-screen">
+        <div id="black-background">
+          <div class="col-12 col-lg-9">
+          <p><%= current_user.name %></p>
+            <div id="videos"
+              data-controller="vonage"
+              data-vonage-api-key="<%= ENV['VONAGE_API_KEY'] %>"
+              data-vonage-session-id="<%= @match.vonage_session_id %>"
+              data-vonage-token="<%= @token %>"
+              data-vonage-name="<%= current_user.name %>"
+              data-vonage-role="<%= current_user.age %>"
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row justify-content-center">
-     <% if @user_match.status == "pending" %>
-          <%= simple_form_for [@user_match] do |f| %>
-          <%= f.input :status, as: :hidden, :input_html => { :value => "accept" } %>
-          <%= button_tag do %>
-          <p> MATCH! </p>
-          <% end %>
-        <% end %>
-      <% elsif @user_match.status == "accept" %>
-        <p> Awaiting Match Confirmation </p>
-      <% end %>
-  </div>
   <% end %>
 
-  <div class="">
-    <div class="row justify-content-center p-3">
-      <h1> Matched Chat Room </h1>
+  <% if params[:mutual] %>
+    <div class="row p-3">
+      <p> <%= link_to "Contacts", mutual_matches_matches_path, class: "btn rounded-pill border" %> </p>
     </div>
+  <% end %>
 
-    <div id="messages" data-match-id="<%= @match.id %>">
-      <% @match.messages.each do |message| %>
-      <%# raise %>
-        <div class="message-container" id="message-<%= message.id %>">
-          <% if message.user_id == current_user.id %>
-            <i class="author text-primary">
-              <span><%= message.user.name %></span>
-              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-            </i>
-            <p class="speech-bubble" ><%= message.content %></p>
-          <% else %>
-            <i class="author text-success">
-              <span><%= message.user.name %></span>
-              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-            </i>
-            <p class="speech-bubble" ><%= message.content %></p>
+
+
+    <div class="row justify-content-center mt-3 mb-3">
+      <div class="message-container">
+
+        <div id="messages" data-match-id="<%= @match.id %>">
+          <% @match.messages.each do |message| %>
+          <%# raise %>
+            <div class="" id="message-<%= message.id %>">
+              <% if message.user_id == current_user.id %>
+
+              <div class="d-flex message-box">
+                <div class="text-left">
+                  <i class="author">
+                    <span>
+                      <% if message.user.photos.attached? %>
+                        <%= cl_image_tag message.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
+                      <% end %>
+                    </span>
+                  </i>
+                </div>
+
+                <div class="text-left message-content-me">
+                  <small class="text-muted"><%= message.user.name %></small><br>
+                  <span><%= message.content %></span>
+                  <div class="text-right text-muted">
+                    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                  </div>
+                </div>
+              </div>
+
+              <% else %>
+
+              <div class="message-box">
+                <div class="d-flex flex-row-reverse text-right">
+
+                  <div class="text-right">
+                    <i class="author">
+                      <span>
+                        <% if message.user.photos.attached? %>
+                          <%= cl_image_tag message.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
+                        <% end %>
+                      </span>
+                    </i>
+                  </div>
+                  <div class="text-left message-content-other">
+                    <small class="text-muted"><%= message.user.name %></small><br>
+                    <span><%= message.content %></span>
+                    <div class="text-right text-muted">
+                      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <% end %>
+            </div>
           <% end %>
         </div>
-      <% end %>
+
+        <div class="input_message">
+          <%= simple_form_for [ @match, @message ], remote: true do |f| %>
+            <%= f.input :content, label: false, placeholder: "Type a message..", class: "" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="">
-    <%= simple_form_for [ @match, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Type a message.." %>
-    <% end %>
-  </div>
-
-  <div class="row p-3">
-    <p> <%= link_to "back", events_path, class: "btn rounded-pill border" %> </p>
-  </div>
-
 </div>
 

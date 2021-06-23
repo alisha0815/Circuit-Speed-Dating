@@ -1,5 +1,13 @@
-<h4> My matched Contacts </h4>
-<% @contacts.each do |contact| %>
- <p><%= contact.user.name %> || <%= link_to "Start Chat", match_path(contact.match, mutual: true) %> </p>
- <%# raise %>
-<% end %>
+<h4> Contacts </h4>
+
+<div class="row">
+  <div class="col-12 col-md-3">
+    <% @contacts.each do |contact| %>
+   <p><%= contact.user.name %> <%= link_to "Start Chat", match_path(contact.match, mutual: true), class: "btn rounded-pill border" %> </p>
+   <%# raise %>
+  <% end %>
+  </div>
+
+
+
+</div>

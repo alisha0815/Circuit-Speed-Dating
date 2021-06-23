@@ -8,8 +8,8 @@ class RecurringEventsController < ApplicationController
     @event = Event.new
     # raise
     (@start_date).upto(@end_date) do |date|
-      Event.create(name: "Session", start_time: "#{date} #{@start_hour}:#{@start_min}:00 UTC +00:00",
-                                    end_time: "#{date} #{@end_hour}:#{@end_min}:00 UTC +00:00")
+    Event.create(name: "Session", start_time: "#{date} #{@start_hour}:#{@start_min}:00 UTC +00:00",
+                                  end_time: "#{date} #{@end_hour}:#{@end_min}:00 UTC +00:00")
     # raise
     end
 

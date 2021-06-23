@@ -2,9 +2,18 @@
 <p> <%= link_to "back", events_path, class: "btn rounded-pill border" %> </p>
 
   <div class="row justify-content-center">
-    <h4> "Lobby" </h4>
-    <h4> Matches for this <%= @event.name %> </h4>
+    <h2> Lobby </h2>
   </div>
+
+  <% if @my_matches.exists? %>
+    <div class="row justify-content-center">
+      <h4> Matches for this <%= @event.name %> </h4>
+    </div>
+  <% else %>
+    <div class="row justify-content-center">
+      <h4> Your matches are nearly ready! </h4>
+    </div>
+  <% end %>
 
   <div class="row justify-content-center">
     <% @event.my_matches(current_user).each do |match| %>
@@ -26,8 +35,10 @@
   </div>
 
   <div class="row justify-content-center">
+  <% if @my_matches.exists? %>
     <%# if DateTime.now == @event.start_time - 300.seconds %>
       <h1> <%= link_to "BEGIN SESSION", match_path(@my_matches.first) %> </h1>
     <%# end %>
+  <% end %>
   </div>
 </div>

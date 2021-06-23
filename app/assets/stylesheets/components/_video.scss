@@ -1,11 +1,12 @@
-body, html {
-    height: 50%;
+.video-screen {
+  width: 100%;
 }
 
 #black-background {
   background-color: $gray !important;
   color: white !important;
   border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 
