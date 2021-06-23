@@ -1,5 +1,5 @@
-<div class="card-scroll">
-  <div class="container" style="background-color: #FDDFDD;">
+
+  <div class="container">
 
     <div class="row justify-content-center">
       <% if current_user == @user %>
@@ -17,7 +17,7 @@
 
     <div class="row justify-content-center">
       <% if @user.photos.attached? %>
-      <%= cl_image_tag @user.photos.second.key, height: 200 , width: 800, :crop=>"fill", :radius => 20 %>
+      <%= cl_image_tag @user.photos.second.key, height: 200 , width: 590, :crop=>"fill", :radius => 20 %>
       <% end %>
     </div>
 
@@ -33,7 +33,7 @@
       <% end %>
     </div>
 
-    <div class="row px-4" style="background-color: #DAE7FF;">
+    <div class="row p-4 col-info" style="background-color: #DAE7FF;">
       <div class="col-sm-12">
         <p> <i class="fas fa-envelope-open-text"></i> <%= @user.description %> </p>
         <p> <i class="fas fa-birthday-cake"></i> <%= @user.age %> </p>
@@ -42,8 +42,12 @@
         <p> <i class="fas fa-location-arrow"></i> <%= @user.address %> </p>
       </div>
     </div>
+  
 
-    <div class="row px-4 mt-2" style="background-color: #FDDFDD;">
+
+
+
+    <div class="row p-4 mt-3 col-info" style="background-color: #DAE7FF;">
       <div class="col-sm-4">
         <h5 class="interest_title"> <i class="fas fa-user-tie"></i> Business </h5>
         <% @user.interests_category("business").each do |interest| %>
@@ -65,7 +69,7 @@
     </div>
 
 
-    <div class="row px-4" style="background-color: #FDDFDD;">
+    <div class="row p-4 mt-3 col-info" style="background-color: #DAE7FF;">
       <div class="col-sm-4">
         <h5 class="interest_title"> <i class="fas fa-running"></i> Fitness </h5>
         <% @user.interests_category("fitness").each do |interest| %>
@@ -87,7 +91,7 @@
     </div>
 
 
-    <div class="row px-4" style="background-color: #FDDFDD;">
+    <div class="row p-4 mb-3 mt-3 col-info" style="background-color: #DAE7FF;">
       <div class="col-sm-4">
         <h5 class="interest_title"> <i class="fas fa-photo-video"></i> Movies </h5>
         <% @user.interests_category("movies").each do |interest| %>
@@ -107,7 +111,6 @@
         <% end %>
       </div>
     </div>
-
   </div>
-</div>
+
 
