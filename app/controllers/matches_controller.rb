@@ -1,8 +1,15 @@
 class MatchesController < ApplicationController
+
+  def index
+    @matches = Match.all
+  end
+
   def show
     @match = Match.find(params[:id])
     @message = Message.new
+    # get user matches for this match
     @user_match = current_user_match
+    @other_user_match = other_user_match
     # video chat
     opentok = OpenTok::OpenTok.new ENV['VONAGE_API_KEY'], ENV['VONAGE_API_SECRET']
     @token = opentok.generate_token @match.vonage_session_id, { name: current_user.name }
@@ -37,7 +44,25 @@ class MatchesController < ApplicationController
     elsif (current_user.my_round % 3).zero?
       current_user.my_round = 1
       current_user.save
-      redirect_to root_path
+      redirect_to events_path
+    end
+  end
+
+  def mutual_matches
+    # all matches belonging to user
+    @contacts = []
+    @my_user_matches = UserMatch.where(user: current_user)
+    @user_matches = UserMatch.all
+
+    @user_matches.each do |user_match|
+      @my_user_matches.each do |my_user_match|
+        if user_match.match_id == my_user_match.match_id
+          if user_match.status == "accept" && my_user_match.status == "accept"
+            @contacts << user_match if user_match.user != current_user
+            #raise
+          end
+        end
+      end
     end
   end
 
@@ -48,6 +73,14 @@ class MatchesController < ApplicationController
     user_matches = @match.user_matches
     user_matches.select do |user_match|
       return user_match if user_match.user_id == current_user.id
+    end
+  end
+
+  def other_user_match
+    # find current user user_match
+    user_matches = @match.user_matches
+    user_matches.select do |user_match|
+      return user_match if user_match.user_id != current_user.id
     end
   end
 end
