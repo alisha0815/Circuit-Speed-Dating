@@ -1,6 +1,10 @@
 class UserMatchesController < ApplicationController
   before_action :set_user_match, only: [:update]
 
+  def index
+    @user_matches = UserMatch.all.where(user: current_user)
+  end
+
   def update
     if @user_match.update(user_match_params)
       flash[:notice] = 'Matched!'

@@ -1,6 +1,21 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <%= render 'matches/clock' %>
+  <% unless params[:mutual] %>
+  <div class="row justify-content-center pb-3">
+
+
+    <div class="col-sm-5">
+      <%= render 'matches/clock' %>
+    </div>
+
+    <div class="col-sm-5">
+      <% if @other_user_match.user.photos.attached? %>
+      <%= cl_image_tag @other_user_match.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
+      <% end %>
+      <h3> You're talking with <%= @other_user_match.user.name %>! </h3>
+      <p> Age: <%= @other_user_match.user.age %> </p>
+      <p> Gender: <%= @other_user_match.user.gender %> </p>
+      <p> Preference: Straight </p>
+    </div>
   </div>
 
   <div class="row justify-content-center">
@@ -35,6 +50,7 @@
         <p> Awaiting Match Confirmation </p>
       <% end %>
   </div>
+  <% end %>
 
   <div class="">
     <div class="row justify-content-center p-3">
@@ -43,12 +59,21 @@
 
     <div id="messages" data-match-id="<%= @match.id %>">
       <% @match.messages.each do |message| %>
+      <%# raise %>
         <div class="message-container" id="message-<%= message.id %>">
-          <i class="author">
-            <span><%= message.user.name %></span>
-            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-          </i>
-          <p class="speech-bubble" ><%= message.content %></p>
+          <% if message.user_id == current_user.id %>
+            <i class="author text-primary">
+              <span><%= message.user.name %></span>
+              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            </i>
+            <p class="speech-bubble" ><%= message.content %></p>
+          <% else %>
+            <i class="author text-success">
+              <span><%= message.user.name %></span>
+              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            </i>
+            <p class="speech-bubble" ><%= message.content %></p>
+          <% end %>
         </div>
       <% end %>
     </div>

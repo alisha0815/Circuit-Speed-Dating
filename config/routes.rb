@@ -19,18 +19,26 @@ Rails.application.routes.draw do
 
   end
 
-  resources :matches, only: [:show] do
+  # Roulette
+  resources :matches, only: [:index, :show] do
+    collection do
+      get 'mutual_matches'
+    end
     member do
       get 'next'
     end
   end
-  
+
+  # My User Matches
+
+
+
   # Creating Chatroom
   resources :matches, only: [:show] do
     resources :messages, only: [:create]
   end
 
-  resources :user_matches, only: [:update]
+  resources :user_matches, only: [:index, :update]
 
   # Creating Bookings
   resources :bookings, only: [:edit, :update, :destroy, :show, :index]

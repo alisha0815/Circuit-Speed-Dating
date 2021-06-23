@@ -1,0 +1,5 @@
+<h4> My matched Contacts </h4>
+<% @contacts.each do |contact| %>
+ <p><%= contact.user.name %> || <%= link_to "Start Chat", match_path(contact.match, mutual: true) %> </p>
+ <%# raise %>
+<% end %>
