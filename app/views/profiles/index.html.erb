@@ -18,7 +18,7 @@
             <div class="profile_card">
               <%= cl_image_tag user.photos.first.key, class: "carousel-image" %>
               <div class="profile-name"><p><%= user.name %><span class="profile-position">   <%= user.age %></span>
-              <span class="js-heart">
+              <span class="js-heart" data-user-id="<%= user.id %>">
                 <% if current_user.likes?(user)%>♥️</span>
                 <% else%>
                 <%= link_to "Like ❤", profile_likes_path(user.id), class: "btn rounded-pill border mb-2", method: :post, remote: true%></h3>

@@ -1,2 +1,3 @@
-const heart = document.querySelector(".js-heart");
+var heart = document.querySelector('.js-heart[data-user-id="<%=@user.id%>"]');
+console.log(heart);
 heart.innerHTML = "heart!";
