@@ -1,0 +1,24 @@
+.lobby-background  {
+  background: -webkit-linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  background: -o-linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  background: -moz-linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}
+
+.bg-purple {
+    background: -webkit-linear-gradient(110deg, #323645 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #323645 70%, #003199 70%);
+    background: -o-linear-gradient(110deg, #323645 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #323645 70%, #003199 70%);
+    background: -moz-linear-gradient(110deg, #323645 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #323645 70%, #003199 70%);
+    background: linear-gradient(110deg, #323645 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #323645, #003199 70%);
+}
+
+.lobby-card {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+h1 a {
+  text-decoration: none;
+  color: red;
+}

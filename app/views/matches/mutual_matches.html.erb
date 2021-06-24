@@ -1,13 +1,12 @@
-<h4> Contacts </h4>
+<div class="col-6 card home-page-pages card-scroll">
+  <h4> Contacts </h4>
 
-<div class="row">
-  <div class="col-12 col-md-3">
-    <% @contacts.each do |contact| %>
-   <p><%= contact.user.name %> <%= link_to "Start Chat", match_path(contact.match, mutual: true), class: "btn rounded-pill border" %> </p>
-   <%# raise %>
-  <% end %>
+  <div class="row">
+    <div class="col-sm-3">
+      <% @contacts.each do |contact| %>
+     <p><%=  %> <%= link_to contact.user.name, match_path(contact.match, mutual: true), class: "btn rounded-pill border" %> </p>
+     <%# raise %>
+    <% end %>
+    </div>
   </div>
-
-
-
 </div>

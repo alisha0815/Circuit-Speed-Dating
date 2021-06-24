@@ -12,7 +12,11 @@
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: center;
   color: #3d81db;
-  font-size: 24px;
+  font-size: 25px;
+}
+
+.sidenav {
+  background-color: white;
 }
 
 #mysidenav a {
@@ -73,15 +77,15 @@
 
 #user_login {
   top: 580px;
-  color: #fb2b34;
+  color: #3d81db;
   &:before {
-    color: #fb2b34;
+    color: #3d81db;
   }
 }
 
 #user_login:hover {
-  color: #fb2b34;
-  background-color: #FFC7C9;
+  color: #3d81db;
+  background-color: #D2E1FC;
 }
 
 #user_logout {

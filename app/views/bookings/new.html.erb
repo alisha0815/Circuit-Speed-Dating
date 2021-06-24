@@ -1,8 +1,10 @@
-<p> <%= link_to "Back", events_path, class: "btn rounded-pill border" %> </p>
+<div class="col-6 card home-page-pages card-scroll">
+  <p> <%= link_to "Back", events_path, class: "btn rounded-pill border" %> </p>
 
-<%= simple_form_for([@event, @booking]) do |f| %>
+  <%= simple_form_for([@event, @booking]) do |f| %>
   <h3> Book a Session </h3>
   <p>Start Time: <%= @event.start_time %></p>
   <p>End Time: <%= @event.end_time %></p>
   <%= f.submit "Book now", class: "btn rounded-pill border", data: { confirm: "Are you sure you want to book?" } %>
-<% end %>
+  <% end %>
+</div>

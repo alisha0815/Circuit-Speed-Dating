@@ -1,8 +1,8 @@
-<div class="container">
+<div class="col-6 card home-page-pages card-scroll">
   <% unless params[:mutual] %>
 
     <div class="row justify-content-between mt-2">
-      <div class="match-item col-sm-3">
+      <div class="match-item col-sm-3 text-center align-self-center">
         <% if @other_user_match.user.photos.attached? %>
         <%= cl_image_tag @other_user_match.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
         <% end %>
