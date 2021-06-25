@@ -1,14 +1,12 @@
-<div class="card-scroll">
-<div class="image-container">
-<img class="home-picture" src="<%= asset_path('logo.jpg') %>"/>
-  <img class="home-picture" src="<%= asset_path('home-page-image.jpg') %>"  alt="couple-dating"/>
-</div>
- <div class="row justify-content-center">
+
+  <div style=" width: 50%;">
+    <img class="home-picture" style=" border-radius: 16px 16px 0 0; width: 100%; object-fit: cover;" src="<%= asset_path('logo.jpg') %>"/>
+    <img class="home-picture" style=" border-radius: 0 0 16px 16px; width: 100%; object-fit: cover;" src="<%= asset_path('home-page-image.jpg') %>"  alt="couple-dating"/>
+
+  <div class="row justify-content-center" style=" position: absolute; top: 47%; left: 69%;">
     <% if current_user %>
-      <p> <%= link_to "My Profile", profile_path(current_user), class: "btn rounded-pill border" %> </p>
+    <p> <%= link_to "My Profile", profile_path(current_user), class: "btn rounded-pill border",  style:" background-color: white;" %> </p>
     <% end %>
-    <p> <%= link_to "Browse Profiles", profiles_path, class: "btn rounded-pill border" %> </p>
+    <p> <%= link_to "Browse Profiles", profiles_path, class: "btn rounded-pill border", style:" background-color: white;" %> </p>
   </div>
 </div>
-
-

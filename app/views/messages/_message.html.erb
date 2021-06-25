@@ -1,7 +1,49 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+<div class="" id="message-<%= message.id %>">
+  <% if message.user_id == current_user.id %>
+
+  <div class="d-flex message-box">
+    <div class="text-left">
+      <i class="author">
+        <span>
+          <% if message.user.photos.attached? %>
+          <%= cl_image_tag message.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
+          <% end %>
+        </span>
+      </i>
+    </div>
+
+    <div class="text-left message-content-me">
+      <small class="text-muted"><%= message.user.name %></small><br>
+      <span><%= message.content %></span>
+      <div class="text-right text-muted">
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </div>
+    </div>
+  </div>
+
+  <% else %>
+
+  <div class="message-box">
+    <div class="d-flex flex-row-reverse text-right">
+
+      <div class="text-right">
+        <i class="author">
+          <span>
+            <% if message.user.photos.attached? %>
+            <%= cl_image_tag message.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', style: "", :crop=>"thumb", class: "avatar" %>
+            <% end %>
+          </span>
+        </i>
+      </div>
+      <div class="text-left message-content-other">
+        <small class="text-muted"><%= message.user.name %></small><br>
+        <span><%= message.content %></span>
+        <div class="text-right text-muted">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
 </div>

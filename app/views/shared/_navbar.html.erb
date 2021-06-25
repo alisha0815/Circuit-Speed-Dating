@@ -1,22 +1,21 @@
 <!-- Load an icon library -->
 
 <div id="mysidenav" class="sidenav">
-    <% if !user_signed_in? %>
-  <%= link_to "", new_user_session_path, id: "user_login", class: "fas fa-door-closed" %>
+  <% if !user_signed_in? %>
+  <%= link_to "", new_user_session_path, id: "user_login", class: "fas fa-sign-in-alt" %>
   <% end %>
-
 
   <% if user_signed_in? %>
     <%= link_to "", root_path, id: "home", class: "fas fa-house-user" %>
-    <%= link_to "", profile_path(current_user), id: "profile", class: "fas fa-user-circle" %>
+    <%= link_to "", profile_path(current_user), id: "profile", class: "fas fa-user-edit" %>
     <%= link_to "", bookings_path, id: "bookings", class: "far fa-calendar-alt" %>
+    <%= link_to "", mutual_matches_matches_path, id: "inbox", class: "far fa-comments" %>
   <% end %>
 
   <% if user_signed_in? %>
-  <%= link_to "", destroy_user_session_path, method: :delete, id: "user_logout", class: "fas fa-door-open" %>
+  <%= link_to "", destroy_user_session_path, method: :delete, id: "user_logout", class: "fas fa-sign-out-alt" %>
   <% end %>
 
-  
   <%# if current_user.photos.attached? %>
     <%#= cl_image_tag current_user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: '', :crop=>"thumb", class: "avatar", id: "image" %>
   <%# end %>

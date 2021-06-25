@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       @booking.event = @event
       if @booking.save
-        redirect_to loading_path
+        redirect_to events_path
         flash[:notice] = "Booked successfully"
       else
         render :new

@@ -8,63 +8,97 @@
   width: 100%; /* Set a specific width */
   height: 50px;
   text-decoration: none; /* Remove underline */
-  font-size: 12px; /* Increase font size */
-  color: white; /* White text color */
+  font-size: 12px; /* Increase font size */ /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: center;
-  color: #2572FF;
-  font-size: 24px;
-  
+  color: #3d81db;
+  font-size: 25px;
 }
 
-/* The about link: 20px from the top with a green background */
-#image {
-  top: 80px;
+.sidenav {
+  background-color: white;
 }
-#home:hover {
-  color: #2262d8;
-  background-color: #a1c1fd;
+
+#mysidenav a {
+  text-decoration: none;
 }
 
 #home {
   top: 180px;
-  opacity: 1;
+  color: #2dcbde;
+  &:before {
+    color: #2dcbde;
+  }
 }
 
-#profile:hover {
-  color: #2262d8;
-  background-color: #a1c1fd;
-} 
+#home:hover {
+  color: #2dcbde;
+  background-color: #C6F9FF;
+}
 
 #profile {
   top: 280px;
+  color: #CC1D75;
+  &:before {
+    color: #7f1479;
+  }
 }
 
-#bookings:hover {
-  color: #2262d8;
-  background-color: #a1c1fd;
+#profile:hover {
+  color: #CC1D75;
+  background-color: #E2AEC8;
 }
 
 #bookings {
   top: 380px;
+  color: #fb9b09;
+  &:before {
+    color: #fb9b09;
+  }
 }
 
-#user_login:hover {
-  color: #2262d8;
-  background-color: #a1c1fd;
+#bookings:hover {
+  color: #fb9b09;
+  background-color: #FFE1B3;
+}
+
+#inbox {
+  top: 480px;
+  color: #39cd40;
+  &:before {
+    color: #39cd40;
+  }
+}
+
+#inbox:hover {
+  color: #39cd40;
+  background-color: #d5f8b9;
 }
 
 #user_login {
-  top: 480px;
+  top: 580px;
+  color: #3d81db;
+  &:before {
+    color: #3d81db;
+  }
 }
 
-#user_logout:hover {
-  color: #2262d8;
-  background-color: #a1c1fd;
+#user_login:hover {
+  color: #3d81db;
+  background-color: #D2E1FC;
 }
 
 #user_logout {
   top: 580px;
+  color: #fb2b34;
+  &:before {
+    color: #fb2b34;
+  }
+}
+
+#user_logout:hover {
+  color: #fb2b34;
+  background-color: #FFC7C9;
 }
 
 .nav-background {

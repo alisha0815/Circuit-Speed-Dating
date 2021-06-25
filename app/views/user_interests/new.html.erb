@@ -1,11 +1,11 @@
 
-<div class="card-scroll">
-<h1 class="interests-header">Your Interests</h1>
+<div class="col-6 card home-page-pages card-scroll">
+  <h1 class="interests-header">Your Interests</h1>
   <%= simple_form_for [ @user, @user_interest ] do |f| %>
   <%#= f.input :interest, collection: ['sport','industry'], input_html: {multiple: true, class: 'multiple-select select2 tag-selector'}, as: :radio_buttons %>
-    <%= link_to "Back", profile_path(current_user), class: "btn rounded-pill border p-2 mb-2" %>
-    <%= f.submit "Create Interests", class: 'form-control', class: "btn rounded-pill border" %>
-    <%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
+  <%= link_to "Back", profile_path(current_user), class: "btn rounded-pill border p-2 mb-2" %>
+  <%= f.submit "Create Interests", class: 'form-control', class: "btn rounded-pill border" %>
+  <%= f.input :interest, collection: Interest.all, input_html: { multiple: true, class: 'multiple-select select2 tag-selector' }, include_hidden: false, as: :check_boxes, item_wrapper_class: 'tag-item' %>
   <% end %>
 </div>
 
