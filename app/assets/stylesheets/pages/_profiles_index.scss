@@ -97,6 +97,87 @@
   object-fit: cover;
 }
 
+
+a.btn.rounded-pill.border {
+  background-color: white;
+  color: #F44235;
+  border-color: #F44235;
+  border-style: solid;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+a.btn.rounded-pill.border:hover {
+  background-color: #F44235;
+  color: white;
+}
+
+.btn-secondary {
+  margin: 40px auto 0px;
+  text-align: center;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+  padding: 10px 17px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #F44235;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-radius: 10px;
+  border: 2px solid #F44235;
+}
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  background-color: #F44235;
+  color: white;
+  border: none;
+}
+
+.btn-secondary_you {
+  margin: 40px auto 0px;
+  text-align: center;
+  background: #F44235;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+  padding: 10px 17px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-radius: 10px;
+  border: 2px solid #F44235;
+}
+
+p.text-muted {
+  font-size: 20px;
+}
+
+.a.button {
+  border: 1px solid #167FFF;
+  color: #167FFF
+}
+.btn-secondary .fa {
+  margin-right: 5px;
+}
+.animate-like {
+animation-name: likeAnimation;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+animation-duration: 0.65s;
+}
+@keyframes likeAnimation {
+0%   { transform: scale(30); }
+100% { transform: scale(1); }
+}
+
 @media screen and (max-width: 1000px) {
   .profile-name {
       font-size: 18px;
