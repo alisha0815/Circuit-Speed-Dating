@@ -1,12 +1,43 @@
+<div class="row no-gutters">
+  <div class="col-sm-6">
+  </div>
 
-  <div style=" width: 50%;">
-    <img class="home-picture" style=" border-radius: 16px 16px 0 0; width: 100%; object-fit: cover;" src="<%= asset_path('logo.jpg') %>"/>
-    <img class="home-picture" style=" border-radius: 0 0 16px 16px; width: 100%; object-fit: cover;" src="<%= asset_path('home-page-image.jpg') %>"  alt="couple-dating"/>
+  <div class="col-sm-6 mt-4">
+    <div class="row justify-content-center mt-4">
+      <div class="col-sm-10 std-card">
+        <p class="font-weight-bold">About our webapp 💻 </p>
+        <p class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lacinia lacus. Fusce dapibus purus suscipit maximus euismod. Cras lacinia dolor vitae quam ultrices, vitae laoreet est blandit. Praesent vitae nibh ut sem lobortis ullamcorper. Duis a nisi finibus, varius orci in, pretium metus. Donec a placerat orci, porta iaculis magna. Sed non tempus nisl, id maximus quam. In vitae justo eget lacus eleifend commodo. Sed ut sem elit. Curabitur rutrum faucibus aliquet. In nec mollis lorem. </p>
+      </div>
+    </div>
 
-  <div class="row justify-content-center" style=" position: absolute; top: 47%; left: 69%;">
-    <% if current_user %>
-    <p> <%= link_to "My Profile", profile_path(current_user), class: "btn rounded-pill border",  style:" background-color: white;" %> </p>
-    <% end %>
-    <p> <%= link_to "Browse Profiles", profiles_path, class: "btn rounded-pill border", style:" background-color: white;" %> </p>
+    <div class="row justify-content-center mt-4">
+      <div class="col-sm-10 std-card">
+        <p class="font-weight-bold"> Step 1️⃣ </p>
+        <p class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lacinia lacus. Fusce dapibus purus suscipit maximus euismod. Cras lacinia dolor vitae quam ultrices, vitae laoreet est blandit. Praesent vitae nibh ut sem lobortis ullamcorper. Duis a nisi finibus, varius orci in, pretium metus. Donec a placerat orci, porta iaculis magna. Sed non tempus nisl, id maximus quam. In vitae justo eget lacus eleifend commodo. Sed ut sem elit. Curabitur rutrum faucibus aliquet. In nec mollis lorem. </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-2">
+      <div class="col-sm-10 std-card">
+        <p class="font-weight-bold"> Step 2️⃣ </p>
+        <p class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lacinia lacus. Fusce dapibus purus suscipit maximus euismod. Cras lacinia dolor vitae quam ultrices, vitae laoreet est blandit. Praesent vitae nibh ut sem lobortis ullamcorper. Duis a nisi finibus, varius orci in, pretium metus. Donec a placerat orci, porta iaculis magna. Sed non tempus nisl, id maximus quam. In vitae justo eget lacus eleifend commodo. Sed ut sem elit. Curabitur rutrum faucibus aliquet. In nec mollis lorem. </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-2">
+      <div class="col-sm-10 std-card">
+        <p class="font-weight-bold"> Step 3️⃣ </p>
+        <p class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lacinia lacus. Fusce dapibus purus suscipit maximus euismod. Cras lacinia dolor vitae quam ultrices, vitae laoreet est blandit. Praesent vitae nibh ut sem lobortis ullamcorper. Duis a nisi finibus, varius orci in, pretium metus. Donec a placerat orci, porta iaculis magna. Sed non tempus nisl, id maximus quam. In vitae justo eget lacus eleifend commodo. Sed ut sem elit. Curabitur rutrum faucibus aliquet. In nec mollis lorem. </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4 mb-4" >
+      <% if current_user %>
+      <p> <%= link_to "My Profile", profile_path(current_user), class: "btn-red" %> </p>
+      <% end %>
+    </div>
+
   </div>
 </div>
+
+

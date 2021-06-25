@@ -1,0 +1,30 @@
+.btn-red {
+  text-decoration: none;
+  color: white;
+  background-color: #fb1800;
+  border-color: #fb1800;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+}
+
+.btn-red:hover {
+    background-color: #F66D5E;
+    border-color: #F66D5E;
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+.icon-red a {
+  font-size: 40px;
+  color: #fb1800;
+}
+
+.icon-red a:hover {
+  text-decoration: none;
+  font-size: 40px;
+  color: #F66D5E;
+}

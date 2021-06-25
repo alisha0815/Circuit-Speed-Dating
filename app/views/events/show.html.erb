@@ -1,47 +1,67 @@
-<div class="col-6 card home-page-pages card-scroll bg-news">
-  <div class="container-fluid">
-    <i class="fas fa-chevron-circle-left"><%= link_to " ", events_path %> </i>
-    <p> </p>
+<div class="row no-gutters">
+  <div class="col-sm-6">
+  </div>
 
-    <div class="row justify-content-center">
-      <h2> Lobby </h2>
-    </div>
-
-    <% if @my_matches.exists? %>
-      <div class="row justify-content-center">
-        <h4> Matches for this <%= @event.name %> </h4>
+  <div class="col-sm-6">
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="col-sm-5">
+          <p class="icon-red"><%= link_to " ", events_path, class: "fas fa-chevron-circle-left" %> </p>
+        </div>
       </div>
-    <% else %>
-      <div class="row justify-content-center">
-        <h4> Your matches are nearly ready! </h4>
-      </div>
-    <% end %>
 
-    <div class="row justify-content-center">
-      <% @event.my_matches(current_user).each do |match| %>
-      <div class="col-sm-3 m-2 lobby-card">
-        <%# raise %>
-        <% match.user_matches.each do | user_match | %>
-          <% if user_match.user_id != current_user.id %>
-            <% if user_match.user.photos.attached? %>
-              <%= cl_image_tag user_match.user.photos.first.key, height: 150 , width: 150, :crop=>"fill", :radius => 100 %>
-            <% end %>
-            <p> <%= user_match.user.name %> </p>
-            <p> <%= user_match.user.description %> </p>
-            <p> Age: <%= user_match.user.age %> </p>
-            <p> <%= user_match.user.address %> </p>
+      <div class="row justify-content-center mt-4">
+        <div class="col-sm-10">
+          <% if @my_matches.exists? %>
+            <div class="row justify-content-center text-white">
+              <h2> Lobby </h2>
+            </div>
+            <div class="row justify-content-center text-white">
+              <h4> Matches for this <%= @event.name %> </h4>
+            </div>
+          <% else %>
+            <h2> Lobby </h2>
+            <div class="row justify-content-center text-white">
+              <h4> Your matches are nearly ready! </h4>
+            </div>
           <% end %>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <% @event.my_matches(current_user).each do |match| %>
+        <div class="col-sm-3">
+          <% match.user_matches.each do | user_match | %>
+            <% if user_match.user_id != current_user.id %>
+              <% if user_match.user.photos.attached? %>
+                <%= cl_image_tag user_match.user.photos.first.key, crop: "fill", radius: "16", class: "lobby-card" %>
+                <div class="lobby-info">
+                  <p> 👤 <%= user_match.user.name %> </p>
+                  <p> 🎂 <%= user_match.user.age %> </p>
+                  <p> 📍 <%= user_match.user.address %> </p>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
         <% end %>
       </div>
-      <% end %>
+
+      <div class="row justify-content-center text-center mt-4">
+        <div class="col-sm-10">
+          <% if @my_matches.exists? %>
+            <%# if DateTime.now == @event.start_time - 300.seconds %>
+            <h1> <%= link_to "BEGIN SESSION", match_path(@my_matches.first), class: "" %> </h1>
+            <%# end %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
 
-    <div class="row justify-content-center">
-    <% if @my_matches.exists? %>
-      <%# if DateTime.now == @event.start_time - 300.seconds %>
-        <h1> <%= link_to "BEGIN SESSION", match_path(@my_matches.first), class: "" %> </h1>
-      <%# end %>
-    <% end %>
-    </div>
   </div>
 </div>
+
+
+
+
