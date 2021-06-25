@@ -3,24 +3,10 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 90%;
   padding: 20px;
-  background: {
-     image: asset_url("chat_background.jpg");
-  }
+  background-image: asset_url("chat_background.jpg");
   background-size: contain;
   border-radius: 10px;
   font-family: Helvetica;
-}
-
-.message-container::before {
-  content: "";
-
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.8;
 }
 
 .message-box {
