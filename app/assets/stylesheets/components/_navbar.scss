@@ -103,11 +103,11 @@
 
 .nav-background {
   background-color: white;
-  position: absolute;
+  position: fixed;
   padding-right: 70px;
   border-radius: 32px;
   margin-left: 6px;
   margin-top: 8px;
   height: 98%;
-  
+  z-index: 1;
 }

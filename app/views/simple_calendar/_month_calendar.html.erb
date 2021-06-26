@@ -18,9 +18,9 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class="callendar-body-style">
       <% date_range.each_slice(7) do |dates| %>
-        <tr>
+        <tr class="callendar-day-style">
           <% dates.each do |date| %>
             <%= content_tag :td, class: calendar.td_classes_for(date) do %>
               <% passed_block.call date.day, sorted_events.fetch(date, []) %>
