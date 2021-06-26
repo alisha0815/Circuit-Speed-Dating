@@ -1,138 +1,18 @@
 <div class="row">
 
+  <!-- MESSAGING FEATURE -->
   <div class="col-sm-6">
-
-    <div class="row justify-content-center ml-4 mt-4 mb-3">
+    <div class="row justify-content-center align-item-center ml-4 mt-4 mb-3 mt-4">
       <div class="col-sm-10 mt-4">
-        <% if params[:mutual] %>
-          <p class="mb-3"><%= link_to "Contacts", mutual_matches_matches_path, class: "btn-red" %></p>
-        <% end %>
-      </div>
-      <div class="message-container scroll">
-
-        <div id="messages" data-match-id="<%= @match.id %>">
-          <% @match.messages.each do |message| %>
-            <div class="" id="message-<%= message.id %>">
-              <% if message.user_id == current_user.id %>
-
-              <div class="d-flex message-box">
-                <div class="text-left">
-                  <i class="author">
-                    <span>
-                      <% if message.user.photos.attached? %>
-                        <%= cl_image_tag message.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, :crop=>"thumb", class: "message-avatar" %>
-                      <% end %>
-                    </span>
-                  </i>
-                </div>
-
-                <div class="text-left message-content-me">
-                  <small class="text-muted"><%= message.user.name %></small><br>
-                  <span><%= message.content %></span>
-                  <div class="text-right text-muted">
-                    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-                  </div>
-                </div>
-              </div>
-
-              <% else %>
-
-              <div class="message-box">
-                <div class="d-flex flex-row-reverse text-right">
-
-                  <div class="text-right">
-                    <i class="author">
-                      <span>
-                        <% if message.user.photos.attached? %>
-                          <%= cl_image_tag message.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, :crop=>"thumb", class: "message-avatar" %>
-                        <% end %>
-                      </span>
-                    </i>
-                  </div>
-                  <div class="text-left message-content-other">
-                    <small class="text-muted"><%= message.user.name %></small><br>
-                    <span><%= message.content %></span>
-                    <div class="text-right text-muted">
-                      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-
-      </div>
-    </div>
-    <div class="row justify-content-center ml-4 mt-4 mb-3">
-      <div class="col-sm-10">
-        <div class="input_message">
-          <%= simple_form_for [ @match, @message ], remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Type a message..", class: "" %>
-          <% end %>
-        </div>
+        <%= render 'messages/message_container' %>
       </div>
     </div>
   </div>
 
+<!-- VIDEO BELOW -->
+
   <div class="col-sm-6">
-    <div class="container">
-    <% unless params[:mutual] %>
-      <div class="row justify-content-around mt-4 text-white">
-        <div class="col-sm-3">
-          <% if @other_user_match.user.photos.attached? %>
-          <%= cl_image_tag @other_user_match.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: 'max', style: "", :crop=>"thumb" %>
-          <% end %>
-        </div>
-        <div class="col-sm-3">
-          <h3> <%= @other_user_match.user.name %> </h3>
-          <p> Age: <%= @other_user_match.user.age %> </p>
-        </div>
-        <div class="col-sm-3">
-          <p> Gender: <%= @other_user_match.user.gender %> </p>
-          <p> Preference: Straight </p>
-        </div>
-      </div>
-
-      <div class="row justify-content-center mt-4">
-        <div class="col-sm-3 align-self-center match-item mt-4">
-          <h3> YOUR MATCH IS READY! </h3>
-        </div>
-        <div class="col-sm-3 align-self-center match-item">
-          <% if current_user.update_match?(@user_match) %>
-            <p> Awaiting Match Confirmation </p>
-          <% elsif @user_match.status == "pending" %>
-            <h1> <%= link_to "MATCH ❤", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "", method: :patch %> </h1>
-          <% end %>
-        </div>
-        <div class="col-sm-3 align-self-center">
-          <%= render 'matches/clock' %>
-        </div>
-      </div>
-
-      <div class="row justify-content-center mt-4">
-        <div class="col-sm-10">
-          <div class="video-screen">
-            <div id="black-background">
-              <div class="col-12 col-lg-9">
-              <p><%= current_user.name %></p>
-                <div id="videos"
-                  data-controller="vonage"
-                  data-vonage-api-key="<%= ENV['VONAGE_API_KEY'] %>"
-                  data-vonage-session-id="<%= @match.vonage_session_id %>"
-                  data-vonage-token="<%= @token %>"
-                  data-vonage-name="<%= current_user.name %>"
-                  data-vonage-role="<%= current_user.age %>"
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'matches/video' %>
   </div>
 </div>
 
