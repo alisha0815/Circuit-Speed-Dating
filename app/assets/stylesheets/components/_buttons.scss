@@ -1,0 +1,75 @@
+
+.btn-red {
+  text-decoration: none;
+  color: white;
+  background-color: #fb1800;
+  border-color: #fb1800;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+}
+
+.btn-red:hover {
+    background-color: #F66D5E;
+    border-color: #F66D5E;
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+.icon-red a {
+  font-size: 40px;
+  color: #fb1800;
+}
+
+.icon-red a:hover {
+  text-decoration: none;
+  font-size: 40px;
+  color: #F66D5E;
+}
+
+.btn-blue {
+  text-decoration: none;
+  color: white;
+  background-color: #3376fd;
+  border-color: #3376fd;
+  border: 1px solid #3376fd;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+}
+
+.btn-blue:hover {
+    background-color: #B7CFFF;
+    border-color: #B7CFFF;
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+
+
+.btn-red-event {
+  text-decoration: none;
+  color: white;
+  background-color: #fb1800;
+  border-color: #fb1800;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+  text-decoration: none;
+}
+
+.btn-red-event:hover {
+    background-color: #F66D5E;
+    border-color: #F66D5E;
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+}
+

@@ -7,7 +7,7 @@
 
   <% if user_signed_in? %>
     <%= link_to "", root_path, id: "home", class: "fas fa-house-user" %>
-    <%= link_to "", profile_path(current_user), id: "profile", class: "fas fa-user-edit" %>
+    <%= link_to "", profile_path(current_user), id: "profile", class: "fas fa-user" %>
     <%= link_to "", bookings_path, id: "bookings", class: "far fa-calendar-alt" %>
     <%= link_to "", mutual_matches_matches_path, id: "inbox", class: "far fa-comments" %>
   <% end %>

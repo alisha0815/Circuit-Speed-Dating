@@ -49,6 +49,8 @@ class MatchesController < ApplicationController
   end
 
   def mutual_matches
+    @match = Match.find(params[:match]) if params[:match]
+    @message = Message.new
     # all matches belonging to user
     @contacts = []
     @my_user_matches = UserMatch.where(user: current_user)
