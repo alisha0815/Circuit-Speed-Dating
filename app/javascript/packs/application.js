@@ -39,7 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   //initSelect2();
   //multipleSelect();
   initMatchCable();
-  const deadline = new Date(Date.parse(new Date()) + 1 * 10 * 1000);
+  const deadline = new Date(Date.parse(new Date()) + 1 * 60 * 1000);
   initializeClock('clockdiv', deadline);
 });
 
