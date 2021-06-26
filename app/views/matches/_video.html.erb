@@ -1,9 +1,9 @@
-<div class="container">
+<div class="mt-4">
     <% unless params[:mutual] %>
-      <div class="row justify-content-around mt-4 text-white">
+      <div class="d-flex justify-content-around mt-4 text-white">
         <div class="col-sm-3">
           <% if @other_user_match.user.photos.attached? %>
-          <%= cl_image_tag @other_user_match.user.photos.first.key, :gravity=>"face", :height=>50, :width=>50, :zoom=>0.7, radius: 'max', style: "", :crop=>"thumb" %>
+          <%= cl_image_tag @other_user_match.user.photos.first.key, radius: "max", :crop=>"fill", class: "video-avatar" %>
           <% end %>
         </div>
         <div class="col-sm-3">
