@@ -1,72 +1,101 @@
-table { 
-	width: 750px; 
-	border-collapse: collapse; 
-	margin:50px auto;
-	}
+body{margin-top:20px;}
+.events_area {
+    padding: 130px 0 100px;
+    background: white;
+}
+@media (max-width: 991px) {
+    .events_area {
+        padding: 70px 0;
+    }
+}
+.events_area .event-link {
+    color: #fdc632;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.events_area .event-link img {
+    margin-left: 5px;
+    display: inline-block;
+}
 
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
+.single_event {
+    margin-bottom: 30px;
+}
+.single_event .event_thumb {
+    overflow: hidden;
+}
+.single_event .event_thumb img {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.single_event .event_details {
+    background: #F44235;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 350px;
+    padding: 30px 25px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.single_event .event_details .date {
+    color: #ffffff;
+    padding-right: 15px;
+    border-right: 2px solid #fff;
+    font-family: "Rubik", sans-serif;
+    font-size: 30px;
+}
+.single_event .event_details .date span {
+    display: block;
+    color: #fdc632;
+    font-size: 40px;
+    font-weight: 500;
+}
+.single_event .event_details .time-location {
+    padding-left: 15px;
+    font-size: 22px;
+}
+.single_event .event_details .time-location p {
+    margin-bottom: 0px;
+}
+.single_event .event_details .time-location p span {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+}
+.single_event:hover img {
+    transform: scale(1.1);
+}
+.single_event:hover h4 a {
+    color: #fdc632;
+}
 
-th { 
-	background: #3498db; 
-	color: white; 
-	font-weight: bold; 
-	}
+#delete_btn {
+  background-color: white;
+  color: #F44235;
+  font-size: 20px;
+  font-weight: bolder;
+  justify-content: center;
+  border-style: none;
+}
 
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 18px;
-	}
+#delete_btn:hover {
+    background-color: #fa7b72;
+    color: white;
+  } 
+
+a#calendar_btn {
+  color: #2572FF;
+  font-size: 30px;
+}
+
+.calendar_round_btn {
+  text-align: right;
+}
 
 
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	table { 
-	  	width: 100%; 
-	}
-
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		/* Label the data */
-		content: attr(data-column);
-
-		color: #000;
-		font-weight: bold;
-	}
-
+p#event_name {
+  font-size: 20px;
 }
