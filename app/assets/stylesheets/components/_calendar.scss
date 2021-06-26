@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .simple-calendar {
   table {
     min-height: 60vh;
@@ -13,21 +16,67 @@
   border-radius: 4px;
   transition: background 0.3s ease;
   text-decoration: none;
-  background-color: white;
+  background-color: #b0c6f3;
   opacity: 1;
 }
 
 .meeting:hover {
-  background: #b0c6f3;
+  background: #699bff;
   color: white
 }
 
 .meeting a {
   text-decoration: none;
-  color: black;
+  color: #fb1800;
+  font-family: 'Pacifico', cursive;
 }
 
 .meeting a:hover {
   text-decoration: none;
-  color: blue;
+  font-size: 11px;
+  font-weight: bolder;
+  transition-delay: 0.1s;
+  transition-duration: 0.2s;
 }
+
+.callendar-body-style {
+  color: red;
+}
+
+.callendar-day-style {
+  margin: 10px;
+}
+
+.simple-calendar {
+  .day {
+    background-color: rgb(255, 203, 203);
+    margin: 5px;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    border: 2px solid white;
+  }
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background-color: rgb(208, 255, 255);
+  }
+  .next-month { 
+    background-color: rgb(208, 255, 255);
+  }
+  .current-month {}
+
+  .has-events {}
+}
+

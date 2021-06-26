@@ -24,7 +24,7 @@
           <% end %>
           <small class=""> <%= event.time %> </small>
           <% if event.bookings.count < event.capacity %>
-          <small> <%= link_to "Book", new_event_booking_path(event) %> </small>
+          <small> <%= link_to "Book!", new_event_booking_path(event) %> </small>
           <% end %>
           <small> Spots: <%= event.bookings.count %>/<%= event.capacity %> </small>
         </div>
