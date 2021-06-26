@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
           <div class="col-sm-10">
             <h2 class="text-primary"> Possible dates for your session </h2>
-            <p class="text-muted">Here are some suggested profiles for your possible dates for your dating session. Go like ❤ people you are interested in! You can like as much as you can. 👉 <strong>Join the session today !</strong> </p>
+            <p class="text-muted">Here are some suggested profiles for your possible dates for your dating session. Go like ❤ people you are interested in! 👉 <strong>Join the session today !</strong> </p>
           </div>
         </div>
         <div class="profile-container mt-4">
@@ -20,14 +20,15 @@
               <% @users.each do |user| %>
               <div class="carousel-item <%= user == @users.first ? 'active' : '' %>">
                 <div class="profile_card"><%= cl_image_tag user.photos.first.key, class: "carousel-image" %>
-                  <div class="profile-name"><p><%= user.name %>
-                    <span class="profile-position">   <%= user.age %></span>
+                  <div class="profile-name d-flex justify-content-between">
+                    <div><p><%= user.name %><span class="profile-position">   <%= user.age %></span></p>
+                  </div>  
                     
-                      <span class="js-heart" data-user-id="<%= user.id %>">
+                      <div><span class="js-heart" data-user-id="<%= user.id %>">
                         <% if current_user.likes?(user)%>
                         <span id="heart_btn", class="btn-secondary_you">
                           <i class="fa fa-heart" aria-hidden="true"></i> You Like!
-                        </span>
+                        </span></div>
                         <% else%>
                         <%= link_to  profile_likes_path(user.id), id: "heart_btn", class: "btn-secondary", method: :post, remote: true do %>
                           <i class="fa fa-heart" aria-hidden="true"></i> Like
@@ -35,7 +36,7 @@
                         <% end %>
                       </span>
                   </div>
-                  <div class="profile-position"><p><i class="fas fa-location-arrow"></i> <%= user.address %>   
+                  <div class="profile-position d-flex justify-content-between"><p><i class="fas fa-location-arrow"></i> <%= user.address %>   
                   <span class="view_btn"><%= link_to "View", profile_path(user), class: "button" %></span></p></div>
                 </div>
               </div>
@@ -62,9 +63,9 @@
 </div>
 
 <div class="row justify-content-center">
-  <p><%= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
-  <p><%= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
-  <p><%= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
+  <p><%#= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
+  <p><%#= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
+  <p><%#= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
 </div>
 
 
