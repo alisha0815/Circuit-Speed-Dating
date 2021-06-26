@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
           <div class="col-sm-10">
             <h2 class="text-primary"> Possible dates for your session </h2>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lacinia lacus. Fusce dapibus purus suscipit maximus euismod. Cras lacinia dolor vitae quam ultrices, vitae laoreet est blandit. Praesent vitae nibh ut sem lobortis ullamcorper. Duis a nisi finibus, varius orci in</p>
+            <p class="text-muted">Here are some suggested profiles for your possible dates for your dating session. Go like ❤ people you are interested in! You can like as much as you can. 👉 <strong>Join the session today !</strong> </p>
           </div>
         </div>
         <div class="profile-container mt-4">
@@ -21,13 +21,21 @@
                 <div class="profile_card"><%= cl_image_tag user.photos.first.key, class: "carousel-image" %>
                   <div class="profile-name"><p><%= user.name %>
                     <span class="profile-position">   <%= user.age %></span>
+                    
                       <span class="js-heart" data-user-id="<%= user.id %>">
-                      <% if current_user.likes?(user)%>♥️</span>
-                      <% else%>
-                      <%= link_to "Like ❤", profile_likes_path(user.id), class: "btn rounded-pill border mb-2", method: :post, remote: true%></h3>
-                      <% end %>
+                        <% if current_user.likes?(user)%>
+                        <span id="heart_btn", class="btn-secondary_you">
+                          <i class="fa fa-heart" aria-hidden="true"></i> You Like!
+                        </span>
+                        <% else%>
+                        <%= link_to  profile_likes_path(user.id), id: "heart_btn", class: "btn-secondary", method: :post, remote: true do %>
+                          <i class="fa fa-heart" aria-hidden="true"></i> Like
+                        <% end %>
+                        <% end %>
+                      </span>
                   </div>
-                  <div class="profile-position"><p><i class="fas fa-location-arrow"></i> <%= user.address %>   <span class="view_btn"><%= link_to "View", profile_path(user), class: "button" %></span></p></div>
+                  <div class="profile-position"><p><i class="fas fa-location-arrow"></i> <%= user.address %>   
+                  <span class="view_btn"><%= link_to "View", profile_path(user), class: "button" %></span></p></div>
                 </div>
               </div>
               <% end %>
@@ -53,9 +61,9 @@
 </div>
 
 <div class="row justify-content-center">
-  <p><%#= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
-  <p><%#= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
-  <p><%#= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
+  <p><%= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
+  <p><%= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
+  <p><%= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
 </div>
 
 
