@@ -1,4 +1,8 @@
-<div class="" id="message-<%= message.id %>">
+<div class="message-bg">
+  <div class="message-container scroll">
+    <div id="messages" data-match-id="<%= @match.id %>">
+      <% @match.messages.each do |message| %>
+      <div class="" id="message-<%= message.id %>">
         <% if message.user_id == current_user.id %>
 
         <div class="d-flex message-box">
@@ -45,3 +49,19 @@
 
         <% end %>
       </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4 mb-3">
+    <div class="col">
+      <div class="input_message">
+        <%= simple_form_for [ @match, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Type a message..", class: "" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
