@@ -18,42 +18,46 @@
   text-decoration: none;
   background-color: #b0c6f3;
   opacity: 1;
+  text-shadow: none;
+  text-align: center;
 }
 
 .meeting:hover {
   background: #699bff;
-  color: white
+  color: white;
+  text-shadow: none;
 }
 
 .meeting a {
   text-decoration: none;
   color: #fb1800;
   font-family: 'Pacifico', cursive;
+  text-shadow: none;
 }
 
 .meeting a:hover {
   text-decoration: none;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: bolder;
   transition-delay: 0.1s;
   transition-duration: 0.2s;
+  
 }
 
 .callendar-body-style {
-  color: red;
-}
-
-.callendar-day-style {
-  margin: 10px;
+  color: white;
 }
 
 .simple-calendar {
   .day {
     background-color: rgb(255, 203, 203);
+    text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
     margin: 5px;
   }
 
-  .wday-0 {}
+  .wday-0 {
+    
+  }
   .wday-1 {}
   .wday-2 {}
   .wday-3 {}
@@ -70,13 +74,18 @@
   .start-date {}
 
   .prev-month {
-    background-color: rgb(208, 255, 255);
+    background-color: #CFEEFF;
   }
   .next-month { 
-    background-color: rgb(208, 255, 255);
+    background-color: #CFEEFF;
   }
   .current-month {}
 
   .has-events {}
+
+  .table thead th {
+     text-align: center;
+     background-color: rgba(255,300,40,0.1);
+  }
 }
 

@@ -12,8 +12,8 @@
 
 #videos {
     position: relative !important;
-    width: 750px;
-    height: 400px;
+    width: 800px;
+    height: 550px;
     margin-left: auto;
     margin-right: 10px;
 }
@@ -48,4 +48,14 @@
   background-color: $red;
   padding: 8px 16px;
   opacity: 0.8;
+}
+
+.video-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+  border: 2px solid #fff;
+  bottom: 50px;
+  overflow: visible;
+  object-fit: cover;
 }
