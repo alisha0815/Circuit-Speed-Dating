@@ -5,7 +5,7 @@
       <div class="col-sm-2 ml-4">
         <h4> Contacts </h4>
         <% @contacts.each do |contact| %>
-        <p><%=  %> <%= link_to contact.user.name, mutual_matches_matches_path(match: contact.match.id), class: "btn-blue" %> </p>
+        <p><%=  %> <%= link_to contact.user.name, mutual_matches_matches_path(match: contact.match.id), class: "btn-red" %> </p>
         <% end %>
       </div>
 

@@ -19,20 +19,22 @@
 
 </head>
 
-<body class="">
-
+<body>
   <%= render 'shared/flashes' %>
  
-  <div class="justify-content-center home-page-size home-page-card">
+  <div class="d-flex home-page-card">
     <div class="nav-background">
       <%= render 'shared/navbar' %>
     </div>
 
-    <div class="">
+    <div class="flex-grow-1 justify-content-center">
       <%= yield %>
     </div>
-
+    <div class="">
+      <%#= render 'shared/footer' %>
+    </div>
   </div>
 
 </body>
+
 </html>

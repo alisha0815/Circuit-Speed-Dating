@@ -1,49 +1,60 @@
 <div class="row">
   <div class="col-sm-1">
   </div>
+
   <div class="col-sm-5 align-item-center">
-    <div class="row justify-content-center ">
+    <div class="row justify-content-center">
       <div class="mt-5">
-        <h1 class="text-white"> Chemistry happens in person.</h1>
-        <h3 class="text-white"> So we designed an incredible dating experience driven by purpose and accountability. </h3>
+        <h1 class="h1-title"> ::CIRCUIT</h1>
+        <div class="d-flex justify-content-left" >
+          <% if current_user %>
+          <p> <%= link_to "FIND YOUR MATCH NOW", profiles_path, class: "btn-red" %> </p>
+          <% end %>
+        </div>
+        <h1 class="h1-home"> Chemistry happens in person.</h1>
+        <h3 class="h2-home"> So we designed an incredible dating experience driven by purpose and accountability. </h3>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%#= render 'pages/reviews' %>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-6 mt-4">
+  <div class="col-sm-6">
+
+    <div class="d-flex flex-row-reverse mt-4">
+      <% if current_user %>
+      <p> <%= link_to "Sign up", profile_path(current_user), class: "btn-red" %> </p>
+      <% end %>
+    </div>
+
     <div class="row justify-content-center mt-4">
       <div class="col-sm-10 std-card">
-        <h4 class="font-weight-bold"> Learn 💻 </h4>
+        <h4 class="font-weight-bold"> <i class="fas fa-dice-one"></i> Learn </h4>
         <p class="text-muted"> When it comes to dating apps, you’ve got options: Tinder, Badoo, Bumble, Hinge, Match, POF, OKCupid and many more. It doesn’t matter if you want to find love, a date, or just have a casual chat, you want an app that’s the right match for you. And it’s not always black and white – when you want to meet new people, your friends at Circuit can help you out with features designed to make the impossible possible. Dating online just got easier. </p>
       </div>
     </div>
 
     <div class="row justify-content-center mt-4">
       <div class="col-sm-10 std-card">
-        <h4 class="font-weight-bold"> Date safer with Face to Face 1️⃣ </h4>
+        <h4 class="font-weight-bold"> <i class="fas fa-dice-two"></i> Date safer with Face-to-Face </h4>
         <p class="text-muted"> We’re all eager to meet new people, but dating during COVID-19 means putting your safety first. When two metres apart isn’t enough, Face-to-Face lets you video chat with your match, so you can keep the connection going online. </p>
       </div>
     </div>
 
     <div class="row justify-content-center mt-2">
       <div class="col-sm-10 std-card">
-        <h4 class="font-weight-bold"> Matches at your fingertips 2️⃣ </h4>
+        <h4 class="font-weight-bold"> <i class="fas fa-dice-three"></i> Matches at your fingertips </h4>
         <p class="text-muted"> One of the most important decisions you’ll make is picking a dating app that can offer you all the things your ex couldn’t. And it’s not just as simple as choosing between Tinder or Hinge. Meeting people online is a journey, and you want someone along for the ride that you can trust. When it comes to making a match, think of the Circuit app as your new co-pilot. </p>
       </div>
     </div>
 
     <div class="row justify-content-center mt-2">
       <div class="col-sm-10 std-card">
-        <h4 class="font-weight-bold"> All-inclusive, all the time 3️⃣ </h4>
+        <h4 class="font-weight-bold"> <i class="fas fa-dice-four"></i> All-inclusive, all the time </h4>
         <p class="text-muted"> We’re not a fan of labels, so we offer a dating experience designed to connect you with new people outside your usual circles. </p>
         <p class="text-muted"> We believe everyone deserves the right to be seen and make the first move no matter how they identify. On our app, we put everyone in front of you, and let you choose who you want to chat with.</p>
       </div>
-    </div>
-
-    <div class="row justify-content-center mt-4 mb-4" >
-      <% if current_user %>
-      <p> <%= link_to "My Profile", profile_path(current_user), class: "btn-red" %> </p>
-      <% end %>
     </div>
 
   </div>

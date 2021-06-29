@@ -7,8 +7,8 @@
 }
 
 .std-card {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: whitesmoke;
   border-radius: 8px;
   padding: 12px;
   margin-top: 6px;
@@ -16,18 +16,20 @@
 }
 
 .home-page-card {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  position: relative;
+  min-height: 100vh;
 }
 
 .home-page-card::before {
   content: "";
   //background-color: #FFE2E3;
-  background: -webkit-linear-gradient(110deg, #FFC9CC 60%, #CFEEFF  60%);
-  background: -o-linear-gradient(110deg, #FFC9CC 60%, #CFEEFF 60%);
-  background: -moz-linear-gradient(110deg, #FFC9CC 60%, #CFEEFF 60%);
-  background: linear-gradient(110deg, #FFC9CC 60%, #CFEEFF 60%);
+  background: -webkit-linear-gradient(110deg, #FBA7AD 60%, #CFEEFF  60%);
+  background: -o-linear-gradient(110deg, #FBA7AD 60%, #CFEEFF 60%);
+  background: -moz-linear-gradient(110deg, #FBA7AD 60%, #CFEEFF 60%);
+  background: linear-gradient(110deg, #FBA7AD 60%, #CFEEFF 60%);
   //background-image: url(https://images.unsplash.com/photo-1588287792348-8fc81e82828d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
   background-size: contain;
   // this is how to make the background not repeat.
@@ -39,62 +41,5 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 1;
-}
-
-.home-page-pages {
-    width: 100%;
-    border-radius: 14px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    
-}
-
-.home-page-size {
-    //position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-}
-
-.home-page-image {
-    background-color: whitesmoke;
-}
-
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.card-position {
-  justify-content: flex-end;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  
-}
-
-.home-picture {
-  height: 50%;
-}
-
-.none-scroll {
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-.container button:hover {
-  cursor: pointer;
-  transform: scale(1.2);
+  // opacity: 0.8;
 }

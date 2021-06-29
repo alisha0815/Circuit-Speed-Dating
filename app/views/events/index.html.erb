@@ -1,12 +1,10 @@
 <div class="d-flex justify-content-center">
 
-  <div class="col-sm-10 mt-4">
+  <div class="col-sm-9 mt-4">
+
     <div class="row justify-content-center">
-      <div class="col-sm-5 text-left">
-        <p class="icon-red"> <%= link_to "", profiles_path, class: "fas fa-chevron-circle-left" %> </p>
-      </div>
        <div class="col-sm-5 mt-3 text-right">
-        <p> <%= link_to "My-Sessions", bookings_path, class: "btn-red" %> </p>
+        <p> <%= link_to "My Sessions", bookings_path, class: "btn-red" %> </p>
       </div>
     </div>
 
@@ -20,11 +18,11 @@
           <% if (current_user.events).include?(event) %>
           <p><%= link_to event.name, event_path(event) %></p>
           <% end %>
-          <small class=""> <%= event.time %> </small>
+          <p class=""> <%= event.time %> </p>
           <% if event.bookings.count < event.capacity %>
-          <small> <%= link_to "Book!", new_event_booking_path(event) %> </small>
+          <p> <%= link_to "Book!", new_event_booking_path(event) %> </p>
           <% end %>
-          <small> Spots: <%= event.bookings.count %>/<%= event.capacity %> </small>
+          <p> Spots: <%= event.bookings.count %>/<%= event.capacity %> </p>
         </div>
         <% end %>
         <% end %>
