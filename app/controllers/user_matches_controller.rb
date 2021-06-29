@@ -6,11 +6,7 @@ class UserMatchesController < ApplicationController
   end
 
   def update
-    if @user_match.update(user_match_params)
-      flash[:notice] = 'Matched!'
-    else
-      render :edit
-    end
+    @user_match.update(user_match_params)
   end
 
   private
