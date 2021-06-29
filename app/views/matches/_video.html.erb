@@ -21,12 +21,11 @@
           <h3 class="h2-home"> YOUR MATCH IS READY! </h3>
         </div>
         <div class="col-sm-4 align-self-center match-item">
-          <% if current_user.update_match?(@user_match) %>
-            <h5> Awaiting Match Confirmation </h5>
-          <% elsif @user_match.status == "pending" %>
-            <h1> <%= link_to "MATCH ❤", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "", method: :patch %> </h1>
-          <% end %>
+          <span id="js-match">
+            <h1> <%= link_to "MATCH ❤", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "", method: :patch, remote: true %> </h1>
+          </span>
         </div>
+
         <div class="col-sm-4 align-self-center">
           <%= render 'matches/clock' %>
         </div>
