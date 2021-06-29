@@ -21,37 +21,41 @@
       </div>
 
       <div class="col-sm-10 std-card-once d-flex justify-content-center">
-        <div class="col-sm-3 align-self-center">
+        <div class="col-sm-3 align-self-center mt-1">
           <% if current_user == @user%>
             <h4> <%= @user.name %> </h4>
           <% else%>
-            <h4> <%= @user.name %> </h4>
+            <h4 class="mt-3"> <%= @user.name %> </h4>
             <span class="js-heart" data-user-id="<%= @user.id %>">
               <% if current_user.likes?(@user)%>
-                <span id="heart_btn", class="btn-secondary_you">
+              <div class="mt-3">
+                <span id="heart_btn", class="btn-secondary_you ">
                   <i class="fa fa-heart" aria-hidden="true"></i> Liked! </span>
+              </div>
               <% else%>
+              <div class="mt-3">
                 <%= link_to  profile_likes_path(@user.id), id: "heart_btn", class: "btn-secondary mt-4", method: :post, remote: true do %>
                   <i class="fa fa-heart" aria-hidden="true"></i> Like
                 <% end %>
+              </div>
               <% end %>
           <% end %>
         </div>
 
         <div class="col-sm-9">
-          <div class="row justify-content-between mt-2 pl-3">
+          <div class="row justify-content-between mt-3 mb-4 p-2 pl-3">
             <h4> Hey! I'm <%= @user.name %>... </h4>
             <% if current_user == @user %>
             <%= link_to "", edit_user_registration_path, class: "far fa-edit m-2" %>
             <% end %>
           </div>
-          <div class="row">
+          <div class="row mr-4">
             <p class="pl-3"> <i class="fas fa-envelope-open-text" style="color: #F44235"></i> <%= @user.description %> </p>
           </div>
-          <div class="row">
+          <div class="row mr-3">
             <div class="col-sm-5 justify-content-between">
               <p> <i class="fas fa-birthday-cake" style="color: #F44235"></i> <%= @user.age %> </p>
-              <p> <i class="fas fa-male" style=" color: #F44235"></i> <%= @user.gender %> </p>
+              <p> <i class="fas fa-male" style=" color: #F44235"></i> <%= @user.gender.capitalize %> </p>
               <p> <i class="fas fa-location-arrow" style="color: #F44235"></i> <%= @user.address %> </p>
             </div>
             <div class="col-sm-5 justify-content-between">
@@ -78,7 +82,7 @@
 
         <% if !@user.interests_category("business").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-user-tie" style="color: #167FFB"></i> Business </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-user-tie" style="color: #167FFB"></i> | Business | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("business").each do |interest| %>
             <p class="profile-interest"><%= interest.name %></p>
@@ -89,7 +93,7 @@
 
         <% if !@user.interests_category("entertainment").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-gamepad" style="color: #167FFB"></i> Entertainment </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-gamepad" style="color: #167FFB"></i> | Entertainment | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("entertainment").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -100,7 +104,7 @@
 
         <% if !@user.interests_category("fashion").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-vest" style="color: #167FFB"></i> Fashion </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-vest" style="color: #167FFB"></i> | Fashion | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("fashion").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -111,7 +115,7 @@
 
         <% if !@user.interests_category("fitness").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-running" style="color: #167FFB"></i> Fitness </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-running" style="color: #167FFB"></i> | Fitness | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("fitness").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -122,7 +126,7 @@
 
         <% if !@user.interests_category("food").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-utensils" style="color: #167FFB"></i> Food </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-utensils" style="color: #167FFB"></i> | Food | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("food").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -133,7 +137,7 @@
 
         <% if !@user.interests_category("hobbies").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-water" style="color: #167FFB"></i> Hobbies </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-water" style="color: #167FFB"></i> | Hobbies | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("hobbies").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -144,7 +148,7 @@
 
         <% if !@user.interests_category("movies").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-photo-video" style="color: #167FFB"></i> Movies </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-photo-video" style="color: #167FFB"></i> | Movies | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("movies").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -155,7 +159,7 @@
 
         <% if !@user.interests_category("music").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-music" style="color: #167FFB"></i> Music </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-music" style="color: #167FFB"></i> | Music | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("music").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>
@@ -166,7 +170,7 @@
 
         <% if !@user.interests_category("outdoors").empty? %>
         <div class="p-2">
-          <h5 class="interest_title ml-2"> <i class="fas fa-skiing-nordic" style="color: #167FFB"></i> Outdoors </h5>
+          <h5 class="interest_title ml-2"> <i class="fas fa-skiing-nordic" style="color: #167FFB"></i> | Outdoors | </h5>
           <div class="d-flex flex-wrap">
             <% @user.interests_category("outdoors").each do |interest| %>
             <p class="profile-interest"><%= interest.name  %></p>

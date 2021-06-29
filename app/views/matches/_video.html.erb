@@ -1,22 +1,22 @@
 <div class="mt-4">
     <% unless params[:mutual] %>
-      <div class="d-flex justify-content-around mt-4 text-white">
-        <div class="col-sm-3">
+      <div class="d-flex justify-content-center mt-4 text-white">
+        <div class="col-sm-4">
           <% if @other_user_match.user.photos.attached? %>
           <%= cl_image_tag @other_user_match.user.photos.first.key, radius: "max", :crop=>"fill", class: "video-avatar" %>
           <% end %>
         </div>
         <div class="col-sm-3">
-          <h3> <%= @other_user_match.user.name %> </h3>
-          <p> Age: <%= @other_user_match.user.age %> </p>
+          <h4> <%= @other_user_match.user.name %> </h4>
+          <h4> Age: <%= @other_user_match.user.age %> </h4>
         </div>
         <div class="col-sm-3">
-          <p> Gender: <%= @other_user_match.user.gender %> </p>
-          <p> Preference: Straight </p>
+          <h5> Gender: <%= @other_user_match.user.gender.capitalize %> </h5>
+          <h5> Preference: Straight </h5>
         </div>
       </div>
 
-      <div class="d-flex justify-content-center mt-4">
+      <div class="d-flex justify-content-center mt-1">
         <div class="col-sm-4 align-self-center match-item mt-4">
           <h3 class="h2-home"> YOUR MATCH IS READY! </h3>
         </div>
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-center mt-4">
+      <div class="row justify-content-center mt-2">
         <div class="col-sm-12">
           <div class="video-screen">
             <div id="black-background">

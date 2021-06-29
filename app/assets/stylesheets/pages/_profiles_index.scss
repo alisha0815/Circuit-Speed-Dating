@@ -37,7 +37,7 @@
 
 .profile-name {
   text-align: left;
-  //font-size: 24px;
+  font-size: 24px;
   font-weight: bold;
   margin: 25px 0 10px 0;
 }
@@ -85,7 +85,7 @@ a.btn.rounded-pill.border:hover {
 .btn-secondary {
   //margin: 20px auto 0px;
   text-align: center;
-  background: white;
+  background: #FC6574;
   border-radius: 3px;
   //box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
   padding: 10px 14px;
@@ -93,7 +93,7 @@ a.btn.rounded-pill.border:hover {
   cursor: pointer;
   border: none;
   outline: none;
-  color: #F44235;
+  color: white;
   text-decoration: none;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -149,7 +149,7 @@ animation-duration: 0.65s;
 
 @media screen and (max-width: 1000px) {
   .profile-name {
-      //font-size: 18px;
+      //font-size: 28px;
   }
 }
 

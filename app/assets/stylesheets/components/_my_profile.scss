@@ -1,7 +1,8 @@
 
 
 .interest_title {
-
+  color: white;
+  font-weight: 900;
 }
 
 .p-none {
@@ -10,8 +11,8 @@
 
 .profile-banner {
 	object-fit: cover;
-	border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+	border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 	width: 100%;
 }
 
@@ -20,6 +21,20 @@ a:link {
 }
 
 .container {
-	position: center;
-	left: 610px;
+	//position: center;
+	//left: 610px;
+}
+
+.profile-interest {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.profile-interest:hover {
+  color: #ff5577;
+  transition: 400ms;
 }

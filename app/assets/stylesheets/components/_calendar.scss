@@ -13,9 +13,9 @@
 .meeting {
   padding: 8px 18px;
   border-radius: 4px;
-  transition: background 0.3s ease;
+  transition: background 0.5s ease;
   text-decoration: none;
-  background-color: #b0c6f3;
+  background-color: #84ACFD;
   opacity: 1;
   text-shadow: none;
   text-align: center;
@@ -25,20 +25,22 @@
   background: #699bff;
   color: white;
   text-shadow: none;
+  font-weight: bolder;
 }
 
 .meeting a {
   text-decoration: none;
   color: #fb1800;
-  text-shadow: none;
+  //text-shadow: none;
+  font-weight: bold;
 }
 
 .meeting a:hover {
   text-decoration: none;
-  font-size: 10px;
+  //font-size: 10px;
   font-weight: bolder;
-  transition-delay: 0.1s;
-  transition-duration: 0.2s;
+  //transition-delay: 0.1s;
+  //transition-duration: 0.2s;
   
 }
 
@@ -48,7 +50,8 @@
 
 .simple-calendar {
   .day {
-    background-color: rgb(255, 203, 203);
+    //background-color: rgb(255, 203, 203);
+    background-color: #2b303b;
     text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
     margin: 5px;
   }
@@ -72,10 +75,10 @@
   .start-date {}
 
   .prev-month {
-    background-color: #CFEEFF;
+    background-color: #f7939d;
   }
   .next-month { 
-    background-color: #CFEEFF;
+    background-color: #f7939d;
   }
   .current-month {}
 
@@ -83,7 +86,8 @@
 
   .table thead th {
      text-align: center;
-     background-color: rgba(255,300,40,0.1);
+     background-color: #2b303b;
+     color: whitesmoke;
   }
 }
 
