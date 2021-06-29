@@ -1,10 +1,12 @@
 <!-- Load an icon library -->
-
+<p id="logo-dots">: :</p>
+<i class="fab fa-cuttlefish" id="logo-c"></i>
 <div id="mysidenav" class="sidenav">
+
   <% if !user_signed_in? %>
   <%= link_to "", new_user_session_path, id: "user_login", class: "fas fa-sign-in-alt" %>
   <% end %>
-
+    
   <% if user_signed_in? %>
     <%= link_to "", profile_path(current_user), id: "profile", class: "fas fa-user" %>
     <%= link_to "", profiles_path, id: "profiles", class: "fab fa-searchengin" %>
