@@ -1,0 +1,31 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 150px;
+  height: 150px;
+  padding: 20px 50px;
+  color: rgba(0,0,0,0.9);
+  position: absolute;
+  border-top: 0.9px solid #d1d1d1;
+}
+
+.footer-links {
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  color: black;
+  opacity: 0.4;
+  text-decoration: none;
+  //padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  opacity: 0.4;
+  color: #D23333;
+}
+

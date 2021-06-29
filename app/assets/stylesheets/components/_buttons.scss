@@ -1,5 +1,34 @@
+.btn-white {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fb1800;
+  background-color: white;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+}
+
+.btn-white a {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 900;
+    color: #fb1800;
+  }
+
+.btn-white:hover {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  border-color: #F66D5E;
+  text-decoration: none;
+  background-color: #F66D5E;
+}
+
 
 .btn-red {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   text-decoration: none;
   color: white;
   background-color: #fb1800;
@@ -12,25 +41,31 @@
 }
 
 .btn-red:hover {
-    background-color: #F66D5E;
-    border-color: #F66D5E;
-    text-decoration: none;
-    color: white;
-    opacity: 1;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  background-color: #F66D5E;
+  border-color: #F66D5E;
+  text-decoration: none;
+  color: white;
+  opacity: 1;
 }
 
 .icon-red a {
-  font-size: 40px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   color: #fb1800;
 }
 
 .icon-red a:hover {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 40px;
   color: #F66D5E;
 }
 
 .btn-blue {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   text-decoration: none;
   color: white;
   background-color: #3376fd;
@@ -43,16 +78,18 @@
 }
 
 .btn-blue:hover {
-    background-color: #B7CFFF;
-    border-color: #B7CFFF;
-    text-decoration: none;
-    color: white;
-    opacity: 1;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  background-color: #B7CFFF;
+  border-color: #B7CFFF;
+  text-decoration: none;
+  color: white;
+  opacity: 1;
 }
 
-
-
 .btn-red-event {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   text-decoration: none;
   color: white;
   background-color: #fb1800;
@@ -66,10 +103,12 @@
 }
 
 .btn-red-event:hover {
-    background-color: #F66D5E;
-    border-color: #F66D5E;
-    text-decoration: none;
-    color: white;
-    text-decoration: none;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  background-color: #F66D5E;
+  border-color: #F66D5E;
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 

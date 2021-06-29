@@ -1,67 +1,58 @@
 <div class="d-flex justify-content-center">
-  <div class="col-sm-7">
+  <div class="col-sm-6">
+
     <div class="row justify-content-center mt-3">
-      <div class="col-sm-5 text-left">
-        <% if current_user == @user %>
-        <% end %>
-      </div>
-      <div class="col-sm-5 mt-3 text-right">
+      <div class="col-sm-10 mt-3 text-right">
         <span> <%= link_to "Browse Profiles", profiles_path, class: "btn-red m-2" %> </span>
       </div>
     </div>
-
-
 
     <div class="row justify-content-center mt-4">
       <div class="col-sm-10 p-0">
         <% if @user.photos.attached? %>
         <%= cl_image_tag @user.photos.second.key, height: 200 , width: 590, :crop=>"fill", class: " profile-banner" %>
         <% end %>
-    </div>
+      </div>
 
       <div class="col-sm-10" style="position:absolute;">
         <% if @user.photos.attached? %>
         <%= cl_image_tag @user.photos.first.key, :gravity=>"face", :crop=>"fill", class: "avatar" %>
         <% end %>
       </div>
-    </div>
 
-    <div class="row justify-content-center mt-2">
-      <div class="col-sm-10 std-card d-flex">
-        <div class="col-sm-4 align-self-center">
-
+      <div class="col-sm-10 std-card d-flex justify-content-center">
+        <div class="col-sm-3 align-self-center">
           <% if current_user == @user%>
-            <h3> <%= @user.name %> | <%= link_to "⚡️" %> </h3>
+            <h4> <%= @user.name %> </h4>
           <% else%>
-            <h3> <%= @user.name %> | <%= link_to "⚡️" %> </h3>
+            <h4> <%= @user.name %> </h4>
             <span class="js-heart" data-user-id="<%= @user.id %>">
-              <% if current_user.likes?(@user)%> 
+              <% if current_user.likes?(@user)%>
                 <span id="heart_btn", class="btn-secondary_you">
-                  <i class="fa fa-heart" aria-hidden="true"></i> You Like!
-                </span>
+                  <i class="fa fa-heart" aria-hidden="true"></i> Liked! </span>
               <% else%>
-                <%= link_to  profile_likes_path(@user.id), id: "heart_btn", class: "btn-secondary ", method: :post, remote: true do %>
+                <%= link_to  profile_likes_path(@user.id), id: "heart_btn", class: "btn-secondary mt-4", method: :post, remote: true do %>
                   <i class="fa fa-heart" aria-hidden="true"></i> Like
                 <% end %>
-              <% end %> 
-            </span>
+              <% end %>
           <% end %>
         </div>
 
-        <div class="col-sm-8">
-          <div class="row justify-content-between mt-2">
-            <h3> Hey! I'm <%= @user.name %>! </h3>
+        <div class="col-sm-9">
+          <div class="row justify-content-between mt-2 pl-3">
+            <h4> Hey! I'm <%= @user.name %>... </h4>
             <% if current_user == @user %>
             <%= link_to "", edit_user_registration_path, class: "far fa-edit m-2" %>
             <% end %>
           </div>
           <div class="row">
-            <p class="text-muted"> <i class="fas fa-envelope-open-text" style="color: #F44235"></i> <%= @user.description %> </p>
+            <p class="pl-3"> <i class="fas fa-envelope-open-text" style="color: #F44235"></i> <%= @user.description %> </p>
           </div>
           <div class="row">
             <div class="col-sm-5 justify-content-between">
               <p> <i class="fas fa-birthday-cake" style="color: #F44235"></i> <%= @user.age %> </p>
               <p> <i class="fas fa-male" style=" color: #F44235"></i> <%= @user.gender %> </p>
+              <p> <i class="fas fa-location-arrow" style="color: #F44235"></i> <%= @user.address %> </p>
             </div>
             <div class="col-sm-5 justify-content-between">
               <p> <i class="fas fa-heading" style="color: #F44235"></i> <%= @user.height %> </p>
@@ -71,6 +62,9 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row justify-content-center">
     </div>
 
     <div class="row justify-content-center mt-2 mb-4">
@@ -165,6 +159,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 
