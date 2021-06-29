@@ -1,16 +1,17 @@
 
 
 .interest_title {
-	font-size: 14px;
+
 }
 
 .p-none {
-	padding: 0 !important;
+	//padding: 0 !important;
 }
 
 .profile-banner {
-	object-fit: auto;
-	border-radius: 8px;
+	object-fit: cover;
+	border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 	width: 100%;
 }
 

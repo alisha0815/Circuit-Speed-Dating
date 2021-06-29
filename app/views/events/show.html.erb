@@ -11,11 +11,11 @@
       <div class="row justify-content-center mt-4">
         <div class="col-sm-10">
           <% if @my_matches.exists? %>
-            <div class="row justify-content-center text-white">
-              <h1> Lobby </h1>
+            <div class="row justify-content-center">
+              <h1 class="h1-home"> Lobby </h1>
             </div>
             <div class="row justify-content-center text-white">
-              <h2> Matches for this <%= @event.name %> </h2>
+              <h2 class="h2-home"> Matches for this <%= @event.name %> </h2>
             </div>
           <% else %>
             <h1> Lobby </h1>
@@ -42,21 +42,21 @@
                 <% if user_match.user.photos.attached? %>
                 <%= cl_image_tag user_match.user.photos.first.key, crop: "fill", class: "" %>
                 <% end %>
-                <p> 👤 <%= user_match.user.name %> </p>
+                <p> <i class="fas fa-user-circle"></i> <%= user_match.user.name %> </p>
               </div>
-            <div class="socialinfo text-center">
+            <div class="d-flex socialinfo justify-content-center text-center">
               <div class="socialtext1">
-                <p> 🎂 <%= user_match.user.age %> </p>
-                <p>age</p>
+                <p> <%= user_match.user.age %> </p>
+                <p><i class="fas fa-birthday-cake"></i></p>
               </div>
 
               <div class="socialtext2">
-                <p> 📍 <%= user_match.user.address %> </p>
-                <p>city</p>
+                <p><%= user_match.user.address %></p>
+                <p><i class="fas fa-map-marker-alt"></i></p>
               </div>
 
               <div class="socialtext3">
-                <p>135</p>
+                <p> <%= rand(18..38) %> </p>
                 <p>dates</p>
               </div>
             </div>

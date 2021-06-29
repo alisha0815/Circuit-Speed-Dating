@@ -16,24 +16,24 @@
         </div>
       </div>
 
-      <div class="row justify-content-center mt-4">
-        <div class="col-sm-3 align-self-center match-item mt-4">
-          <h3> YOUR MATCH IS READY! </h3>
+      <div class="d-flex justify-content-center mt-4">
+        <div class="col-sm-4 align-self-center match-item mt-4">
+          <h3 class="h2-home"> YOUR MATCH IS READY! </h3>
         </div>
-        <div class="col-sm-3 align-self-center match-item">
+        <div class="col-sm-4 align-self-center match-item">
           <% if current_user.update_match?(@user_match) %>
-            <p> Awaiting Match Confirmation </p>
+            <h5> Awaiting Match Confirmation </h5>
           <% elsif @user_match.status == "pending" %>
             <h1> <%= link_to "MATCH ❤", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "", method: :patch %> </h1>
           <% end %>
         </div>
-        <div class="col-sm-3 align-self-center">
+        <div class="col-sm-4 align-self-center">
           <%= render 'matches/clock' %>
         </div>
       </div>
 
       <div class="row justify-content-center mt-4">
-        <div class="col-sm-10">
+        <div class="col-sm-12">
           <div class="video-screen">
             <div id="black-background">
               <div class="col-12 col-lg-9">

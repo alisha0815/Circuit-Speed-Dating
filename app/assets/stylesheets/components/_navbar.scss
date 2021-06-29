@@ -11,7 +11,6 @@
   font-size: 12px; /* Increase font size */ /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: center;
-  color: #3d81db;
   font-size: 25px;
 }
 
@@ -23,21 +22,8 @@
   text-decoration: none;
 }
 
-#home {
-  top: 180px;
-  color: #167FFB;
-  &:before {
-    color: #167FFB;
-  }
-}
-
-#home:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
-}
-
 #profile {
-  top: 280px;
+  top: 180px;
   color: #167FFB;
   &:before {
     color: #167FFB;
@@ -49,8 +35,34 @@
   background-color: #A2DBFA;
 }
 
-#bookings {
+#profiles {
+  top: 280px;
+  color: #167FFB;
+  &:before {
+    color: #167FFB;
+  }
+}
+
+#profiles:hover {
+  color: #167FFB;
+  background-color: #A2DBFA;
+}
+
+#home {
   top: 380px;
+  color: #167FFB;
+  &:before {
+    color: #167FFB;
+  }
+}
+
+#home:hover {
+  color: #167FFB;
+  background-color: #A2DBFA;
+}
+
+#bookings {
+  top: 480px;
   color: #167FFB;
   &:before {
     color: #167FFB;
@@ -63,7 +75,7 @@
 }
 
 #inbox {
-  top: 480px;
+  top: 580px;
   color: #167FFB;
   &:before {
     color: #167FFB;
@@ -76,7 +88,7 @@
 }
 
 #user_login {
-  top: 580px;
+  top: 680px;
   color: #167FFB;
   &:before {
     color: #167FFB;
@@ -89,7 +101,7 @@
 }
 
 #user_logout {
-  top: 580px;
+  top: 680px;
   color: #167FFB;
   &:before {
     color: #167FFB;
@@ -102,7 +114,8 @@
 }
 
 .nav-background {
-  background-color: white;
+  //background-color: white;
+  background-color: #2b303b;
   position: fixed;
   padding-right: 70px;
   border-radius: 32px;

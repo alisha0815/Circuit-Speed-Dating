@@ -2,6 +2,7 @@
   font-family: 'Righteous', 'Lobster Two';
   font-size: 10rem;
   color: white;
+  text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
 }
 
 .h1-home {
@@ -9,12 +10,19 @@
   font-size: 3.3rem;
   //color: #c5eaff;
   color: white;
+  text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
+}
+
+.h2-home:hover {
+  color: #f70008;
+  transition: 800ms;
 }
 
 .h2-home {
   font-family: 'Righteous', 'Lobster Two';
   font-size: 2.2rem;
   color: white;
+  text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
 }
 
 h4 i {
@@ -39,7 +47,7 @@ h3 {
 h4 {
   font-family: 'Comfortaa', cursive;
   font-size: 1.3rem;
-  font-weight: medium;
+  font-weight: bold;
 }
 
 h5 {
@@ -50,6 +58,10 @@ h5 {
 body p {
   font-family: 'Comfortaa', cursive;
   font-weight: normal;
-  color: black;
 }
 
+.btn {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  border-radius: 6px;
+}

@@ -59,9 +59,11 @@
   display: inline-block;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-  color: black;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
-
+.profile-interest:hover {
+  color: #ff5577;
+  transition: 400ms;
+}

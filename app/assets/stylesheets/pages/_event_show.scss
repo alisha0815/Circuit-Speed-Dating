@@ -1,8 +1,8 @@
 
 .uicard {
   position: relative;
-  // background-color: #2b303b;
-  background-color: whitesmoke;
+  background-color: #2b303b;
+  // background-color: whitesmoke;
   width: 300px;
   height: 450px;
   margin: 0 auto;
@@ -37,7 +37,15 @@
 
 .user p {
   font-size: 1.3em;
-  color: #2b303b;
+  //color: #2b303b;
+  color: whitesmoke;
+  margin-top: -20px;
+}
+
+.user p:hover {
+  font-size: 1.3em;
+  //color: #2b303b;
+  color: #ff5577;
   margin-top: -20px;
 }
 
@@ -50,10 +58,13 @@
 .socialtext1 {
   position: relative;
   float: left;
-  color: #2b303b;
+  //color: #2b303b;
+  color: whitesmoke;
   margin-top: 20px;
   margin-left: 12px;
-  border-right: 1px solid #2b303b;
+  margin-right: 12px;
+  //border-right: 1px solid #2b303b;
+  border-right: 1px solid whitesmoke;
   padding: 0px 15px 0px 0px;
   transition: 400ms;
 }
@@ -65,9 +76,13 @@
 
 .socialtext2 {
   position: relative;
-  color: #2b303b;
+  //color: #2b303b;
+  color: whitesmoke;
   margin-top: 20px;
-  border-right: 1px solid #2b303b;
+  margin-left: 12px;
+  margin-right: 12px;
+  //border-right: 1px solid #2b303b;
+  border-right: 1px solid whitesmoke;
   padding: 0px 15px 0px 0px;
   display: inline-block;
   transition: 400ms;
@@ -80,9 +95,11 @@
 
 .socialtext3 {
   position: relative;
-  color: #2b303b;
+  //color: #2b303b;
+  color: whitesmoke;
   float: right;
   margin-top: 20px;
+  margin-left: 12px;
   margin-right: 12px;
   display: inline-block;
   transition: 400ms;

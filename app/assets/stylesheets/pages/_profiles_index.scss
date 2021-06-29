@@ -1,13 +1,6 @@
-.container {
-  position: relative;
+.highlight:hover {
+  color: red;
 }
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 
 .profile-container {
   display: flex;
@@ -44,49 +37,27 @@
 
 .profile-name {
   text-align: left;
-  font-size: 24px;
+  //font-size: 24px;
   font-weight: bold;
-  color: black;
   margin: 25px 0 10px 0;
 }
 
 .profile-position {
   font-size: 16px;
-  color: #777;
   text-align: left;
 }
 
 .button {
-  margin: 20px 0 0 0;
-  padding: 10px 20px;
+  //margin: 20px 0 0 0;
+  //padding: 10px 20px;
   color: #999;
   text-decoration: none;
   border: 1px solid #999;
-  border-radius: 4px;
+  border-radius: 6px;
   text-align: right;
 }
 
-.button:hover {
-  color: #fff;
-  background: #167FFF;
-  border: 1px solid #167FFF;
-}
 
-#booking.btn :active {
-  background-color: #167FFF;;
-}
-
-.btn btn-primary btn-lg {
-  color: white;
-  background: #167FFF;
-  border: 1px solid #167FFF;
-}
-
-.btn-primary:hover {
-  color: #167FFF;
-  background: white;
-  border: 1px solid #167FFF;
-}
 
 .carousel-image {
   width: 100%;
@@ -104,7 +75,6 @@ a.btn.rounded-pill.border {
   border-color: #F44235;
   border-style: solid;
   font-weight: bolder;
-  font-size: 20px;
 }
 
 a.btn.rounded-pill.border:hover {
@@ -113,13 +83,13 @@ a.btn.rounded-pill.border:hover {
 }
 
 .btn-secondary {
-  margin: 40px auto 0px;
+  //margin: 20px auto 0px;
   text-align: center;
   background: white;
   border-radius: 3px;
-  box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-  padding: 10px 17px;
-  font-size: 18px;
+  //box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+  padding: 10px 14px;
+  //font-size: 18px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -127,28 +97,26 @@ a.btn.rounded-pill.border:hover {
   text-decoration: none;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  border-radius: 10px;
-  border: 2px solid #F44235;
+  border-radius: 6px;
+  border: 1.8px solid rgb(240, 75, 113);
 }
 .btn-secondary:hover {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   background-color: #F44235;
   color: white;
   border: none;
 }
 
 .btn-secondary_you {
-  margin: 40px auto 0px;
+  //margin: 40px auto 0px;
   text-align: center;
   background: #F44235;
-  border-radius: 3px;
+  border-radius: 6px;
   box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-  padding: 10px 17px;
-  font-size: 18px;
+  padding: 10px 14px;
   cursor: pointer;
   border: none;
   outline: none;
-  color: white;
   text-decoration: none;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -158,6 +126,7 @@ a.btn.rounded-pill.border:hover {
 
 .info-tag {
   font-size: 20px;
+  color: whitesmoke;
 }
 
 .a.button {
@@ -180,7 +149,7 @@ animation-duration: 0.65s;
 
 @media screen and (max-width: 1000px) {
   .profile-name {
-      font-size: 18px;
+      //font-size: 18px;
   }
 }
 
@@ -190,7 +159,7 @@ animation-duration: 0.65s;
   }
 
   .profile-name {
-      font-size: 16px;
+      //font-size: 16px;
   }
 }
 
