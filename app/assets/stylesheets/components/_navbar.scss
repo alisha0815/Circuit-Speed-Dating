@@ -24,98 +24,98 @@
 
 #profile {
   top: 180px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #profile:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 #profiles {
   top: 280px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #profiles:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 #home {
   top: 380px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #home:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 #bookings {
   top: 480px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #bookings:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 #inbox {
   top: 580px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #inbox:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 #user_login {
   top: 680px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #user_login:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 #user_logout {
   top: 680px;
-  color: #167FFB;
+  color: #A2DBFA;
   &:before {
-    color: #167FFB;
+    color: #A2DBFA;
   }
 }
 
 #user_logout:hover {
-  color: #167FFB;
-  background-color: #A2DBFA;
+  color: #A2DBFA;
+  background-color: #CFEEFF;
 }
 
 .nav-background {
-  //background-color: white;
-  background-color: #2b303c;
+  background-color: whitesmoke;
+  // background-color: #2b303c;
   position: fixed;
   padding-right: 70px;
   border-radius: 32px;
@@ -126,7 +126,7 @@
 }
 
 #logo-dots {
-  color: white;
+  color: #2b303c;
   position: absolute;
   font-size: 25px;
   font-weight: bold;
@@ -136,7 +136,8 @@
 }
 
 #logo-c {
-  color: white;
+  color: #2b303c;
+  // color: white;
   position: absolute;
   font-size: 25px;
   top: 58px;

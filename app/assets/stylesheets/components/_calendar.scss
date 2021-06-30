@@ -23,7 +23,8 @@
 
 .meeting:hover {
   background: #699bff;
-  color: white;
+  color: #2b303b;
+  // color: whitesmoke;
   text-shadow: none;
   font-weight: bolder;
 }
@@ -45,14 +46,16 @@
 }
 
 .callendar-body-style {
-  color: white;
+  // color: white;
+  color: #2b303b;
 }
 
 .simple-calendar {
   .day {
-    //background-color: rgb(255, 203, 203);
-    background-color: #2b303b;
-    text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
+    // background-color: rgba(148, 144, 144, 0.747);
+    background-color: whitesmoke;
+    // background-color: #2b303b;
+    // text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
     margin: 5px;
   }
 
@@ -67,7 +70,8 @@
   .wday-6 {}
 
   .today {
-    border: 2px solid white;
+    // border: 2px solid whitesmoke;
+    border: 2px solid #c2c2c2;
   }
   .past {}
   .future {}
@@ -75,10 +79,12 @@
   .start-date {}
 
   .prev-month {
-    background-color: #f7939d;
+    // background-color: #f7939d;
+    background-color: #E2E2E2;
   }
   .next-month { 
-    background-color: #f7939d;
+    //background-color: #f7939d;
+    background-color: #E2E2E2;
   }
   .current-month {}
 
@@ -86,8 +92,10 @@
 
   .table thead th {
      text-align: center;
-     background-color: #2b303b;
-     color: whitesmoke;
+     //background-color: #2b303b;
+     //color: whitesmoke;
+     background-color: whitesmoke;
+     color: #2b303b;
   }
 }
 
