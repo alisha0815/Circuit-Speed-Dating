@@ -1,80 +1,81 @@
-body{margin-top:20px;}
+body {
+  margin-top: 20px;
+}
 .events_area {
-    padding: 130px 0 100px;
-    background: white;
+  padding: 100px;
+  background: white;
+  position: relative;
+  border-radius: 10px;
 }
 @media (max-width: 991px) {
-    .events_area {
-        padding: 70px 0;
-    }
+  .events_area {
+    padding: 70px 0;
+  }
 }
 .events_area .event-link {
-    color: #fdc632;
-    font-size: 13px;
-    text-transform: uppercase;
+  color: #fdc632;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 .events_area .event-link img {
-    margin-left: 5px;
-    display: inline-block;
+  margin-left: 5px;
+  display: inline-block;
 }
 
 .single_event {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .single_event .event_thumb {
-    overflow: hidden;
+  overflow: hidden;
 }
 .single_event .event_thumb img {
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .single_event .event_details {
-    background: #F44235;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 350px;
-    padding: 30px 25px;
-    color: #ffffff;
-    border-radius: 10px;
+  background: #2b303c;
+  width: 350px;
+  padding: 30px 25px;
+  color: #ffffff;
+  border-radius: 10px;
 }
 .single_event .event_details .date {
-    color: #ffffff;
-    padding-right: 15px;
-    border-right: 2px solid #fff;
-    font-family: "Rubik", sans-serif;
-    font-size: 30px;
+  color: #ffffff;
+  padding-right: 15px;
+  border-right: 2px solid #fff;
+  font-family: "Rubik", sans-serif;
+  font-size: 30px;
 }
 .single_event .event_details .date span {
-    display: block;
-    color: #fdc632;
-    font-size: 40px;
-    font-weight: 500;
+  display: block;
+  color: #fdc632;
+  font-size: 40px;
+  font-weight: 500;
 }
 .single_event .event_details .time-location {
-    padding-left: 15px;
-    font-size: 22px;
+  padding-left: 15px;
+  font-size: 22px;
 }
 .single_event .event_details .time-location p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .single_event .event_details .time-location p span {
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 500;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
 }
 .single_event:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 .single_event:hover h4 a {
-    color: #fdc632;
+  color: #fdc632;
 }
 
 #delete_btn {
   background-color: white;
-  color: #F44235;
+  color: #f44235;
   font-size: 20px;
   font-weight: bolder;
   justify-content: center;
@@ -82,12 +83,12 @@ body{margin-top:20px;}
 }
 
 #delete_btn:hover {
-    background-color: #fa7b72;
-    color: white;
-  } 
+  background-color: #f44235;
+  color: white;
+}
 
 a#calendar_btn {
-  color: #2572FF;
+  color: #2572ff;
   font-size: 30px;
 }
 
@@ -95,7 +96,12 @@ a#calendar_btn {
   text-align: right;
 }
 
-
 p#event_name {
   font-size: 20px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
 }
