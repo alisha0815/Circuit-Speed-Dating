@@ -3,13 +3,13 @@
   <div class="col-sm-9 mt-4">
 
     <div class="row justify-content-center">
-       <div class="col-sm-9 mt-3 text-right">
+       <div class="col-sm-9 mt-2 text-right">
         <p> <%= link_to "My Sessions", bookings_path, class: "btn-red" %> </p>
       </div>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-sm-10 p-3">
+    <div class="row justify-content-center m-3">
+      <div class="col-sm-9">
         <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
         <%= date %>
 

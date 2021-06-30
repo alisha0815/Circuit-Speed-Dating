@@ -1,11 +1,12 @@
 
-<div class="simple-calendar std-card">
-  <h2> Book a Session! </h2>
-  <div class="d-flex align-items-center justify-content-between">
-    <div class="calendar-heading my-2">
-      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-danger' %>
-      <span class="calendar-title btn btn-danger"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-danger' %>
+<div class="simple-calendar std-card" style="
+    padding: 35px;">
+  <h2 class=""> Book a Session! </h2>
+  <div class="">
+    <div class="calendar-heading my-2 mb-3 mt-3">
+      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn-outline' %>
+      <span class="calendar-title btn-red"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn-outline' %>
     </div>
   </div>
 

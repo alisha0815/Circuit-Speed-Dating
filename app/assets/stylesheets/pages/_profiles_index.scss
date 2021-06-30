@@ -1,160 +1,35 @@
-.highlight:hover {
-  color: red;
-}
 
 .profile-container {
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  margin: 0 30px;
+  height: 60vh;
+  margin: 0 40px;
 }
 
 .profile-card {
-  flex: 1 1 30%;
-  max-width: 300px;
   background: #fff;
-  padding: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 4px;
   box-shadow: 0 0 2px 0 #ccc;
   transition: .3s;
 }
 
-.profile-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px -5px #ccc;
-}
-
-.profile-icon {
-  height: 100px;
-  width: 100px;
+.carousel-image {
+  width: 100%;
+  height: 40vh;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: top;
   object-fit: cover;
-  border-radius: 50%;
 }
 
 .profile-name {
   text-align: left;
   font-size: 24px;
   font-weight: bold;
-  margin: 25px 0 10px 0;
+  // margin: 25px 0 10px 0;
 }
 
-.profile-position {
-  font-size: 16px;
-  text-align: left;
+.carousel-inner {
+  padding: 20px 0px;
 }
-
-.button {
-  //margin: 20px 0 0 0;
-  //padding: 10px 20px;
-  color: #999;
-  text-decoration: none;
-  border: 1px solid #999;
-  border-radius: 6px;
-  text-align: right;
-}
-
-
-
-.carousel-image {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: top;
-  object-fit: cover;
-}
-
-
-a.btn.rounded-pill.border {
-  background-color: white;
-  color: #F44235;
-  border-color: #F44235;
-  border-style: solid;
-  font-weight: bolder;
-}
-
-a.btn.rounded-pill.border:hover {
-  background-color: #F44235;
-  color: white;
-}
-
-.btn-secondary {
-  //margin: 20px auto 0px;
-  text-align: center;
-  background: #FC6574;
-  border-radius: 3px;
-  //box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-  padding: 10px 14px;
-  //font-size: 18px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  color: white;
-  text-decoration: none;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-  border-radius: 6px;
-  border: 1.8px solid rgb(240, 75, 113);
-}
-.btn-secondary:hover {
-  transform: translateY(-1px);
-  background-color: #F44235;
-  color: white;
-  border: none;
-}
-
-.btn-secondary_you {
-  //margin: 40px auto 0px;
-  text-align: center;
-  background: #F44235;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-  padding: 10px 14px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  text-decoration: none;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-  border-radius: 10px;
-  border: 2px solid #F44235;
-}
-
-.a.button {
-  border: 1px solid #167FFF;
-  color: #167FFF
-}
-.btn-secondary .fa {
-  margin-right: 5px;
-}
-.animate-like {
-animation-name: likeAnimation;
-animation-iteration-count: 1;
-animation-fill-mode: forwards;
-animation-duration: 0.65s;
-}
-@keyframes likeAnimation {
-0%   { transform: scale(30); }
-100% { transform: scale(1); }
-}
-
-@media screen and (max-width: 1000px) {
-  .profile-name {
-      //font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .profile-card {
-      padding: 20px 15px;
-  }
-
-  .profile-name {
-      //font-size: 16px;
-  }
-}
-

@@ -4,7 +4,7 @@
     <div class="row justify-content-center mt-4">
       <div class="col-sm-10 std-card mt-4">
         <div class="row justify-content-center">
-          <div class="col-sm-11 p-2">
+          <div class="col-sm-11 ml-3 mt-4">
             <h2 class="text-danger"> Possible dates for your session </h2>
             <p class="info-tag">Here are some suggested profiles for your possible dates for your dating session. Go like ❤ people you are interested in! </p>
             <br>
@@ -15,8 +15,6 @@
         <div class="profile-container">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-
-
 
               <% @users.each do |user| %>
               <div class="carousel-item <%= user == @users.first ? 'active' : '' %>">
@@ -37,7 +35,7 @@
                           </span>
                           </span>
                           <% else%>
-                          <%= link_to  profile_likes_path(user.id), class: "btn-secondary", method: :post, remote: true do %>
+                          <%= link_to  profile_likes_path(user.id), class: "btn-red", method: :post, remote: true do %>
                           <i class="fa fa-heart" aria-hidden="true"></i> Like
                           <% end %>
                           <% end %>
@@ -47,15 +45,13 @@
 
                     <div class="justify-space-around mt-3">
                         <span class="mr-4"> <i class="fas fa-map-marker-alt"></i> <%= user.address %> </span>
-                        <span class="view_btn"><%= link_to "View", profile_path(user), class: "btn btn-outline-danger mt-1" %></span>
+                        <span class=""><%= link_to "View", profile_path(user), class: "btn-outline mt-1" %></span>
                     </div>
                   </div>
 
                 </div>
               </div>
               <% end %>
-
-
 
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -69,21 +65,16 @@
           </div>
         </div>
 
-        <div class="row justify-content-center">
-          <div class="col-sm-10 text-right">
-
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row justify-content-center">
-  <p><%= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
-  <p><%= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
-  <p><%= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
-</div>
+
+  <p><%#= link_to "All", profiles_path(current_user), class: "btn rounded-pill border" %></p>
+  <p><%#= link_to "Female", profiles_path(gender:"female"), class: "btn rounded-pill border", id: "booking.btn" %></p>
+  <p><%#= link_to "Male", profiles_path(gender:"male"), class: "btn rounded-pill border" %></p>
+
 
 
 

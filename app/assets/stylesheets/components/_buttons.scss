@@ -1,36 +1,10 @@
-.btn-white {
-  font-family: 'Comfortaa', cursive;
-  font-weight: 700;
-  text-decoration: none;
-  color: #fb1800;
-  background-color: white;
-  border: 1px solid #fb1800;
-  padding: 8px 24px;
-  border-radius: 6px;
-  transition: opacity 0.3s ease;
-  margin: 2px;
-}
-
-.btn-white a {
-    font-family: 'Comfortaa', cursive;
-    font-weight: 900;
-    color: #fb1800;
-  }
-
-.btn-white:hover {
-  font-family: 'Comfortaa', cursive;
-  font-weight: 700;
-  border-color: #F66D5E;
-  text-decoration: none;
-  background-color: #F66D5E;
-}
-
 
 .btn-red {
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   text-decoration: none;
   color: white;
+  //background-color: #009DF7;
   background-color: #fb1800;
   border-color: #fb1800;
   border: 1px solid #fb1800;
@@ -63,31 +37,8 @@
   color: #F66D5E;
 }
 
-.btn-blue {
-  font-family: 'Comfortaa', cursive;
-  font-weight: 700;
-  text-decoration: none;
-  color: white;
-  background-color: #3376fd;
-  border-color: #3376fd;
-  border: 1px solid #3376fd;
-  padding: 8px 24px;
-  border-radius: 6px;
-  transition: opacity 0.3s ease;
-  margin: 2px;
-}
-
-.btn-blue:hover {
-  font-family: 'Comfortaa', cursive;
-  font-weight: 700;
-  background-color: #B7CFFF;
-  border-color: #B7CFFF;
-  text-decoration: none;
-  color: white;
-  opacity: 1;
-}
-
-.btn-red-event {
+.btn-secondary_you {
+  //margin: 40px auto 0px;
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   text-decoration: none;
@@ -97,18 +48,50 @@
   border: 1px solid #fb1800;
   padding: 8px 24px;
   border-radius: 6px;
-  transition: opacity 0.3s ease;
   margin: 2px;
-  text-decoration: none;
+
+  box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+
+  //-webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.btn-red-event:hover {
+.btn-outline {
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
-  background-color: #F66D5E;
-  border-color: #F66D5E;
   text-decoration: none;
-  color: white;
-  text-decoration: none;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  color: #fb1800;
 }
 
+.btn-outline:hover {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  background-color: #fb1800;
+  color: white;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+}
+
+.animate-like {
+animation-name: likeAnimation;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+animation-duration: 0.65s;
+}
+@keyframes likeAnimation {
+0%   { transform: scale(30); }
+100% { transform: scale(1); }
+}
+
+@media screen and (max-width: 1000px) {
+  .profile-name {
+      //font-size: 28px;
+  }
+}

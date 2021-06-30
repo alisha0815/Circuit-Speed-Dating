@@ -1,37 +1,38 @@
+.simple-calendar .td {
+  //height: 20vh;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.simple-calendar .std-card {
+  height: 20vh;
+}
 
 .simple-calendar {
-  table {
-    min-height: 60vh;
-  }
-  .today {
-
-  }
 }
 
 .meeting {
-  padding: 8px 18px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
   transition: background 0.5s ease;
   text-decoration: none;
   background-color: #84ACFD;
   opacity: 1;
   text-shadow: none;
   text-align: center;
+  color: whitesmoke;
+  font-size: 12px;
 }
 
 .meeting:hover {
   background: #699bff;
   color: #2b303b;
-  // color: whitesmoke;
+  color: whitesmoke;
   text-shadow: none;
   font-weight: bolder;
 }
 
 .meeting a {
   text-decoration: none;
-  color: #fb1800;
+  color: whitesmoke;
   //text-shadow: none;
   font-weight: bold;
 }
@@ -48,15 +49,16 @@
 .callendar-body-style {
   // color: white;
   color: #2b303b;
+  // height: 60px;
 }
 
 .simple-calendar {
   .day {
     // background-color: rgba(148, 144, 144, 0.747);
-    background-color: whitesmoke;
+    background-color: #eef0f1;
     // background-color: #2b303b;
     // text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
-    margin: 5px;
+    //margin: 5px;
   }
 
   .wday-0 {
@@ -98,4 +100,3 @@
      color: #2b303b;
   }
 }
-

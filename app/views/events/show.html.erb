@@ -76,7 +76,7 @@
         <div>
           <% if @my_matches.exists? %>
             <%# if DateTime.now == @event.start_time - 300.seconds %>
-            <h1> <%= link_to "BEGIN SESSION", match_path(@my_matches.first), class: "h1-home" %> </h1>
+            <h1> <%= link_to "BEGIN SESSION", match_path(@my_matches.first), class: "btn-red" %> </h1>
             <%# end %>
           <% end %>
         </div>
