@@ -34,17 +34,17 @@ Event.destroy_all
 puts 'Creating users'
 
 # User_one
-photo_one_first = URI.open('https://images.unsplash.com/photo-1615332327401-3c8f03c8af5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-photo_one_second = URI.open('https://images.unsplash.com/photo-1616689321313-4e2eeabd5420?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+photo_one_first = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625158389/alin1_xa8o4d.jpg')
+photo_one_second = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625158389/alin2_gzuzh4.jpg')
 
 user_one = User.new(
     email: "alin.epifanov@yahoo.com",
     password: "password",
     name: "Alin",
-    description: "XXX",
-    age: 32,
+    description: "I am huge fan of football - Real Madrid is my favorite team. I own a small logistics company, living in one of the most beautiful cities in Europe, (I don't want to hear that it is not! -- if you've never been here during summer). I love to travel, parties and people. Love to listen to The Neighbourhood. I am looking for someone who loves to laugh and has a really good sense of humor, because I don’t. 😉",
+    age: 33,
     gender: "female",
-    height: 182,
+    height: 188,
     address: "Oslo, Norway",
     job_title: "Sports Coach",
     education: "Diploma in Sports Science",
@@ -57,15 +57,15 @@ user_one.save!
 puts "user_one created!"
 
 # User_two
-photo_two_first= URI.open('https://images.unsplash.com/photo-1562904403-a5106bef8319?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-photo_two_second= URI.open('https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+photo_two_first = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625160407/8b2326b1-d4bd-439a-96b2-4db1513c4fcc_hbxvep.jpg')
+photo_two_second = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625160407/img-5792_bazc2c.jpg')
 
 user_two = User.new(
     email: "aliciasohn815@gmail.com",
     password: "password",
     name: "Alicia",
-    description: "XXX",
-    age: 34,
+    description: "Writing books and like doing some voluntary work for kids . Have been to more than 50 countries. I like swimming and going skiing. Introverted intuition or the closest equivalent would be INFJ-T. I am really passionate about music. I also love nature and our planet. I'm very simple actually. Random favorite bands would be New Order, The Twilight Sad, Joy Division, The Cure, Japandroids, Royal Headache, Killing Joke. Apart from this, I like numbers. Statistics and new tech. If you think I am a kind of cool nerd, MATCH me!",
+    age: 35,
     gender: "female",
     height: 171.5,
     address: "Oslo, Norway",
@@ -80,18 +80,18 @@ user_two.save!
 puts "user_two created!"
 
 # User_three
-photo_three_first = URI.open('https://images.unsplash.com/photo-1558467612-d1dd65c7ede7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-photo_three_second = URI.open('https://images.unsplash.com/photo-1504730030853-eff311f57d3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1bmdsYXNzJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60')
+photo_three_first = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625158537/matt1_ff0ib7.png')
+photo_three_second = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625158895/matteo-catanese-pi8hk-3zccu-unsplash_guziiw.jpg')
 user_three = User.new(
     email: "stioukimattigr@gmail.com",
     password: "password",
-    name: "Matthaois",
-    description: "XXX",
+    name: "Matthaios",
+    description: "I am huge fan of crossfit, my favorite team is Borussia-Dortmund. I own a Hotel in chania Crete, and live in one the warmest cities in Greece. I love to travel & train (I actually recently started training on an app called PersonalTrainers!! @MattFantastic. I spend my free time with people that I love! And I am trying to get my fingers around the guitar when ever possible. Hey but I'll tell you more about me if I am lucky enough to get to talk with you - face to face!",
     age: 24,
     gender: "female",
-    height: 173,
+    height: 179,
     address: "Eidsberg, Norway",
-    job_title: "Hotel Receptionist",
+    job_title: "Hotel Owner",
     education: "N/A",
     sexual_orientation: "Curious",
     open_to: "Something Casual"
