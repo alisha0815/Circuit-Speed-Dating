@@ -15,8 +15,9 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
       @booking.user = current_user
       @booking.event = @event
+      binding.pry
       if @booking.save
-        redirect_to events_path
+        redirect_to bookings_path
         flash[:notice] = "Booked successfully"
       else
         render :new

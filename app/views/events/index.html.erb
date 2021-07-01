@@ -20,7 +20,10 @@
           <% end %>
           <p class=""> <%= event.time %> </p>
           <% if event.bookings.count < event.capacity %>
-          <p> <%= link_to "Book!", new_event_booking_path(event) %> </p>
+          <p> <%= simple_form_for([event, @booking]) do |f| %>
+                <%= f.submit "Book now", class: "btn-red" %>
+              <% end %>
+          </p>
           <% end %>
           <p> Spots: <%= event.bookings.count %>/<%= event.capacity %> </p>
         </div>
