@@ -3,15 +3,17 @@
   background-color: #eef0f1;
   // background-color: #2b303f;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  border-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
   opacity: 1;
   border: 2px solid whitesmoke;
   padding: 10px;
+  height: 495px;
 }
 
 .scroll {
-    max-height: 550px;
-    overflow-y: auto;
+  height: 400px;
+  overflow-y: auto;
 }
 
 .message-avatar {
@@ -26,8 +28,7 @@
   padding: 20px;
   //background-image: asset_url("");
   background-size: contain;
-  border-radius: 6px;
-  font-family: Helvetica;
+  border-radius: 12px;
 }
 
 .message-box {
@@ -44,9 +45,9 @@
   padding:10px 30px;
   margin-left: 5px;
   border: 0.8px solid #d1d1d1;
-  border-radius: 10px;
+  border-radius: 12px;
   background: lighten(#c5eaff, 10%);
-  color: black;
+  color: #2b303b;
 }
 
 .message-content-other {
@@ -54,11 +55,14 @@
   padding:10px 20px;
   margin-right: 5px;
   border: 0.8px solid #d1d1d1;
-  border-radius: 10px;
+  border-radius: 12px;
   background: lighten(#ffffff, 10%);
-  color: black;
+  color: #2b303b;
 }
 
 .input_message {
-  padding: 10px;
+}
+
+.input_message .form-control {
+  border-radius: 12px;
 }

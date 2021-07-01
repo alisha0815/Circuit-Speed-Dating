@@ -3,19 +3,20 @@
 }
 
 #black-background {
-  background-color: $gray !important;
+  background-color: #eef0f1 !important;
   color: white !important;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 
 #videos {
-    position: relative !important;
-    width: 800px;
-    height: 550px;
-    margin-left: auto;
-    margin-right: 10px;
+    //position: relative !important;
+    width: 600px;
+    height: 450px;
+    //margin-left: auto;
+    //margin-right: 10px;
 }
 
 .OT_subscriber {
@@ -38,24 +39,9 @@
     border-radius: 3px;
 }
 
-#phone-btn {
-  color: white;
-  position: absolute;
-  right: 0px;
-  bottom: -35px;
-  font-size: 12px;
-  border-radius: 30px;
-  background-color: $red;
-  padding: 8px 16px;
-  opacity: 0.8;
-}
-
-.video-avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 90px;
-  border: 2px solid #fff;
-  bottom: 50px;
-  overflow: visible;
-  object-fit: cover;
+.col-adjust {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0.5px;
 }

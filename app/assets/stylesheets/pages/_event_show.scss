@@ -3,7 +3,7 @@
   position: relative;
   // background-color: #2b303b;
   background-color: #eef0f1;
-  width: 300px;
+  width: 400px;
   height: 450px;
   margin: 0 auto;
   margin-top: 40px;
@@ -17,7 +17,7 @@
   border-radius: 5px 5px 0 0;
   position: relative;
   margin:0 auto;
-  width: 300px;
+  width: 400px;
   height: 200px;
   object-fit: cover;
 }
@@ -37,37 +37,40 @@
 }
 
 .user p {
-  font-size: 1.3em;
+  font-size: 20px;
+  font-weight: bold;
   color: #2b303b;
   // color: whitesmoke;
   margin-top: -20px;
 }
 
 .user p:hover {
-  font-size: 1.3em;
-  //color: #2b303b;
+  font-size: 20px;
+  font-weight: bold;
   color: #ff5577;
   margin-top: -20px;
 }
 
 .socialinfo {
   position: relative;
-  margin-top: 45px;
-  cursor: pointer;
+  margin-top: 30px;
+  //cursor: pointer;
+  color: #7A7A7A;
 }
 
 .socialtext1 {
   position: relative;
-  float: left;
-  color: #2b303b;
+  //float: left;
+  //color: #2b303b;
   // color: whitesmoke;
   margin-top: 20px;
-  margin-left: 12px;
-  margin-right: 12px;
+  //margin-left: 12px;
+  //margin-right: 12px;
   border-right: 1px solid #2b303b;
   // border-right: 1px solid whitesmoke;
-  padding: 0px 15px 0px 0px;
+  //padding: 0px 15px 0px 0px;
   transition: 400ms;
+  width: 25%;
 }
 
 .socialtext1:hover {
@@ -77,16 +80,17 @@
 
 .socialtext2 {
   position: relative;
-  color: #2b303b;
+  //color: #2b303b;
   //color: whitesmoke;
   margin-top: 20px;
-  margin-left: 12px;
-  margin-right: 12px;
+  //margin-left: 12px;
+  //margin-right: 12px;
   border-right: 1px solid #2b303b;
   // border-right: 1px solid whitesmoke;
-  padding: 0px 15px 0px 0px;
+  //padding: 0px 15px 0px 0px;
   display: inline-block;
   transition: 400ms;
+  width: 50%;
 }
 
 .socialtext2:hover {
@@ -96,14 +100,15 @@
 
 .socialtext3 {
   position: relative;
-  color: #2b303b;
+  //color: #2b303b;
   // color: whitesmoke;
-  float: right;
+  //float: right;
   margin-top: 20px;
-  margin-left: 12px;
-  margin-right: 12px;
+  //margin-left: 12px;
+  //margin-right: 12px;
   display: inline-block;
   transition: 400ms;
+  width: 25%;
 }
 .socialtext3:hover {
   color: #ff5577;

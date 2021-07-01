@@ -1,23 +1,52 @@
-<div class="d-flex justify-content-center">
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <!-- MATCH BUTTON & TIMER -->
+    <div class="col-sm col-adjust">
+      <% unless params[:mutual] %>
+      <div class="d-flex justify-content-between mt-4 text-center">
+        <div class="col-sm-4 col-adjust">
+          <div class="video-avatar">
+            <% if @other_user_match.user.photos.attached? %>
+            <%= cl_image_tag @other_user_match.user.photos.first.key, :crop=>"fill", class: "" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-flex justify-content-around col-sm-3 prof-box">
+          <span><h5> <i class="fas fa-signature"></i> | <%= @other_user_match.user.name %> </h5></span>
+          <span><h5> <i class="fas fa-birthday-cake"></i> | <%= @other_user_match.user.age %> </h5></span>
+        </div>
+        <div class="d-flex justify-content-around col-sm-4 prof-box">
+          <span><h5> <i class="fas fa-venus-mars"></i> | <%= @other_user_match.user.gender.capitalize %> </h5></span>
+          <span><h5> Preference: Curious </h5></span>
+        </div>
+      </div>
 
-  <div class="col-sm-6">
-  <!-- VIDEO BELOW -->
-    <div class="">
+      <div class="d-flex justify-content-between mt-3">
+        <div class="col-sm-4 prof-box-2 my-auto">
+          <span><h3 class="h3-match "> YOUR MATCH IS READY! </h3></span>
+        </div>
+        <div class="col-sm-4 align-self-center match-item">
+          <span id="js-match">
+            <h1> <i class="fas fa-chevron-right"></i> <%= link_to "MATCH", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "btn-red-event", method: :patch, remote: true %> <i class="fas fa-chevron-left"></i> </h1>
+          </span>
+        </div>
+
+        <div class="col-sm-4 prof-box-2">
+          <%= render 'matches/clock' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-3">
+    <!-- VIDEO BELOW -->
+    <div class="col-sm col-adjust">
       <%= render 'matches/video' %>
     </div>
-
-    <!-- MESSAGING FEATURE -->
-    <div class="row justify-content-center align-item-center ml-4 mt-4 mb-3 mt-4">
-      <div class="col-sm-10 mt-4">
-        <%= render 'messages/message_container' %>
-      </div>
+    <div class="col-sm col-adjust">
+      <!-- MESSAGING FEATURE -->
+      <%= render 'messages/message_container' %>
     </div>
-
   </div>
 </div>
-
-
-
-
-
-

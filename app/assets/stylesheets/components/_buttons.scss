@@ -79,6 +79,32 @@
   margin: 2px;
 }
 
+.btn-red-event {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  //background-color: #009DF7;
+  background-color: #fb1800;
+  border-color: #fb1800;
+  border: 1px solid #fb1800;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  margin: 2px;
+}
+
+.btn-red-event:hover {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  background-color: #F66D5E;
+  border-color: #F66D5E;
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+}
+
+
 .animate-like {
 animation-name: likeAnimation;
 animation-iteration-count: 1;

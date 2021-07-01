@@ -4,7 +4,6 @@
 
       <div class="row justify-content-left mt-4">
         <div class="col-sm-6">
-          <p class="icon-red"><%= link_to " ", events_path, class: "fas fa-chevron-circle-left" %> </p>
         </div>
       </div>
 
@@ -46,7 +45,9 @@
                 <% end %>
                 <p> <i class="fas fa-user-circle"></i> <%= user_match.user.name %> </p>
               </div>
+
             <div class="d-flex socialinfo justify-content-center text-center">
+
               <div class="socialtext1">
                 <p> <%= user_match.user.age %> </p>
                 <p><i class="fas fa-birthday-cake"></i></p>
@@ -62,6 +63,7 @@
                 <p>dates</p>
               </div>
             </div>
+
           </div>
           <% end %>
 
@@ -72,7 +74,7 @@
         <% end %>
       </div>
 
-      <div class="d-flex justify-content-center text-center mt-4">
+      <div class="d-flex justify-content-center text-center mt-4 mb-4">
         <div>
           <% if @my_matches.exists? %>
             <%# if DateTime.now == @event.start_time - 300.seconds %>

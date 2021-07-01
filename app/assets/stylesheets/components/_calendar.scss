@@ -14,25 +14,24 @@
   border-radius: 12px;
   transition: background 0.5s ease;
   text-decoration: none;
-  background-color: #84ACFD;
+  background-color: #CFEEFF;
   opacity: 1;
   text-shadow: none;
   text-align: center;
-  color: whitesmoke;
+  color: #2b303b;
   font-size: 12px;
 }
 
 .meeting:hover {
-  background: #699bff;
+  background: #A6DEFF;
   color: #2b303b;
-  color: whitesmoke;
   text-shadow: none;
   font-weight: bolder;
 }
 
 .meeting a {
   text-decoration: none;
-  color: whitesmoke;
+  color: #2b303b;
   //text-shadow: none;
   font-weight: bold;
 }
