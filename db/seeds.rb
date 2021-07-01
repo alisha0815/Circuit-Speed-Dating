@@ -38,14 +38,18 @@ photo_one_first = URI.open('https://images.unsplash.com/photo-1615332327401-3c8f
 photo_one_second = URI.open('https://images.unsplash.com/photo-1616689321313-4e2eeabd5420?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 
 user_one = User.new(
-    email: Faker::Internet.email(domain: 'gmail'),
+    email: "alin.epifanov@yahoo.com",
     password: "password",
-    name: "Anne",
-    description: "I am a fashion designer 🎨, fairly decent skier, and able to order cocktails 🍹😄 in 3 different languages. I like checking out a new bar with friends, scuba diving anwhere tropical, and trying a new hobby on for size. I appreciate when my date has an intelligent side, is ambitious.",
-    age: 25,
+    name: "Alin",
+    description: "XXX",
+    age: 32,
     gender: "female",
-    height: 165,
-    address: "Oslo, Norway"
+    height: 182,
+    address: "Oslo, Norway",
+    job_title: "Sports Coach",
+    education: "Diploma in Sports Science",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
     )
 user_one.photos.attach(io: photo_one_first, filename: 'temp.png', content_type: 'image/png')
 user_one.photos.attach(io: photo_one_second, filename: 'temp.png', content_type: 'image/png')
@@ -57,14 +61,18 @@ photo_two_first= URI.open('https://images.unsplash.com/photo-1562904403-a5106bef
 photo_two_second= URI.open('https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
 
 user_two = User.new(
-    email: Faker::Internet.email(domain: 'gmail'),
+    email: "aliciasohn815@gmail.com",
     password: "password",
-    name: "Grace",
-    description: "Hiking, sleeping, Netflix, running, baking, and tea. What I lack in technique. I make up for in enthusiasm though my technique has gotten pretty good 🤷‍♀️ Let's talk sports, dogs, and the ending of Infinity War.. 😉 ",
+    name: "Alicia",
+    description: "XXX",
     age: 34,
     gender: "female",
     height: 171.5,
-    address: "Oslo, Norway"
+    address: "Oslo, Norway",
+    job_title: "Statistician",
+    education: "Masters in Statistics",
+    sexual_orientation: "Straight",
+    open_to: "Something Casual"
     )
 user_two.photos.attach(io: photo_two_first, filename: 'temp.png', content_type: 'image/png')
 user_two.photos.attach(io: photo_two_second, filename: 'temp.png', content_type: 'image/png')
@@ -72,17 +80,21 @@ user_two.save!
 puts "user_two created!"
 
 # User_three
-photo_three_first= URI.open('https://images.unsplash.com/photo-1558467612-d1dd65c7ede7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-photo_three_second= URI.open('https://images.unsplash.com/photo-1504730030853-eff311f57d3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1bmdsYXNzJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60')
+photo_three_first = URI.open('https://images.unsplash.com/photo-1558467612-d1dd65c7ede7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+photo_three_second = URI.open('https://images.unsplash.com/photo-1504730030853-eff311f57d3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1bmdsYXNzJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60')
 user_three = User.new(
-    email: Faker::Internet.email(domain: 'gmail'),
+    email: "stioukimattigr@gmail.com",
     password: "password",
-    name: "Mallory",
-    description: "I am a huge baseball fan. Also enjoy ski. 😉 I also really love Broadway musicals- definitely a total theatre nerd lol. Looking for a serious relationship but also open to friends - just important to have a connection and hopefully some common interests 😜",
-    age: 31,
+    name: "Matthaois",
+    description: "XXX",
+    age: 24,
     gender: "female",
-    height: 167,
-    address: "Eidsberg, Norway"
+    height: 173,
+    address: "Eidsberg, Norway",
+    job_title: "Hotel Receptionist",
+    education: "N/A",
+    sexual_orientation: "Curious",
+    open_to: "Something Casual"
     )
 user_three.photos.attach(io: photo_three_first, filename: 'temp.png', content_type: 'image/png')
 user_three.photos.attach(io: photo_three_second, filename: 'temp.png', content_type: 'image/png')
@@ -90,17 +102,21 @@ user_three.save!
 puts "user_three created!"
 
 # User_four
-photo_four_first= URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
-photo_four_second= URI.open('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JvdXAlMjBtZW4lMjBzdW5nbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+photo_four_first = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625143847/k1_okcfs9.jpg')
+photo_four_second = URI.open('https://res.cloudinary.com/dkonx40kl/image/upload/v1625144094/k2_ncxtnu.jpg')
 user_four= User.new(
-    email: Faker::Internet.email(domain: 'gmail'),
+    email: "codingkyle92@gmail.com",
     password: "password",
-    name: "Martin",
-    description: "Born and raised in South Africa, but currently living in Oslo. I work at a successful startup tech company 👨‍💻, which is the reason I moved to Oslo. I'd like to think of myself as a down to earth, optimistic and ambitious guy 😉",
-    age: 23,
+    name: "Kyle",
+    description: "Born and raised in South Africa, but now living in Oslo. I'm basically a rocket scientist 🧑‍🔬. Just kidding. I've appeared on the cover of GQ - thrice ‼️. Okay... still exaggerating ... *just* a smidge. I am really ambitious, love crude jokes and once got a B+ in 5th grade science class. Try with me ❤️ for more down-to-earth talks and if you choose to match - I'll send a pic of my favourite animal. 😉",
+    age: 29,
     gender: "male",
     height: 178.5,
-    address: "Bærum, Norway"
+    address: "Sørengkaia, Norway",
+    job_title: "Project Manager",
+    education: "Degree in Film Production",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
     )
 user_four.photos.attach(io: photo_four_first, filename: 'temp.png', content_type: 'image/png')
 user_four.photos.attach(io: photo_four_second, filename: 'temp.png', content_type: 'image/png')
@@ -118,7 +134,11 @@ user_five = User.new(
     age: 35,
     gender: "male",
     height: 187,
-    address: "Oslo, Norway"
+    address: "Oslo, Norway",
+    job_title: "Marketing Coordinator",
+    education: "Degree in Marketing",
+    sexual_orientation: "Gay",
+    open_to: "A relationship"
     )
 user_five.photos.attach(io: photo_five_first, filename: 'temp.png', content_type: 'image/png')
 user_five.photos.attach(io: photo_five_second, filename: 'temp.png', content_type: 'image/png')
@@ -136,7 +156,11 @@ user_six = User.new(
     age: 26,
     gender: "male",
     height: 174,
-    address: "Trondheim, Norway"
+    address: "Trondheim, Norway",
+    job_title: "Doctor",
+    education: "PhD in Medical Science",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
     )
 user_six.photos.attach(io: photo_six_first, filename: 'temp.png', content_type: 'image/png')
 user_six.photos.attach(io: photo_six_second, filename: 'temp.png', content_type: 'image/png')
@@ -154,11 +178,16 @@ user_seven = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Kalandseidet, Norway"
+    address: "Kalandseidet, Norway",
+    job_title: "Web Designer",
+    education: "Le Wagon",
+    sexual_orientation: "Curious",
+    open_to: "A relationship"
     )
 user_seven.photos.attach(io: photo_seven_first, filename: 'temp.png', content_type: 'image/png')
 user_seven.photos.attach(io: photo_seven_second, filename: 'temp.png', content_type: 'image/png')
 user_seven.save!
+puts "user_seven created!"
 
 # User_eight
 photo_eight_first= URI.open('https://images.unsplash.com/photo-1508243529287-e21914733111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80')
@@ -171,11 +200,16 @@ user_eight = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Manstad, Norway"
+    address: "Manstad, Norway",
+    job_title: "Dog Trainer",
+    education: "Degree in Fine Arts",
+    sexual_orientation: "Gay",
+    open_to: "Something Casual"
     )
 user_eight.photos.attach(io: photo_eight_first, filename: 'temp.png', content_type: 'image/png')
 user_eight.photos.attach(io: photo_eight_second, filename: 'temp.png', content_type: 'image/png')
 user_eight.save!
+puts "user_eight created!"
 
 # User_nine
 photo_nine_first= URI.open('https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80')
@@ -188,11 +222,16 @@ user_nine = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Sandnes, Norway"
+    address: "Sandnes, Norway",
+    job_title: "Nursing Assistant",
+    education: "Vocation Nursing School",
+    sexual_orientation: "Curious",
+    open_to: "A relationship"
     )
 user_nine.photos.attach(io: photo_nine_first, filename: 'temp.png', content_type: 'image/png')
 user_nine.photos.attach(io: photo_nine_second, filename: 'temp.png', content_type: 'image/png')
 user_nine.save!
+puts "user_nine created!"
 
 # User_ten
 photo_ten_first= URI.open('https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80')
@@ -205,11 +244,16 @@ user_ten = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Kongsberg, Norway"
+    address: "Kongsberg, Norway",
+    job_title: "Engineer",
+    education: "STEM",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
     )
 user_ten.photos.attach(io: photo_ten_first, filename: 'temp.png', content_type: 'image/png')
 user_ten.photos.attach(io: photo_ten_second, filename: 'temp.png', content_type: 'image/png')
 user_ten.save!
+puts "user_ten created!"
 
 # User_eleven
 photo_eleven_first= URI.open('https://images.unsplash.com/photo-1441622915984-05d13dfb3d8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80')
@@ -222,11 +266,16 @@ user_eleven = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Stavanger, Norway"
+    address: "Stavanger, Norway",
+    job_title: "Librarian",
+    education: "N/A",
+    sexual_orientation: "Curious",
+    open_to: "A relationship"
     )
 user_eleven.photos.attach(io: photo_eleven_first, filename: 'temp.png', content_type: 'image/png')
 user_eleven.photos.attach(io: photo_eleven_second, filename: 'temp.png', content_type: 'image/png')
 user_eleven.save!
+puts "user_eleven created!"
 
 # User_twelve
 photo_twelve_first= URI.open('https://images.unsplash.com/photo-1551336271-52dfa3160501?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w5NDA1NzAzfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
@@ -239,11 +288,16 @@ user_twelve = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Mandal, Norway"
+    address: "Mandal, Norway",
+    job_title: "Hotel Manager",
+    education: "Diploma in Hospitality",
+    sexual_orientation: "Bisexual",
+    open_to: "Not sure yet"
     )
 user_twelve.photos.attach(io: photo_twelve_first, filename: 'temp.png', content_type: 'image/png')
 user_twelve.photos.attach(io: photo_twelve_second, filename: 'temp.png', content_type: 'image/png')
 user_twelve.save!
+puts "user_twelve created!"
 
 # User_thirteen
 photo_thirteen_first= URI.open('https://images.unsplash.com/photo-1532015917327-c7c46aa1d930?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmlzaGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
@@ -256,11 +310,16 @@ user_thirteen = User.new(
     age: rand(25..35),
     gender: "male",
     height: rand(170..190),
-    address: "Oslo, Norway"
+    address: "Oslo, Norway",
+    job_title: "Group Sales",
+    education: "CIM Marketing",
+    sexual_orientation: "Gay",
+    open_to: "A relationship"
     )
 user_thirteen.photos.attach(io: photo_thirteen_first, filename: 'temp.png', content_type: 'image/png')
 user_thirteen.photos.attach(io: photo_thirteen_second, filename: 'temp.png', content_type: 'image/png')
 user_thirteen.save!
+puts "user_thirteen created!"
 
 # User_fourteen
 photo_fourteen_first= URI.open('https://images.unsplash.com/photo-1568312364058-d8b2a621db27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
@@ -273,11 +332,16 @@ user_fourteen = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "Bergen, Norway"
+    address: "Bergen, Norway",
+    job_title: "Meeting Planner",
+    education: "PA Diploma",
+    sexual_orientation: "Straight",
+    open_to: "Something Casual"
     )
 user_fourteen.photos.attach(io: photo_fourteen_first, filename: 'temp.png', content_type: 'image/png')
 user_fourteen.photos.attach(io: photo_fourteen_second, filename: 'temp.png', content_type: 'image/png')
 user_fourteen.save!
+puts "user_fourteen created!"
 
 # User_fifteen
 photo_fifteen_first = URI.open('https://images.unsplash.com/photo-1522390108011-5f8667fd551d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
@@ -290,11 +354,16 @@ user_fifteen = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "Lycksele, Sweden"
+    address: "Lycksele, Sweden",
+    job_title: "Telemarketer",
+    education: "Telia Internship",
+    sexual_orientation: "Curious",
+    open_to: "A relationship"
     )
 user_fifteen.photos.attach(io: photo_fifteen_first, filename: 'temp.png', content_type: 'image/png')
 user_fifteen.photos.attach(io: photo_fifteen_second, filename: 'temp.png', content_type: 'image/png')
 user_fifteen.save!
+puts "user_fifteen created!"
 
 # User_sixteen
 photo_sixteen_first= URI.open('https://images.unsplash.com/photo-1589935593001-61a9abc746ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80')
@@ -307,13 +376,17 @@ user_sixteen = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "Warszawa, Poland"
+    address: "Oslo, Norway",
+    job_title: "Therapist",
+    education: "PhD in Psychology",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
     )
 user_sixteen.photos.attach(io: photo_sixteen_first, filename: 'temp.png', content_type: 'image/png')
 user_sixteen.photos.attach(io: photo_sixteen_second, filename: 'temp.png', content_type: 'image/png')
 
 # User_seventeen
-photo_seventeen_first = URI.open('https://images.unsplash.com/photo-1607877342019-78edd203ecb7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGxpdHRsZSUyMGdpcmx8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+photo_seventeen_first = URI.open('https://images.unsplash.com/photo-1536456364204-85a9b0676106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 photo_seventeen_second = URI.open('https://images.unsplash.com/photo-1612847061577-67689dec1253?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=975&q=80')
 user_seventeen = User.new(
     email: Faker::Internet.email(domain: 'gmail'),
@@ -323,11 +396,16 @@ user_seventeen = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "London, UK"
+    address: "Oslo, Norway",
+    job_title: "Flight Attendant",
+    education: "Degree in Tourism",
+    sexual_orientation: "Straight",
+    open_to: "Something Casual"
     )
 user_seventeen.photos.attach(io: photo_seventeen_first, filename: 'temp.png', content_type: 'image/png')
 user_seventeen.photos.attach(io: photo_seventeen_second, filename: 'temp.png', content_type: 'image/png')
 user_seventeen.save!
+puts "user_seventeen created!"
 
 # User_eighteen
 photo_eighteen_first= URI.open('https://images.unsplash.com/photo-1594361487118-f4e2b2288aea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')
@@ -340,11 +418,16 @@ user_eighteen = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "Oslo, Norway"
+    address: "Oslo, Norway",
+    job_title: "Chef",
+    education: "Diploma in Culinary Arts",
+    sexual_orientation: "Curious",
+    open_to: "Something Casual"
     )
 user_eighteen.photos.attach(io: photo_eighteen_first, filename: 'temp.png', content_type: 'image/png')
 user_eighteen.photos.attach(io: photo_eighteen_second, filename: 'temp.png', content_type: 'image/png')
 user_eighteen.save!
+puts "user_eighteen created!"
 
 # User_nineteen
 photo_nineteen_first = URI.open('https://images.unsplash.com/photo-1520736179427-d7f281fc39f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80')
@@ -357,11 +440,16 @@ user_nineteen = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "Carse, UK"
+    address: "Oslo, Norway",
+    job_title: "Restaurant Manager",
+    education: "Experience",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
     )
 user_nineteen.photos.attach(io: photo_nineteen_first, filename: 'temp.png', content_type: 'image/png')
 user_nineteen.photos.attach(io: photo_nineteen_second, filename: 'temp.png', content_type: 'image/png')
 user_nineteen.save!
+puts "user_nineteen created!"
 
 # User_twenty
 photo_twenty_first = URI.open('https://images.unsplash.com/photo-1571442463800-1337d7af9d2f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80')
@@ -374,16 +462,113 @@ user_twenty = User.new(
     age: rand(25..35),
     gender: "female",
     height: rand(160..175),
-    address: "Hamar, Norway"
+    address: "Hamar, Norway",
+    job_title: "Barista",
+    education: "Studying",
+    sexual_orientation: "Pansexual",
+    open_to: "A relationship"
     )
 user_twenty.photos.attach(io: photo_twenty_first, filename: 'temp.png', content_type: 'image/png')
 user_twenty.photos.attach(io: photo_twenty_second, filename: 'temp.png', content_type: 'image/png')
 user_twenty.save!
+puts "user_twenty created!"
+
+# User_twenty_one
+photo_twenty_one_first = URI.open('https://images.unsplash.com/photo-1615332327401-3c8f03c8af5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+photo_twenty_one_second = URI.open('https://images.unsplash.com/photo-1616689321313-4e2eeabd5420?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+
+user_twenty_one = User.new(
+    email: Faker::Internet.email(domain: 'gmail'),
+    password: "password",
+    name: "Anne",
+    description: "I am a fashion designer 🎨, fairly decent skier, and able to order cocktails 🍹😄 in 3 different languages. I like checking out a new bar with friends, scuba diving anwhere tropical, and trying a new hobby on for size. I appreciate when my date has an intelligent side, is ambitious.",
+    age: 25,
+    gender: "female",
+    height: 165,
+    address: "Oslo, Norway",
+    job_title: "Makeup Artist",
+    education: "Studying",
+    sexual_orientation: "Straight",
+    open_to: "Not sure yet"
+    )
+user_twenty_one.photos.attach(io: photo_twenty_one_first, filename: 'temp.png', content_type: 'image/png')
+user_twenty_one.photos.attach(io: photo_twenty_one_second, filename: 'temp.png', content_type: 'image/png')
+user_twenty_one.save!
+puts "user_twenty_one created!"
+
+# User_twenty_two
+photo_twenty_two_first = URI.open('https://images.unsplash.com/photo-1562904403-a5106bef8319?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+photo_twenty_two_second = URI.open('https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGlraW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+
+user_twenty_two = User.new(
+    email: Faker::Internet.email(domain: 'gmail'),
+    password: "password",
+    name: "Grace",
+    description: "Hiking, sleeping, Netflix, running, baking, and tea. What I lack in technique. I make up for in enthusiasm though my technique has gotten pretty good 🤷‍♀️ Let's talk sports, dogs, and the ending of Infinity War.. 😉 ",
+    age: 34,
+    gender: "female",
+    height: 171.5,
+    address: "Oslo, Norway",
+    job_title: "Geologist",
+    education: "Masters in Geology",
+    sexual_orientation: "Pansexual",
+    open_to: "Not sure yet"
+    )
+user_twenty_two.photos.attach(io: photo_twenty_two_first, filename: 'temp.png', content_type: 'image/png')
+user_twenty_two.photos.attach(io: photo_twenty_two_second, filename: 'temp.png', content_type: 'image/png')
+user_twenty_two.save!
+puts "user_twenty_two created!"
+
+# User_twenty_three
+photo_twenty_three_first = URI.open('https://images.unsplash.com/photo-1558467612-d1dd65c7ede7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+photo_twenty_three_second = URI.open('https://images.unsplash.com/photo-1504730030853-eff311f57d3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1bmdsYXNzJTIwZ2lybHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60')
+
+user_twenty_three = User.new(
+    email: Faker::Internet.email(domain: 'gmail'),
+    password: "password",
+    name: "Mallory",
+    description: "I am a huge baseball fan. Also enjoy ski. 😉 I also really love Broadway musicals- definitely a total theatre nerd lol. Looking for a serious relationship but also open to friends - just important to have a connection and hopefully some common interests 😜",
+    age: 31,
+    gender: "female",
+    height: 167,
+    address: "Eidsberg, Norway",
+    job_title: "Biologist",
+    education: "Degree in Bio-Science",
+    sexual_orientation: "Bisexual",
+    open_to: "Something Casual"
+    )
+user_twenty_three.photos.attach(io: photo_twenty_three_first, filename: 'temp.png', content_type: 'image/png')
+user_twenty_three.photos.attach(io: photo_twenty_three_second, filename: 'temp.png', content_type: 'image/png')
+user_twenty_three.save!
+puts "user_twenty_three created!"
+
+# User_twenty_four
+photo_twenty_four_first = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
+photo_twenty_four_second = URI.open('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JvdXAlMjBtZW4lMjBzdW5nbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+
+user_twenty_four = User.new(
+    email: Faker::Internet.email(domain: 'gmail'),
+    password: "password",
+    name: "Martin",
+    description: "Born in the USA, but currently living in Oslo. I work at a successful startup tech company 👨‍💻, which is the reason I moved to Oslo. I'd like to think of myself as a down to earth, optimistic and ambitious guy 😉",
+    age: 23,
+    gender: "male",
+    height: 178.5,
+    address: "Bærum, Norway",
+    job_title: "Online Tutor",
+    education: "Self-taught",
+    sexual_orientation: "Curious",
+    open_to: "A relationship"
+    )
+user_twenty_four.photos.attach(io: photo_twenty_four_first, filename: 'temp.png', content_type: 'image/png')
+user_twenty_four.photos.attach(io: photo_twenty_four_second, filename: 'temp.png', content_type: 'image/png')
+user_twenty_four.save!
+puts "user_twenty_four created!"
 
 seedUsers = [user_one, user_two, user_three, user_four, user_five, user_six,
              user_seven, user_eight, user_nine, user_ten, user_eleven, user_twelve,
              user_thirteen, user_fourteen, user_fifteen, user_sixteen, user_seventeen, user_eighteen,
-             user_nineteen, user_twenty]
+             user_nineteen, user_twenty, user_twenty_one, user_twenty_two, user_twenty_three, user_twenty_four]
 
 
 # => SEEDING INTERESTS
@@ -472,17 +657,30 @@ end
 puts "Completed User_interests"
 
 # => SEEDING BOOKINGS
+puts "Creating Events"
 
-event = Event.create!(name: "Dating Launch", start_time: Time.now + 1.hour, end_time: Time.now + 4.hours, capacity: 6)
+event1 = Event.create!(name: "Session", start_time: DateTime.parse("01/07/2021 18:00"), end_time: DateTime.parse("01/07/2021 18:30"), capacity: 6)
+event2 = Event.create!(name: "Dating Launch", start_time: DateTime.parse("03/07/2021 18:00"), end_time: DateTime.parse("03/07/2021 18:30"), capacity: 6)
+event3 = Event.create!(name: "Session", start_time: DateTime.parse("05/07/2021 18:00"), end_time: DateTime.parse("05/07/2021 18:30"), capacity: 6)
+event4 = Event.create!(name: "Session", start_time: DateTime.parse("06/07/2021 18:00"), end_time: DateTime.parse("06/07/2021 18:30"), capacity: 6)
+event5 = Event.create!(name: "Session", start_time: DateTime.parse("07/07/2021 18:00"), end_time: DateTime.parse("07/07/2021 18:30"), capacity: 6)
+event6 = Event.create!(name: "Session", start_time: DateTime.parse("08/07/2021 18:00"), end_time: DateTime.parse("08/07/2021 18:30"), capacity: 6)
+event7 = Event.create!(name: "Session", start_time: DateTime.parse("09/07/2021 18:00"), end_time: DateTime.parse("09/07/2021 18:30"), capacity: 6)
+event8 = Event.create!(name: "Session", start_time: DateTime.parse("10/07/2021 18:00"), end_time: DateTime.parse("10/07/2021 18:30"), capacity: 6)
+week1 = Event.create!(name: "Session", start_time: DateTime.parse("12/07/2021 18:00"), end_time: DateTime.parse("17/07/2021 18:30"), capacity: 6)
+week2 = Event.create!(name: "Session", start_time: DateTime.parse("19/07/2021 18:00"), end_time: DateTime.parse("24/07/2021 18:30"), capacity: 6)
+week3 = Event.create!(name: "Session", start_time: DateTime.parse("26/07/2021 18:00"), end_time: DateTime.parse("31/07/2021 18:30"), capacity: 6)
+
+puts "created #{Event.count} Events"
 
 puts "Creating User Bookings from 1st Event"
 
-booking1 = Booking.create!(user: user_one, event: Event.first)
-booking2 = Booking.create!(user: user_two, event: Event.first)
-booking3 = Booking.create!(user: user_three, event: Event.first)
+booking1 = Booking.create!(user: user_one, event: Event.second)
+booking2 = Booking.create!(user: user_two, event: Event.second)
+booking3 = Booking.create!(user: user_three, event: Event.second)
 # booking4 = Booking.create(user: user_four, event: Event.first)
-booking5 = Booking.create!(user: user_five, event: Event.first)
-booking6 = Booking.create!(user: user_six, event: Event.first)
+booking5 = Booking.create!(user: user_five, event: Event.second)
+booking6 = Booking.create!(user: user_six, event: Event.second)
 puts "created #{Booking.count} bookings"
 puts "Completed User Bookings"
 

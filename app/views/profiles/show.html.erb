@@ -21,20 +21,20 @@
       </div>
 
       <div class="col-sm-10 std-card-once d-flex justify-content-center pb-3">
-        <div class="col-sm-3 align-self-center mt-1">
+        <div class="col-sm-3 align-self-end pb-4">
           <% if current_user == @user%>
-            <h4> <%= @user.name %> </h4>
+
           <% else%>
-            <h4 class="mt-3 ml-3"> <%= @user.name %> </h4>
+            <h4 class="mt-3 ml-2"> </h4>
             <span class="js-heart" data-user-id="<%= @user.id %>">
               <% if current_user.likes?(@user)%>
               <div class="mt-3">
-                <span id="heart_btn", class="btn-secondary_you ">
+                <span id="heart_btn", class="btn-secondary_you">
                   <i class="fa fa-heart" aria-hidden="true"></i> Liked! </span>
               </div>
               <% else%>
               <div class="mt-3 ml-2">
-                <%= link_to  profile_likes_path(@user.id), id: "heart_btn", class: "btn-red mt-4", method: :post, remote: true do %>
+                <%= link_to  profile_likes_path(@user.id), id: "heart_btn", class: "btn-red", method: :post, remote: true do %>
                   <i class="fa fa-heart" aria-hidden="true"></i> Like
                 <% end %>
               </div>
@@ -43,26 +43,28 @@
         </div>
 
         <div class="col-sm-9">
-          <div class="row justify-content-between mt-3 mb-4 p-2 pl-3">
+          <div class="row justify-content-between mt-2 mb-1 p-2 pl-3">
             <h4> Hey! I'm <%= @user.name %>... </h4>
             <% if current_user == @user %>
             <%= link_to "", edit_user_registration_path, class: "far fa-edit m-2" %>
             <% end %>
           </div>
-          <div class="row mr-4">
-            <p class="pl-3"> <i class="fas fa-envelope-open-text" style="color: #F44235"></i> <%= @user.description %> </p>
+          <div class="row mr-4 justify-content-between">
+            <p class="pl-3 grey-sub"> <i class="fas fa-briefcase" style="color: #F44235"></i> <%= @user.job_title %> </p>
+            <p class="pl-3 grey-sub"> <i class="fas fa-envelope-open-text" style="color: #F44235"></i> <%= @user.description %> </p>
           </div>
           <div class="row justify-content-between">
-            <div class="col-sm-5">
-              <p> <i class="fas fa-birthday-cake" style="color: #F44235"></i> <%= @user.age %> </p>
-              <p> <i class="fas fa-male" style=" color: #F44235"></i> <%= @user.gender.capitalize %> </p>
-              <p> <i class="fas fa-location-arrow" style="color: #F44235"></i> <%= @user.address %> </p>
+            <div class="col-sm-6 grey-sub">
+              <p> <i class="fas fa-birthday-cake pr-1" style="color: #F44235"></i> <%= @user.age %> </p>
+              <p> <i class="fas fa-university pr-1" style="color: #F44235"></i> <%= @user.education %> </p>
+              <p> <i class="fas fa-transgender-alt pr-1" style="color: #F44235"></i> <%= @user.sexual_orientation %> </p>
             </div>
-            <div class="col-sm-5">
-              <p> <i class="fas fa-heading" style="color: #F44235"></i> <%= @user.height %> </p>
-              <p> <i class="fas fa-birthday-cake" style="color: #F44235"></i> <%= @user.age %> </p>
-              <p> <i class="fas fa-map-marker-alt" style="color: #F44235"></i> <%= @user.address %> </p>
+            <div class="col-sm-6 grey-sub">
+              <p> <i class="fas fa-venus-mars pr-1" style=" color: #F44235"></i> <%= @user.gender.capitalize %> </p>
+              <p> <i class="fas fa-heading pr-1" style="color: #F44235"></i> <%= @user.height %> </p>
+              <p class="grey-sub"> Open to: <%= @user.open_to %> </p>
             </div>
+            <p class="grey-sub"> <i class="fas fa-map-marker-alt pr-1 pl-3" style="color: #F44235"></i> <%= @user.address %> </p>
           </div>
         </div>
       </div>

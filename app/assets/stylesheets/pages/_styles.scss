@@ -3,6 +3,7 @@
   font-size: 10rem;
   color: white;
   text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
+  letter-spacing: 0.6px;
 }
 
 .h1-home {
@@ -11,20 +12,12 @@
   //color: #c5eaff;
   color: white;
   text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
-}
-
-.h1-home:hover {
-  // color: #f70008;
-  // transition: 1500ms;
+  letter-spacing: 0.6px;
 }
 
 .h1-home a {
   color: white;
-}
-
-.h1-home a:hover {
-  // color: #f70008;
-  // transition: 1500ms;
+  letter-spacing: 0.6px;
 }
 
 .h2-home {
@@ -32,35 +25,29 @@
   font-size: 2.2rem;
   color: white;
   text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
-}
-
-.h2-home:hover {
-  // color: #f70008;
-  // transition: 1500ms;
+  letter-spacing: 0.6px;
 }
 
 .h2-home a {
   color: white;
 }
 
-.h2-home a:hover {
-  // color: #f70008;
-  // transition: 1500ms;
-}
-
 h4 i {
   color: red;
+  letter-spacing: 0.6px;
 }
 
 h1 {
   font-family: 'Comfortaa', cursive;
   font-size: 2.5rem;
+  letter-spacing: 0.6px;
 }
 
 h2 {
   font-family: 'Comfortaa', cursive;
   font-size: 1.9rem;
   font-weight: 500;
+  letter-spacing: 0.6px;
 }
 
 h3 {
@@ -72,22 +59,26 @@ h4 {
   font-family: 'Comfortaa', cursive;
   font-size: 1.4rem;
   font-weight: bold;
+  letter-spacing: 0.6px;
 }
 
 h5 {
   font-family: 'Comfortaa', cursive;
   font-size: 1rem;
+  letter-spacing: 0.6px;
 }
 
 body p {
   font-family: 'Comfortaa', cursive;
   font-weight: normal;
+  letter-spacing: 0.6px;
 }
 
 .btn {
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   border-radius: 6px;
+  letter-spacing: 0.6px;
 }
 
 .info-tag {
@@ -116,4 +107,8 @@ body p {
   font-size: 1.9rem;
   color: #f7939d;
   text-shadow: 1px 1px rgba(148, 144, 144, 0.747);
+}
+
+.grey-sub {
+  color: #7A7A7A;
 }
