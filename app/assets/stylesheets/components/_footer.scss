@@ -12,11 +12,21 @@
   padding: 0px;
 }
 
+.footer-title {
+  color: black !important;
+}
+
+.footer-title-social {
+  padding: 10px;
+}
+
 .footer-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
   font-size: 16px;
+  margin-right: 80px;
+  margin-top: 4px;
 }
 
 .footer-links .fab {
@@ -37,3 +47,6 @@
   color: #D23333;
 }
 
+.footer-wrapper {
+  min-height: 120vh;
+}
