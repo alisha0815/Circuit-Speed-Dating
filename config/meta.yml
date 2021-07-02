@@ -2,6 +2,6 @@
 meta_product_name: "Circuit Speed Dating"
 meta_title: "Circuit Speed Dating - Connecting humans in a Loneliness Pandemic"
 meta_description: "Making your online dating experience safer with face-to-face."
-meta_image: "everywhere_together.png" # should exist in `app/assets/images/`
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
 twitter_account: "@circuit-speed-dating"   # required for Twitter Cards
 
