@@ -16,8 +16,8 @@
           <span><h5 class="grey-sub"> <i class="fas fa-birthday-cake pr-1" style="color: #F44235"></i>| <%= @other_user_match.user.age %> </h5></span>
         </div>
         <div class="d-flex justify-content-around col-sm-4 prof-box">
-          <span><h5 class="grey-sub"> <i class="fas fa-venus-mars pr-1" style=" color: #F44235"></i>| <%= @other_user_match.user.gender.capitalize %> </h5></span>
-          <span><h5 class="grey-sub"> <i class="fas fa-transgender-alt pr-1" style="color: #F44235"></i>| <%= @other_user_match.user.sexual_orientation %> </h5></span>
+          <span><p class="grey-sub"> <i class="fas fa-transgender-alt pr-1" style="color: #F44235"></i>| <%= @other_user_match.user.sexual_orientation %></p></span>
+          <span><p class="grey-sub"> | Open to: <%= @other_user_match.user.open_to %> </p></span>
         </div>
       </div>
 
@@ -28,6 +28,7 @@
         <div class="col-sm-4 align-self-center match-item">
           <span id="js-match">
             <h1> <i class="fas fa-chevron-right"></i> <%= link_to "MATCH", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "btn-red-event", method: :patch, remote: true %> <i class="fas fa-chevron-left"></i> </h1>
+            <h3 class="pt-4"><i class="fas fa-exclamation pr-2"></i><%= link_to "CATFISH!", next_match_path(@match), class: "btn-red-event" %><i class="fas fa-exclamation pl-2"></i></h3>
           </span>
         </div>
 
@@ -47,6 +48,12 @@
     <div class="col-sm col-adjust">
       <!-- MESSAGING FEATURE -->
       <%= render 'messages/message_container' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3 next-btn">
+
     </div>
   </div>
 </div>

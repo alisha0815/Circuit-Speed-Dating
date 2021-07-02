@@ -4,32 +4,35 @@
 
   <div class="col-sm-5 align-item-center">
     <div class="row justify-content-center">
-      <div class="mt-5">
+      <div class="mt-4">
         <h2 class="h1-home ml-1 mt-4"> ::CIRCUIT</h2>
         <h1 class="h1-home ml-1 mt-3"> Chemistry happens in person.</h1>
-        <h3 class="h2-home ml-1 mt-3"> So we designed an incredible dating experience driven by purpose and accountability. </h3>
+        <h3 class="h2-home ml-1 mt-3"> So we designed an incredible dating experience driven by purpose and flexibility. </h3>
         <div class="d-flex mt-4" >
           <% if current_user %>
           <h3> <%= link_to "FIND YOUR MATCH WITH CIRCUIT", profiles_path, class: "btn-red" %> </h3>
           <% end %>
         </div>
       </div>
-      <div class="d-flex justify-content-center">
-        <%#= render 'pages/reviews' %>
+      <div class="d-flex justify-content-center mt-5">
+        <div><%#= image_tag("https://res.cloudinary.com/dkonx40kl/image/upload/v1625221115/group_hangout_m159bh.svg", height: '400', width: '400') %></div>
+        <div><%= image_tag("https://res.cloudinary.com/dkonx40kl/image/upload/v1625221115/everywhere_together_okv0dv.svg", height: '500', width: '480') %></div>
+        <div><%= image_tag("https://res.cloudinary.com/dkonx40kl/image/upload/v1625221115/Chatting_ockmws.svg", height: '400', width: '450') %></div>
+        <div><%#= image_tag("https://res.cloudinary.com/dkonx40kl/image/upload/v1625221116/My_location_skyqst.svg", height: '400', width: '400') %></div>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-6 mt-4">
 
-    <div class="row justify-content-center mt-2">
+    <div class="row justify-content-center mt-4">
       <div class="col-sm-10 std-card p-4">
         <h4 class="font-weight-bold p-1 m-1"> <i class="fas fa-dice-one"></i> Learn </h4>
         <p class="p-1 m-1 grey-sub"> When it comes to dating apps, you’ve got options: Tinder, Badoo, Bumble, Hinge, Match, POF, OKCupid and many more. It doesn’t matter if you want to find love, a date, or just have a casual chat, you want an app that’s the right match for you. And it’s not always black and white – when you want to meet new people, your friends at Circuit can help you out with features designed to make the impossible possible. Dating online just got easier. </p>
       </div>
     </div>
 
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-2">
       <div class="col-sm-10 std-card p-4">
         <h4 class="font-weight-bold p-1 m-1"> <i class="fas fa-dice-two"></i> Date safer with Face-to-Face </h4>
         <p class="p-1 m-1 grey-sub"> We’re all eager to meet new people, but dating during COVID-19 means putting your safety first. When two metres apart isn’t enough, Face-to-Face lets you video chat with your match, so you can keep the connection going online. </p>

@@ -34,7 +34,8 @@ export default class extends Controller {
       insertMode: 'append',
       width: '100%',
       height: '100%',
-      role: this.data.get("role")
+      role: this.data.get("role"),
+      has_audio: false
     }, this.handleError.bind(this))
     this.session.connect(this.token, this.streamConnected.bind(this))
   }

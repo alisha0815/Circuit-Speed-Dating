@@ -60,11 +60,10 @@
               <p> <i class="fas fa-transgender-alt pr-1" style="color: #F44235"></i> <%= @user.sexual_orientation %> </p>
             </div>
             <div class="col-sm-6 grey-sub">
-              <p> <i class="fas fa-venus-mars pr-1" style=" color: #F44235"></i> <%= @user.gender.capitalize %> </p>
-              <p> <i class="fas fa-heading pr-1" style="color: #F44235"></i> <%= @user.height %> </p>
+              <p> <i class="fas fa-heading" style="color: #F44235"></i> <%= @user.height %> </p>
+              <p class="grey-sub"> <i class="fas fa-map-marker-alt pr-1" style="color: #F44235"></i> <%= @user.address %> </p>
               <p class="grey-sub"> Open to: <%= @user.open_to %> </p>
             </div>
-            <p class="grey-sub"> <i class="fas fa-map-marker-alt pr-1 pl-3" style="color: #F44235"></i> <%= @user.address %> </p>
           </div>
         </div>
       </div>

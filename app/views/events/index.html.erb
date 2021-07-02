@@ -16,7 +16,7 @@
         <% events.each do |event| %>
         <div class="meeting">
           <% if (current_user.events).include?(event) %>
-          <p><%= link_to event.name, event_path(event) %></p>
+          <h6><strong> <%= link_to event.name, event_path(event) %> </strong></h6>
           <% end %>
           <p class=""> <%= event.time %> </p>
           <% if event.bookings.count < event.capacity %>
