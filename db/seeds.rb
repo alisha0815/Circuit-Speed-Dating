@@ -673,6 +673,14 @@ week3 = Event.create!(name: "Session", start_time: DateTime.parse("26/07/2021 18
 
 puts "created #{Event.count} Events"
 
+match_10 = Match.create(event: event1)
+        UserMatch.create(user: user_four, match: match_10, status: "accept")
+        UserMatch.create(user: user_fifteen, match: match_10, status: "accept")
+
+match_11 = Match.create(event: event7)
+        UserMatch.create(user: user_four, match: match_11, status: "accept")
+        UserMatch.create(user: user_eight, match: match_11, status: "accept")
+
 puts "Creating User Bookings from 1st Event"
 
 booking1 = Booking.create!(user: user_one, event: Event.second)

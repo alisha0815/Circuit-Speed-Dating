@@ -28,7 +28,7 @@
         <div class="col-sm-4 align-self-center match-item">
           <span id="js-match">
             <h1> <i class="fas fa-chevron-right"></i> <%= link_to "MATCH", user_match_path(@user_match.id, user_match: { status: 'accept' }), class: "btn-red-event", method: :patch, remote: true %> <i class="fas fa-chevron-left"></i> </h1>
-            <h3 class="pt-4"><i class="fas fa-exclamation pr-2"></i><%= link_to "CATFISH!", next_match_path(@match), class: "btn-red-event" %><i class="fas fa-exclamation pl-2"></i></h3>
+            <!-- <h3 class="pt-4"><i class="fas fa-exclamation pr-2"></i><%#= link_to "NEXT!", next_match_path(@match), class: "btn-red-event" %><i class="fas fa-exclamation pl-2"></i></h3> -->
           </span>
         </div>
 
@@ -53,7 +53,6 @@
 
   <div class="row">
     <div class="col-sm-3 next-btn">
-
     </div>
   </div>
 </div>
