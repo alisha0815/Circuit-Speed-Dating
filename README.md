@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Circuit Speed Dating
+
+Dating App: Making your dating experience safer with face-to-face.
+
+Check it out: [Let's date!](https://circuit-speed-dating.herokuapp.com/)
