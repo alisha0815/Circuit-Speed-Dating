@@ -8,7 +8,7 @@ Check it out: [Let's date!](https://circuit-speed-dating.herokuapp.com/)
 * Ruby
 * Ruby on Rails
 * Bootstrap
-* jquery
+* JavaScript & jQuery
 * Vonage API (Video Chat) 
 
 ### Deployment :rocket:
