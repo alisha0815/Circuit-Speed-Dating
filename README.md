@@ -7,9 +7,10 @@ Check it out: [Let's date!](https://circuit-speed-dating.herokuapp.com/)
 ## Tech Stack 
 * Ruby
 * Ruby on Rails
-* Bootstrap
 * JavaScript & jQuery
+* PostgreSQL
 * Vonage API (Video Chat) 
+* Bootstrap
 
 ### Deployment :rocket:
 * Deployed on Heroku 
