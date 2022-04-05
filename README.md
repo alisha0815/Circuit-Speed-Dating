@@ -12,5 +12,7 @@ Check it out: [Let's date!](https://circuit-speed-dating.herokuapp.com/)
 * Vonage API (Video Chat) 
 * Bootstrap
 
-### Deployment :rocket:
-* Deployed on Heroku 
+## 🚀 Contributors
+<p align="left"> 
+ This app was built in collaboration with other three developers, <strong>Kyle Danny, Alin Epifanov, Matthaios Stioukis.</strong>
+  </p>
